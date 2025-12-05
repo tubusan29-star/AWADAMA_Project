@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
+      "AWADAMA_Project/1.0.0": {
+        "dependencies": {
+          "Google.Apis.Sheets.v4": "1.72.0.3966"
+        },
+        "runtime": {
+          "AWADAMA_Project.dll": {}
+        }
+      },
       "Google.Apis/1.72.0": {
         "dependencies": {
           "Google.Apis.Core": "1.72.0"
@@ -80,6 +88,11 @@
     }
   },
   "libraries": {
+    "AWADAMA_Project/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Google.Apis/1.72.0": {
       "type": "package",
       "serviceable": true,

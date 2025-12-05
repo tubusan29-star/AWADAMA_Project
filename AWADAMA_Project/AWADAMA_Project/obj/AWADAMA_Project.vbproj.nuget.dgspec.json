@@ -49,6 +49,12 @@
       "frameworks": {
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
+          "dependencies": {
+            "Google.Apis.Sheets.v4": {
+              "target": "Package",
+              "version": "[1.72.0.3966, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

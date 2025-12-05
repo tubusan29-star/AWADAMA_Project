@@ -22,10 +22,41 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        ErrorText = New TextBox()
+        Button1 = New Button()
+        SuspendLayout()
+        ' 
+        ' ErrorText
+        ' 
+        ErrorText.Location = New Point(12, 371)
+        ErrorText.Multiline = True
+        ErrorText.Name = "ErrorText"
+        ErrorText.Size = New Size(776, 67)
+        ErrorText.TabIndex = 0
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(659, 25)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(94, 29)
+        Button1.TabIndex = 1
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' Form1
+        ' 
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(Button1)
+        Controls.Add(ErrorText)
+        Name = "Form1"
         Text = "Form1"
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
+
+    Friend WithEvents ErrorText As TextBox
+    Friend WithEvents Button1 As Button
 
 End Class
