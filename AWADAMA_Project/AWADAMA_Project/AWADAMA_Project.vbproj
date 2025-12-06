@@ -33,4 +33,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="My Project\新しいフォルダー\" />
+  </ItemGroup>
+
 </Project>
