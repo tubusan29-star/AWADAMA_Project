@@ -1,5 +1,6 @@
 ﻿Public Class CardDataDto
     Private value As Object
+    Public Property DeckNo As String
     Public Property No As String
     Public Property Name As String
     Public Property Cardname As String

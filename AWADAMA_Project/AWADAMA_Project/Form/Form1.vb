@@ -1,7 +1,9 @@
-﻿Public Class Form1
+﻿Imports System.Reflection.Metadata
+
+Public Class Form1
     Dim HandData As List(Of HandDataDto) = New List(Of HandDataDto)
     Dim GraveData As List(Of CardDataDto) = New List(Of CardDataDto)
-    Dim SelectionIndex As Integer = -1
+    Dim SelectionCard As CardDataDto = New CardDataDto()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -76,7 +78,7 @@
 
         btDiscard.Visible = False
 
-        SelectionIndex = -1
+        SelectionCard = Nothing
 
         '手札選択時
         If clickedPanel.Name.Substring(0, 6) = "pnHand" Then
@@ -89,20 +91,28 @@
             Dim clickCardData = GetCardDataByName(clickCardName)
             SetAllySelectionData(clickCardData)
 
-            SelectionIndex = clickNo - 1
+            SelectionCard = clickCardData
+            SelectionCard.DeckNo = HandData(clickNo - 1).No
         End If
     End Sub
 
     Private Sub btDiscard_Click(sender As Object, e As EventArgs) Handles btDiscard.Click
-        Dim result As MsgBoxResult = MsgBox("選択中の手札を捨てますか？", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "確認")
+        Dim result As MsgBoxResult = MsgBox("選択中のカードを墓地に送りますか？", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "確認")
         If result = MsgBoxResult.No Then
             Exit Sub
         End If
-        GraveData.Add(GetCardDataByName(HandData(SelectionIndex).Name))
 
-        HandData.RemoveAt(SelectionIndex)
-        HandCardUpdate()
         pnSelectPanelColor.Visible = False
+
+        For Each no As String In HandData.Select(Function(x) x.No).ToList()
+            If no = SelectionCard.DeckNo Then
+                GraveData.Add(GetCardDataByName(SelectionCard.Name))
+                HandData.Remove(HandData.Find(Function(x) x.No = SelectionCard.DeckNo))
+                HandCardUpdate()
+                Exit For
+            End If
+        Next
+
         gbAllyInfo.Visible = False
         btDiscard.Visible = False
         lbHandMaxSign.Visible = False
@@ -132,7 +142,7 @@
 
         Dim handDataNameList = New List(Of String)
 
-        For i As Integer = 1 To Constant.HandCardNum - 1
+        For i As Integer = 1 To Constant.HandCardNum
 
             Dim foundlbHandName() As Control = Me.Controls.Find("lbHandName" & i.ToString(), True)
 

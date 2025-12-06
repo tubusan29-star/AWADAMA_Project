@@ -87,30 +87,6 @@ Partial Class Form1
         TextBox5 = New TextBox()
         Label10 = New Label()
         btDeck = New Button()
-        pnHand1 = New Panel()
-        lbHandCost1 = New Label()
-        lbHandType1 = New Label()
-        lbHandName1 = New Label()
-        pnHand2 = New Panel()
-        lbHandCost2 = New Label()
-        lbHandType2 = New Label()
-        lbHandName2 = New Label()
-        pnHand3 = New Panel()
-        lbHandCost3 = New Label()
-        lbHandType3 = New Label()
-        lbHandName3 = New Label()
-        pnHand4 = New Panel()
-        lbHandCost4 = New Label()
-        lbHandType4 = New Label()
-        lbHandName4 = New Label()
-        pnHand5 = New Panel()
-        lbHandCost5 = New Label()
-        lbHandType5 = New Label()
-        lbHandName5 = New Label()
-        pnHand6 = New Panel()
-        lbHandCost6 = New Label()
-        lbHandType6 = New Label()
-        lbHandName6 = New Label()
         lbSelectCardSkill1 = New Label()
         lbSelectCardSkill2 = New Label()
         lbSelectCardSkill3 = New Label()
@@ -121,6 +97,31 @@ Partial Class Form1
         Label30 = New Label()
         btDiscard = New Button()
         cnGrave = New ComboBox()
+        lbHandName1 = New Label()
+        lbHandType1 = New Label()
+        lbHandCost1 = New Label()
+        pnHand1 = New Panel()
+        lbHandName2 = New Label()
+        lbHandType2 = New Label()
+        lbHandCost2 = New Label()
+        pnHand2 = New Panel()
+        lbHandName3 = New Label()
+        lbHandType3 = New Label()
+        lbHandCost3 = New Label()
+        pnHand3 = New Panel()
+        lbHandName4 = New Label()
+        lbHandType4 = New Label()
+        lbHandCost4 = New Label()
+        pnHand4 = New Panel()
+        lbHandName5 = New Label()
+        lbHandType5 = New Label()
+        lbHandCost5 = New Label()
+        pnHand5 = New Panel()
+        lbHandName6 = New Label()
+        lbHandType6 = New Label()
+        lbHandCost6 = New Label()
+        pnHand6 = New Panel()
+        Panel15 = New Panel()
         gbAllyInfo.SuspendLayout()
         Panel1.SuspendLayout()
         Panel14.SuspendLayout()
@@ -136,18 +137,18 @@ Partial Class Form1
         Panel3.SuspendLayout()
         Panel2.SuspendLayout()
         Panel5.SuspendLayout()
+        pnGrave.SuspendLayout()
         pnHand1.SuspendLayout()
         pnHand2.SuspendLayout()
         pnHand3.SuspendLayout()
         pnHand4.SuspendLayout()
         pnHand5.SuspendLayout()
         pnHand6.SuspendLayout()
-        pnGrave.SuspendLayout()
         SuspendLayout()
         ' 
         ' btShuffleButton
         ' 
-        btShuffleButton.Location = New Point(814, 825)
+        btShuffleButton.Location = New Point(800, 824)
         btShuffleButton.Name = "btShuffleButton"
         btShuffleButton.Size = New Size(114, 28)
         btShuffleButton.TabIndex = 1
@@ -729,239 +730,17 @@ Partial Class Form1
         ' btDeck
         ' 
         btDeck.Font = New Font("Yu Gothic UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
-        btDeck.Location = New Point(812, 696)
+        btDeck.Location = New Point(798, 695)
         btDeck.Name = "btDeck"
         btDeck.Size = New Size(116, 123)
         btDeck.TabIndex = 5
         btDeck.Text = "30"
         btDeck.UseVisualStyleBackColor = True
         ' 
-        ' pnHand1
-        ' 
-        pnHand1.BorderStyle = BorderStyle.FixedSingle
-        pnHand1.Controls.Add(lbHandCost1)
-        pnHand1.Controls.Add(lbHandType1)
-        pnHand1.Controls.Add(lbHandName1)
-        pnHand1.Location = New Point(173, 555)
-        pnHand1.Name = "pnHand1"
-        pnHand1.Size = New Size(114, 123)
-        pnHand1.TabIndex = 6
-        pnHand1.Visible = False
-        ' 
-        ' lbHandCost1
-        ' 
-        lbHandCost1.BorderStyle = BorderStyle.FixedSingle
-        lbHandCost1.Location = New Point(84, -1)
-        lbHandCost1.Name = "lbHandCost1"
-        lbHandCost1.Size = New Size(29, 20)
-        lbHandCost1.TabIndex = 12
-        lbHandCost1.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandType1
-        ' 
-        lbHandType1.Location = New Point(-1, 96)
-        lbHandType1.Name = "lbHandType1"
-        lbHandType1.Size = New Size(114, 25)
-        lbHandType1.TabIndex = 1
-        lbHandType1.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandName1
-        ' 
-        lbHandName1.AutoSize = True
-        lbHandName1.Location = New Point(3, 23)
-        lbHandName1.Name = "lbHandName1"
-        lbHandName1.Size = New Size(0, 20)
-        lbHandName1.TabIndex = 0
-        ' 
-        ' pnHand2
-        ' 
-        pnHand2.BorderStyle = BorderStyle.FixedSingle
-        pnHand2.Controls.Add(lbHandCost2)
-        pnHand2.Controls.Add(lbHandType2)
-        pnHand2.Controls.Add(lbHandName2)
-        pnHand2.Location = New Point(293, 555)
-        pnHand2.Name = "pnHand2"
-        pnHand2.Size = New Size(114, 123)
-        pnHand2.TabIndex = 7
-        pnHand2.Visible = False
-        ' 
-        ' lbHandCost2
-        ' 
-        lbHandCost2.BorderStyle = BorderStyle.FixedSingle
-        lbHandCost2.Location = New Point(84, -1)
-        lbHandCost2.Name = "lbHandCost2"
-        lbHandCost2.Size = New Size(29, 20)
-        lbHandCost2.TabIndex = 13
-        lbHandCost2.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandType2
-        ' 
-        lbHandType2.Location = New Point(-1, 97)
-        lbHandType2.Name = "lbHandType2"
-        lbHandType2.Size = New Size(114, 25)
-        lbHandType2.TabIndex = 2
-        lbHandType2.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandName2
-        ' 
-        lbHandName2.AutoSize = True
-        lbHandName2.Location = New Point(3, 23)
-        lbHandName2.Name = "lbHandName2"
-        lbHandName2.Size = New Size(0, 20)
-        lbHandName2.TabIndex = 1
-        ' 
-        ' pnHand3
-        ' 
-        pnHand3.BorderStyle = BorderStyle.FixedSingle
-        pnHand3.Controls.Add(lbHandCost3)
-        pnHand3.Controls.Add(lbHandType3)
-        pnHand3.Controls.Add(lbHandName3)
-        pnHand3.Location = New Point(413, 555)
-        pnHand3.Name = "pnHand3"
-        pnHand3.Size = New Size(114, 123)
-        pnHand3.TabIndex = 8
-        pnHand3.Visible = False
-        ' 
-        ' lbHandCost3
-        ' 
-        lbHandCost3.BorderStyle = BorderStyle.FixedSingle
-        lbHandCost3.Location = New Point(84, -1)
-        lbHandCost3.Name = "lbHandCost3"
-        lbHandCost3.Size = New Size(29, 20)
-        lbHandCost3.TabIndex = 13
-        lbHandCost3.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandType3
-        ' 
-        lbHandType3.Location = New Point(-1, 96)
-        lbHandType3.Name = "lbHandType3"
-        lbHandType3.Size = New Size(114, 25)
-        lbHandType3.TabIndex = 3
-        lbHandType3.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandName3
-        ' 
-        lbHandName3.AutoSize = True
-        lbHandName3.Location = New Point(3, 23)
-        lbHandName3.Name = "lbHandName3"
-        lbHandName3.Size = New Size(0, 20)
-        lbHandName3.TabIndex = 2
-        ' 
-        ' pnHand4
-        ' 
-        pnHand4.BorderStyle = BorderStyle.FixedSingle
-        pnHand4.Controls.Add(lbHandCost4)
-        pnHand4.Controls.Add(lbHandType4)
-        pnHand4.Controls.Add(lbHandName4)
-        pnHand4.Location = New Point(533, 555)
-        pnHand4.Name = "pnHand4"
-        pnHand4.Size = New Size(114, 123)
-        pnHand4.TabIndex = 9
-        pnHand4.Visible = False
-        ' 
-        ' lbHandCost4
-        ' 
-        lbHandCost4.BorderStyle = BorderStyle.FixedSingle
-        lbHandCost4.Location = New Point(84, -1)
-        lbHandCost4.Name = "lbHandCost4"
-        lbHandCost4.Size = New Size(29, 20)
-        lbHandCost4.TabIndex = 14
-        lbHandCost4.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandType4
-        ' 
-        lbHandType4.Location = New Point(-1, 97)
-        lbHandType4.Name = "lbHandType4"
-        lbHandType4.Size = New Size(114, 25)
-        lbHandType4.TabIndex = 4
-        lbHandType4.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandName4
-        ' 
-        lbHandName4.AutoSize = True
-        lbHandName4.Location = New Point(3, 23)
-        lbHandName4.Name = "lbHandName4"
-        lbHandName4.Size = New Size(0, 20)
-        lbHandName4.TabIndex = 3
-        ' 
-        ' pnHand5
-        ' 
-        pnHand5.BorderStyle = BorderStyle.FixedSingle
-        pnHand5.Controls.Add(lbHandCost5)
-        pnHand5.Controls.Add(lbHandType5)
-        pnHand5.Controls.Add(lbHandName5)
-        pnHand5.Location = New Point(653, 555)
-        pnHand5.Name = "pnHand5"
-        pnHand5.Size = New Size(114, 123)
-        pnHand5.TabIndex = 10
-        pnHand5.Visible = False
-        ' 
-        ' lbHandCost5
-        ' 
-        lbHandCost5.BorderStyle = BorderStyle.FixedSingle
-        lbHandCost5.Location = New Point(84, -1)
-        lbHandCost5.Name = "lbHandCost5"
-        lbHandCost5.Size = New Size(29, 20)
-        lbHandCost5.TabIndex = 15
-        lbHandCost5.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandType5
-        ' 
-        lbHandType5.Location = New Point(-1, 96)
-        lbHandType5.Name = "lbHandType5"
-        lbHandType5.Size = New Size(114, 25)
-        lbHandType5.TabIndex = 5
-        lbHandType5.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandName5
-        ' 
-        lbHandName5.AutoSize = True
-        lbHandName5.Location = New Point(3, 23)
-        lbHandName5.Name = "lbHandName5"
-        lbHandName5.Size = New Size(0, 20)
-        lbHandName5.TabIndex = 4
-        ' 
-        ' pnHand6
-        ' 
-        pnHand6.BorderStyle = BorderStyle.FixedSingle
-        pnHand6.Controls.Add(lbHandCost6)
-        pnHand6.Controls.Add(lbHandType6)
-        pnHand6.Controls.Add(lbHandName6)
-        pnHand6.Location = New Point(773, 555)
-        pnHand6.Name = "pnHand6"
-        pnHand6.Size = New Size(114, 123)
-        pnHand6.TabIndex = 11
-        pnHand6.Visible = False
-        ' 
-        ' lbHandCost6
-        ' 
-        lbHandCost6.BorderStyle = BorderStyle.FixedSingle
-        lbHandCost6.Location = New Point(84, -1)
-        lbHandCost6.Name = "lbHandCost6"
-        lbHandCost6.Size = New Size(29, 20)
-        lbHandCost6.TabIndex = 16
-        lbHandCost6.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandType6
-        ' 
-        lbHandType6.Location = New Point(-1, 97)
-        lbHandType6.Name = "lbHandType6"
-        lbHandType6.Size = New Size(114, 25)
-        lbHandType6.TabIndex = 6
-        lbHandType6.TextAlign = ContentAlignment.MiddleRight
-        ' 
-        ' lbHandName6
-        ' 
-        lbHandName6.AutoSize = True
-        lbHandName6.Location = New Point(3, 23)
-        lbHandName6.Name = "lbHandName6"
-        lbHandName6.Size = New Size(0, 20)
-        lbHandName6.TabIndex = 5
-        ' 
         ' lbSelectCardSkill1
         ' 
         lbSelectCardSkill1.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill1.Location = New Point(197, 696)
+        lbSelectCardSkill1.Location = New Point(183, 695)
         lbSelectCardSkill1.Name = "lbSelectCardSkill1"
         lbSelectCardSkill1.Size = New Size(594, 53)
         lbSelectCardSkill1.TabIndex = 24
@@ -969,7 +748,7 @@ Partial Class Form1
         ' lbSelectCardSkill2
         ' 
         lbSelectCardSkill2.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill2.Location = New Point(197, 748)
+        lbSelectCardSkill2.Location = New Point(183, 747)
         lbSelectCardSkill2.Name = "lbSelectCardSkill2"
         lbSelectCardSkill2.Size = New Size(594, 53)
         lbSelectCardSkill2.TabIndex = 25
@@ -977,7 +756,7 @@ Partial Class Form1
         ' lbSelectCardSkill3
         ' 
         lbSelectCardSkill3.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill3.Location = New Point(197, 800)
+        lbSelectCardSkill3.Location = New Point(183, 799)
         lbSelectCardSkill3.Name = "lbSelectCardSkill3"
         lbSelectCardSkill3.Size = New Size(594, 53)
         lbSelectCardSkill3.TabIndex = 26
@@ -993,14 +772,15 @@ Partial Class Form1
         ' 
         ' lbHandMaxSign
         ' 
+        lbHandMaxSign.BackColor = Color.Transparent
         lbHandMaxSign.Font = New Font("Yu Gothic UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lbHandMaxSign.ForeColor = Color.Red
-        lbHandMaxSign.Location = New Point(893, 540)
+        lbHandMaxSign.Location = New Point(870, 541)
         lbHandMaxSign.Name = "lbHandMaxSign"
-        lbHandMaxSign.Size = New Size(46, 27)
+        lbHandMaxSign.Size = New Size(42, 27)
         lbHandMaxSign.TabIndex = 33
         lbHandMaxSign.Text = "max"
-        lbHandMaxSign.TextAlign = ContentAlignment.MiddleLeft
+        lbHandMaxSign.TextAlign = ContentAlignment.TopCenter
         lbHandMaxSign.Visible = False
         ' 
         ' pnGrave
@@ -1008,7 +788,7 @@ Partial Class Form1
         pnGrave.BackColor = SystemColors.ActiveBorder
         pnGrave.Controls.Add(Label29)
         pnGrave.Controls.Add(Label30)
-        pnGrave.Location = New Point(42, 729)
+        pnGrave.Location = New Point(23, 726)
         pnGrave.Name = "pnGrave"
         pnGrave.Size = New Size(116, 123)
         pnGrave.TabIndex = 31
@@ -1032,7 +812,7 @@ Partial Class Form1
         ' btDiscard
         ' 
         btDiscard.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btDiscard.Location = New Point(129, 668)
+        btDiscard.Location = New Point(110, 668)
         btDiscard.Name = "btDiscard"
         btDiscard.Size = New Size(29, 24)
         btDiscard.TabIndex = 34
@@ -1044,22 +824,265 @@ Partial Class Form1
         ' cnGrave
         ' 
         cnGrave.FormattingEnabled = True
-        cnGrave.Location = New Point(42, 698)
+        cnGrave.Location = New Point(23, 695)
         cnGrave.Name = "cnGrave"
         cnGrave.Size = New Size(116, 28)
         cnGrave.TabIndex = 35
+        ' 
+        ' lbHandName1
+        ' 
+        lbHandName1.AutoSize = True
+        lbHandName1.Location = New Point(3, 23)
+        lbHandName1.Name = "lbHandName1"
+        lbHandName1.Size = New Size(0, 20)
+        lbHandName1.TabIndex = 0
+        ' 
+        ' lbHandType1
+        ' 
+        lbHandType1.Location = New Point(-1, 96)
+        lbHandType1.Name = "lbHandType1"
+        lbHandType1.Size = New Size(114, 25)
+        lbHandType1.TabIndex = 1
+        lbHandType1.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' lbHandCost1
+        ' 
+        lbHandCost1.BorderStyle = BorderStyle.FixedSingle
+        lbHandCost1.Location = New Point(84, -1)
+        lbHandCost1.Name = "lbHandCost1"
+        lbHandCost1.Size = New Size(29, 20)
+        lbHandCost1.TabIndex = 12
+        lbHandCost1.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' pnHand1
+        ' 
+        pnHand1.BackColor = SystemColors.Control
+        pnHand1.BorderStyle = BorderStyle.FixedSingle
+        pnHand1.Controls.Add(lbHandCost1)
+        pnHand1.Controls.Add(lbHandType1)
+        pnHand1.Controls.Add(lbHandName1)
+        pnHand1.Location = New Point(160, 556)
+        pnHand1.Name = "pnHand1"
+        pnHand1.Size = New Size(114, 123)
+        pnHand1.TabIndex = 6
+        pnHand1.Visible = False
+        ' 
+        ' lbHandName2
+        ' 
+        lbHandName2.AutoSize = True
+        lbHandName2.Location = New Point(3, 23)
+        lbHandName2.Name = "lbHandName2"
+        lbHandName2.Size = New Size(0, 20)
+        lbHandName2.TabIndex = 1
+        ' 
+        ' lbHandType2
+        ' 
+        lbHandType2.Location = New Point(-1, 97)
+        lbHandType2.Name = "lbHandType2"
+        lbHandType2.Size = New Size(114, 25)
+        lbHandType2.TabIndex = 2
+        lbHandType2.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' lbHandCost2
+        ' 
+        lbHandCost2.BorderStyle = BorderStyle.FixedSingle
+        lbHandCost2.Location = New Point(84, -1)
+        lbHandCost2.Name = "lbHandCost2"
+        lbHandCost2.Size = New Size(29, 20)
+        lbHandCost2.TabIndex = 13
+        lbHandCost2.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' pnHand2
+        ' 
+        pnHand2.BackColor = SystemColors.Control
+        pnHand2.BorderStyle = BorderStyle.FixedSingle
+        pnHand2.Controls.Add(lbHandCost2)
+        pnHand2.Controls.Add(lbHandType2)
+        pnHand2.Controls.Add(lbHandName2)
+        pnHand2.Location = New Point(280, 556)
+        pnHand2.Name = "pnHand2"
+        pnHand2.Size = New Size(114, 123)
+        pnHand2.TabIndex = 7
+        pnHand2.Visible = False
+        ' 
+        ' lbHandName3
+        ' 
+        lbHandName3.AutoSize = True
+        lbHandName3.Location = New Point(3, 23)
+        lbHandName3.Name = "lbHandName3"
+        lbHandName3.Size = New Size(0, 20)
+        lbHandName3.TabIndex = 2
+        ' 
+        ' lbHandType3
+        ' 
+        lbHandType3.Location = New Point(-1, 96)
+        lbHandType3.Name = "lbHandType3"
+        lbHandType3.Size = New Size(114, 25)
+        lbHandType3.TabIndex = 3
+        lbHandType3.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' lbHandCost3
+        ' 
+        lbHandCost3.BorderStyle = BorderStyle.FixedSingle
+        lbHandCost3.Location = New Point(84, -1)
+        lbHandCost3.Name = "lbHandCost3"
+        lbHandCost3.Size = New Size(29, 20)
+        lbHandCost3.TabIndex = 13
+        lbHandCost3.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' pnHand3
+        ' 
+        pnHand3.BackColor = SystemColors.Control
+        pnHand3.BorderStyle = BorderStyle.FixedSingle
+        pnHand3.Controls.Add(lbHandCost3)
+        pnHand3.Controls.Add(lbHandType3)
+        pnHand3.Controls.Add(lbHandName3)
+        pnHand3.Location = New Point(400, 556)
+        pnHand3.Name = "pnHand3"
+        pnHand3.Size = New Size(114, 123)
+        pnHand3.TabIndex = 8
+        pnHand3.Visible = False
+        ' 
+        ' lbHandName4
+        ' 
+        lbHandName4.AutoSize = True
+        lbHandName4.Location = New Point(3, 23)
+        lbHandName4.Name = "lbHandName4"
+        lbHandName4.Size = New Size(0, 20)
+        lbHandName4.TabIndex = 3
+        ' 
+        ' lbHandType4
+        ' 
+        lbHandType4.Location = New Point(-1, 97)
+        lbHandType4.Name = "lbHandType4"
+        lbHandType4.Size = New Size(114, 25)
+        lbHandType4.TabIndex = 4
+        lbHandType4.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' lbHandCost4
+        ' 
+        lbHandCost4.BorderStyle = BorderStyle.FixedSingle
+        lbHandCost4.Location = New Point(84, -1)
+        lbHandCost4.Name = "lbHandCost4"
+        lbHandCost4.Size = New Size(29, 20)
+        lbHandCost4.TabIndex = 14
+        lbHandCost4.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' pnHand4
+        ' 
+        pnHand4.BackColor = SystemColors.Control
+        pnHand4.BorderStyle = BorderStyle.FixedSingle
+        pnHand4.Controls.Add(lbHandCost4)
+        pnHand4.Controls.Add(lbHandType4)
+        pnHand4.Controls.Add(lbHandName4)
+        pnHand4.Location = New Point(520, 556)
+        pnHand4.Name = "pnHand4"
+        pnHand4.Size = New Size(114, 123)
+        pnHand4.TabIndex = 9
+        pnHand4.Visible = False
+        ' 
+        ' lbHandName5
+        ' 
+        lbHandName5.AutoSize = True
+        lbHandName5.Location = New Point(3, 23)
+        lbHandName5.Name = "lbHandName5"
+        lbHandName5.Size = New Size(0, 20)
+        lbHandName5.TabIndex = 4
+        ' 
+        ' lbHandType5
+        ' 
+        lbHandType5.Location = New Point(-1, 96)
+        lbHandType5.Name = "lbHandType5"
+        lbHandType5.Size = New Size(114, 25)
+        lbHandType5.TabIndex = 5
+        lbHandType5.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' lbHandCost5
+        ' 
+        lbHandCost5.BorderStyle = BorderStyle.FixedSingle
+        lbHandCost5.Location = New Point(84, -1)
+        lbHandCost5.Name = "lbHandCost5"
+        lbHandCost5.Size = New Size(29, 20)
+        lbHandCost5.TabIndex = 15
+        lbHandCost5.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' pnHand5
+        ' 
+        pnHand5.BackColor = SystemColors.Control
+        pnHand5.BorderStyle = BorderStyle.FixedSingle
+        pnHand5.Controls.Add(lbHandCost5)
+        pnHand5.Controls.Add(lbHandType5)
+        pnHand5.Controls.Add(lbHandName5)
+        pnHand5.Location = New Point(640, 556)
+        pnHand5.Name = "pnHand5"
+        pnHand5.Size = New Size(114, 123)
+        pnHand5.TabIndex = 10
+        pnHand5.Visible = False
+        ' 
+        ' lbHandName6
+        ' 
+        lbHandName6.AutoSize = True
+        lbHandName6.Location = New Point(3, 23)
+        lbHandName6.Name = "lbHandName6"
+        lbHandName6.Size = New Size(0, 20)
+        lbHandName6.TabIndex = 5
+        ' 
+        ' lbHandType6
+        ' 
+        lbHandType6.Location = New Point(-1, 97)
+        lbHandType6.Name = "lbHandType6"
+        lbHandType6.Size = New Size(114, 25)
+        lbHandType6.TabIndex = 6
+        lbHandType6.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' lbHandCost6
+        ' 
+        lbHandCost6.BorderStyle = BorderStyle.FixedSingle
+        lbHandCost6.Location = New Point(84, -1)
+        lbHandCost6.Name = "lbHandCost6"
+        lbHandCost6.Size = New Size(29, 20)
+        lbHandCost6.TabIndex = 16
+        lbHandCost6.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' pnHand6
+        ' 
+        pnHand6.BackColor = SystemColors.Control
+        pnHand6.BorderStyle = BorderStyle.FixedSingle
+        pnHand6.Controls.Add(lbHandCost6)
+        pnHand6.Controls.Add(lbHandType6)
+        pnHand6.Controls.Add(lbHandName6)
+        pnHand6.Location = New Point(760, 556)
+        pnHand6.Name = "pnHand6"
+        pnHand6.Size = New Size(114, 123)
+        pnHand6.TabIndex = 11
+        pnHand6.Visible = False
+        ' 
+        ' Panel15
+        ' 
+        Panel15.BackColor = SystemColors.Control
+        Panel15.BorderStyle = BorderStyle.FixedSingle
+        Panel15.Location = New Point(143, 540)
+        Panel15.Name = "Panel15"
+        Panel15.Size = New Size(780, 146)
+        Panel15.TabIndex = 36
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1342, 1004)
+        Controls.Add(pnHand2)
         Controls.Add(cnGrave)
+        Controls.Add(pnHand6)
         Controls.Add(btDiscard)
+        Controls.Add(pnHand1)
+        Controls.Add(pnHand4)
         Controls.Add(pnGrave)
-        Controls.Add(lbHandMaxSign)
+        Controls.Add(pnHand5)
         Controls.Add(Panel1)
+        Controls.Add(lbHandMaxSign)
         Controls.Add(lbSelectCardSkill3)
+        Controls.Add(pnHand3)
         Controls.Add(Panel14)
         Controls.Add(lbSelectCardSkill2)
         Controls.Add(Panel13)
@@ -1067,17 +1090,11 @@ Partial Class Form1
         Controls.Add(Panel12)
         Controls.Add(btShuffleButton)
         Controls.Add(Panel11)
-        Controls.Add(pnHand6)
         Controls.Add(Panel10)
-        Controls.Add(pnHand5)
         Controls.Add(Panel9)
-        Controls.Add(pnHand4)
         Controls.Add(Panel8)
-        Controls.Add(pnHand3)
         Controls.Add(Panel7)
-        Controls.Add(pnHand2)
         Controls.Add(Panel6)
-        Controls.Add(pnHand1)
         Controls.Add(Panel4)
         Controls.Add(btDeck)
         Controls.Add(Panel3)
@@ -1087,6 +1104,7 @@ Partial Class Form1
         Controls.Add(gbEnemyInfo)
         Controls.Add(pnSelectPanelColor)
         Controls.Add(pnBattleArea)
+        Controls.Add(Panel15)
         Name = "Form1"
         Text = "バトル"
         gbAllyInfo.ResumeLayout(False)
@@ -1119,6 +1137,8 @@ Partial Class Form1
         Panel2.PerformLayout()
         Panel5.ResumeLayout(False)
         Panel5.PerformLayout()
+        pnGrave.ResumeLayout(False)
+        pnGrave.PerformLayout()
         pnHand1.ResumeLayout(False)
         pnHand1.PerformLayout()
         pnHand2.ResumeLayout(False)
@@ -1131,8 +1151,6 @@ Partial Class Form1
         pnHand5.PerformLayout()
         pnHand6.ResumeLayout(False)
         pnHand6.PerformLayout()
-        pnGrave.ResumeLayout(False)
-        pnGrave.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents btShuffleButton As Button
@@ -1140,30 +1158,6 @@ Partial Class Form1
     Friend WithEvents gbAllyInfo As GroupBox
     Friend WithEvents pnBattleArea As Panel
     Friend WithEvents btDeck As Button
-    Friend WithEvents pnHand1 As Panel
-    Friend WithEvents pnHand2 As Panel
-    Friend WithEvents pnHand3 As Panel
-    Friend WithEvents pnHand4 As Panel
-    Friend WithEvents pnHand5 As Panel
-    Friend WithEvents pnHand6 As Panel
-    Friend WithEvents lbHandName1 As Label
-    Friend WithEvents lbHandName2 As Label
-    Friend WithEvents lbHandName3 As Label
-    Friend WithEvents lbHandName4 As Label
-    Friend WithEvents lbHandName5 As Label
-    Friend WithEvents lbHandName6 As Label
-    Friend WithEvents lbHandType1 As Label
-    Friend WithEvents lbHandType2 As Label
-    Friend WithEvents lbHandType3 As Label
-    Friend WithEvents lbHandType4 As Label
-    Friend WithEvents lbHandType5 As Label
-    Friend WithEvents lbHandType6 As Label
-    Friend WithEvents lbHandCost1 As Label
-    Friend WithEvents lbHandCost2 As Label
-    Friend WithEvents lbHandCost3 As Label
-    Friend WithEvents lbHandCost4 As Label
-    Friend WithEvents lbHandCost5 As Label
-    Friend WithEvents lbHandCost6 As Label
     Friend WithEvents lbSelectCardCost As Label
     Friend WithEvents lbSelectCardName As Label
     Friend WithEvents lbSelectCardLine As Label
@@ -1234,5 +1228,30 @@ Partial Class Form1
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox9 As TextBox
     Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents lbHandName1 As Label
+    Friend WithEvents lbHandType1 As Label
+    Friend WithEvents lbHandCost1 As Label
+    Friend WithEvents pnHand1 As Panel
+    Friend WithEvents lbHandName2 As Label
+    Friend WithEvents lbHandType2 As Label
+    Friend WithEvents lbHandCost2 As Label
+    Friend WithEvents pnHand2 As Panel
+    Friend WithEvents lbHandName3 As Label
+    Friend WithEvents lbHandType3 As Label
+    Friend WithEvents lbHandCost3 As Label
+    Friend WithEvents pnHand3 As Panel
+    Friend WithEvents lbHandName4 As Label
+    Friend WithEvents lbHandType4 As Label
+    Friend WithEvents lbHandCost4 As Label
+    Friend WithEvents pnHand4 As Panel
+    Friend WithEvents lbHandName5 As Label
+    Friend WithEvents lbHandType5 As Label
+    Friend WithEvents lbHandCost5 As Label
+    Friend WithEvents pnHand5 As Panel
+    Friend WithEvents lbHandName6 As Label
+    Friend WithEvents lbHandType6 As Label
+    Friend WithEvents lbHandCost6 As Label
+    Friend WithEvents pnHand6 As Panel
+    Friend WithEvents Panel15 As Panel
 
 End Class
