@@ -11,20 +11,24 @@
       "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\form\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|c:\\users\\tubus\\onedrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\awadama_project\\awadama_project\\awadama_project\\dto\\carddatadto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\dto\\carddatadto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|c:\\users\\tubus\\onedrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\awadama_project\\awadama_project\\awadama_project\\form\\form1.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\form\\form1.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|c:\\users\\tubus\\onedrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\awadama_project\\awadama_project\\awadama_project\\common.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\common.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|c:\\users\\tubus\\onedrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\awadama_project\\awadama_project\\awadama_project\\dto\\handdatadto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\dto\\handdatadto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|c:\\users\\tubus\\onedrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\awadama_project\\awadama_project\\awadama_project\\allcarddata.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\allcarddata.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|c:\\users\\tubus\\onedrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\awadama_project\\awadama_project\\awadama_project\\common.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\common.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|c:\\users\\tubus\\onedrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\awadama_project\\awadama_project\\awadama_project\\dto\\carddatadto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0D5F17D1-F5AD-4714-B528-85C2F1BD1B9F}|AWADAMA_Project\\AWADAMA_Project.vbproj|solutionrelative:awadama_project\\dto\\carddatadto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,31 +38,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AllCardData.vb",
-              "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\AllCardData.vb",
-              "RelativeDocumentMoniker": "AWADAMA_Project\\AllCardData.vb",
-              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\AllCardData.vb",
-              "RelativeToolTip": "AWADAMA_Project\\AllCardData.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABKAAAAAAAAAA==",
+              "Title": "HandDataDto.vb",
+              "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Dto\\HandDataDto.vb",
+              "RelativeDocumentMoniker": "AWADAMA_Project\\Dto\\HandDataDto.vb",
+              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Dto\\HandDataDto.vb",
+              "RelativeToolTip": "AWADAMA_Project\\Dto\\HandDataDto.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-12-06T03:13:25.47Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-12-06T12:08:37.866Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AllCardData.vb",
+              "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\AllCardData.vb",
+              "RelativeDocumentMoniker": "AWADAMA_Project\\AllCardData.vb",
+              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\AllCardData.vb",
+              "RelativeToolTip": "AWADAMA_Project\\AllCardData.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-12-06T03:13:25.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Common.vb",
               "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Common.vb",
               "RelativeDocumentMoniker": "AWADAMA_Project\\Common.vb",
               "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Common.vb",
               "RelativeToolTip": "AWADAMA_Project\\Common.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAewDAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-12-05T12:17:18.235Z",
               "EditorCaption": ""
@@ -69,9 +85,9 @@
               "Title": "Form1.vb",
               "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.vb",
               "RelativeDocumentMoniker": "AWADAMA_Project\\Form\\Form1.vb",
-              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.vb*",
-              "RelativeToolTip": "AWADAMA_Project\\Form\\Form1.vb*",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAEwGQAAAA2AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.vb",
+              "RelativeToolTip": "AWADAMA_Project\\Form\\Form1.vb",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAUwGsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-12-06T07:17:26.755Z",
               "EditorCaption": ""
@@ -82,28 +98,28 @@
               "Title": "Form1.vb [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.vb",
               "RelativeDocumentMoniker": "AWADAMA_Project\\Form\\Form1.vb",
-              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.vb [\u30C7\u30B6\u30A4\u30F3]*",
-              "RelativeToolTip": "AWADAMA_Project\\Form\\Form1.vb [\u30C7\u30B6\u30A4\u30F3]*",
+              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.vb [\u30C7\u30B6\u30A4\u30F3]",
+              "RelativeToolTip": "AWADAMA_Project\\Form\\Form1.vb [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-12-05T09:55:12.772Z",
               "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Form1.Designer.vb",
               "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.Designer.vb",
               "RelativeDocumentMoniker": "AWADAMA_Project\\Form\\Form1.Designer.vb",
-              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.Designer.vb*",
-              "RelativeToolTip": "AWADAMA_Project\\Form\\Form1.Designer.vb*",
-              "ViewState": "AgIAAGUBAAAAAAAAAAAAAJEAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Form\\Form1.Designer.vb",
+              "RelativeToolTip": "AWADAMA_Project\\Form\\Form1.Designer.vb",
+              "ViewState": "AgIAAGwBAAAAAAAAAAAAAJgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-12-06T10:11:40.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CardDataDto.vb",
               "DocumentMoniker": "C:\\Users\\tubus\\OneDrive\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\AWADAMA_Project\\AWADAMA_Project\\AWADAMA_Project\\Dto\\CardDataDto.vb",
               "RelativeDocumentMoniker": "AWADAMA_Project\\Dto\\CardDataDto.vb",

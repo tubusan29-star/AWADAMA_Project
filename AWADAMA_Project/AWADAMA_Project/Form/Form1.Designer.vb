@@ -45,46 +45,46 @@ Partial Class Form1
         lbSelectCardName = New Label()
         pnBattleArea = New Panel()
         Panel1 = New Panel()
-        Label2 = New Label()
+        TextBox1 = New TextBox()
         Label3 = New Label()
         Panel14 = New Panel()
         Label27 = New Label()
         Label28 = New Label()
         Panel13 = New Panel()
-        Label25 = New Label()
+        Label2 = New Label()
         Label26 = New Label()
         Panel12 = New Panel()
-        Label23 = New Label()
+        Label9 = New Label()
         Label24 = New Label()
         Panel11 = New Panel()
-        Label21 = New Label()
+        Label11 = New Label()
         Label22 = New Label()
         Panel10 = New Panel()
-        Label19 = New Label()
+        Label1 = New Label()
         Label20 = New Label()
         Panel9 = New Panel()
-        Label17 = New Label()
+        Label5 = New Label()
         Label18 = New Label()
         Panel8 = New Panel()
-        Label15 = New Label()
+        Label7 = New Label()
         Label16 = New Label()
         Panel7 = New Panel()
-        Label13 = New Label()
+        TextBox3 = New TextBox()
         Label14 = New Label()
         Panel6 = New Panel()
-        Label11 = New Label()
+        TextBox7 = New TextBox()
         Label12 = New Label()
         Panel4 = New Panel()
-        Label7 = New Label()
+        TextBox11 = New TextBox()
         Label8 = New Label()
         Panel3 = New Panel()
-        Label5 = New Label()
+        TextBox2 = New TextBox()
         Label6 = New Label()
         Panel2 = New Panel()
-        Label1 = New Label()
+        TextBox9 = New TextBox()
         Label4 = New Label()
         Panel5 = New Panel()
-        Label9 = New Label()
+        TextBox5 = New TextBox()
         Label10 = New Label()
         btDeck = New Button()
         pnHand1 = New Panel()
@@ -116,6 +116,11 @@ Partial Class Form1
         lbSelectCardSkill3 = New Label()
         pnSelectPanelColor = New Panel()
         lbHandMaxSign = New Label()
+        pnGrave = New Panel()
+        Label29 = New Label()
+        Label30 = New Label()
+        btDiscard = New Button()
+        cnGrave = New ComboBox()
         gbAllyInfo.SuspendLayout()
         Panel1.SuspendLayout()
         Panel14.SuspendLayout()
@@ -137,11 +142,12 @@ Partial Class Form1
         pnHand4.SuspendLayout()
         pnHand5.SuspendLayout()
         pnHand6.SuspendLayout()
+        pnGrave.SuspendLayout()
         SuspendLayout()
         ' 
         ' btShuffleButton
         ' 
-        btShuffleButton.Location = New Point(775, 825)
+        btShuffleButton.Location = New Point(814, 825)
         btShuffleButton.Name = "btShuffleButton"
         btShuffleButton.Size = New Size(114, 28)
         btShuffleButton.TabIndex = 1
@@ -352,20 +358,21 @@ Partial Class Form1
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.ControlLight
-        Panel1.Controls.Add(Label2)
+        Panel1.Controls.Add(TextBox1)
         Panel1.Controls.Add(Label3)
         Panel1.Location = New Point(146, 256)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(114, 123)
         Panel1.TabIndex = 27
         ' 
-        ' Label2
+        ' TextBox1
         ' 
-        Label2.Location = New Point(-1, 96)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(114, 25)
-        Label2.TabIndex = 1
-        Label2.TextAlign = ContentAlignment.MiddleRight
+        TextBox1.Location = New Point(3, 93)
+        TextBox1.MaxLength = 3
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(108, 27)
+        TextBox1.TabIndex = 33
+        TextBox1.Visible = False
         ' 
         ' Label3
         ' 
@@ -387,9 +394,9 @@ Partial Class Form1
         ' 
         ' Label27
         ' 
-        Label27.Location = New Point(-1, 96)
+        Label27.Location = New Point(3, 97)
         Label27.Name = "Label27"
-        Label27.Size = New Size(114, 25)
+        Label27.Size = New Size(108, 25)
         Label27.TabIndex = 1
         Label27.TextAlign = ContentAlignment.MiddleRight
         ' 
@@ -404,20 +411,20 @@ Partial Class Form1
         ' Panel13
         ' 
         Panel13.BackColor = SystemColors.ControlLight
-        Panel13.Controls.Add(Label25)
+        Panel13.Controls.Add(Label2)
         Panel13.Controls.Add(Label26)
         Panel13.Location = New Point(569, 257)
         Panel13.Name = "Panel13"
         Panel13.Size = New Size(114, 123)
         Panel13.TabIndex = 31
         ' 
-        ' Label25
+        ' Label2
         ' 
-        Label25.Location = New Point(-1, 96)
-        Label25.Name = "Label25"
-        Label25.Size = New Size(114, 25)
-        Label25.TabIndex = 1
-        Label25.TextAlign = ContentAlignment.MiddleRight
+        Label2.Location = New Point(3, 96)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(108, 25)
+        Label2.TabIndex = 2
+        Label2.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' Label26
         ' 
@@ -430,20 +437,20 @@ Partial Class Form1
         ' Panel12
         ' 
         Panel12.BackColor = SystemColors.ControlLight
-        Panel12.Controls.Add(Label23)
+        Panel12.Controls.Add(Label9)
         Panel12.Controls.Add(Label24)
         Panel12.Location = New Point(569, 386)
         Panel12.Name = "Panel12"
         Panel12.Size = New Size(114, 123)
         Panel12.TabIndex = 31
         ' 
-        ' Label23
+        ' Label9
         ' 
-        Label23.Location = New Point(-1, 96)
-        Label23.Name = "Label23"
-        Label23.Size = New Size(114, 25)
-        Label23.TabIndex = 1
-        Label23.TextAlign = ContentAlignment.MiddleRight
+        Label9.Location = New Point(3, 96)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(108, 25)
+        Label9.TabIndex = 2
+        Label9.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' Label24
         ' 
@@ -456,20 +463,20 @@ Partial Class Form1
         ' Panel11
         ' 
         Panel11.BackColor = SystemColors.ControlLight
-        Panel11.Controls.Add(Label21)
+        Panel11.Controls.Add(Label11)
         Panel11.Controls.Add(Label22)
         Panel11.Location = New Point(689, 386)
         Panel11.Name = "Panel11"
         Panel11.Size = New Size(114, 123)
         Panel11.TabIndex = 31
         ' 
-        ' Label21
+        ' Label11
         ' 
-        Label21.Location = New Point(-1, 96)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(114, 25)
-        Label21.TabIndex = 1
-        Label21.TextAlign = ContentAlignment.MiddleRight
+        Label11.Location = New Point(3, 96)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(108, 25)
+        Label11.TabIndex = 3
+        Label11.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' Label22
         ' 
@@ -482,20 +489,20 @@ Partial Class Form1
         ' Panel10
         ' 
         Panel10.BackColor = SystemColors.ControlLight
-        Panel10.Controls.Add(Label19)
+        Panel10.Controls.Add(Label1)
         Panel10.Controls.Add(Label20)
         Panel10.Location = New Point(689, 127)
         Panel10.Name = "Panel10"
         Panel10.Size = New Size(114, 123)
         Panel10.TabIndex = 31
         ' 
-        ' Label19
+        ' Label1
         ' 
-        Label19.Location = New Point(-1, 96)
-        Label19.Name = "Label19"
-        Label19.Size = New Size(114, 25)
-        Label19.TabIndex = 1
-        Label19.TextAlign = ContentAlignment.MiddleRight
+        Label1.Location = New Point(3, 96)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(108, 25)
+        Label1.TabIndex = 2
+        Label1.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' Label20
         ' 
@@ -508,20 +515,20 @@ Partial Class Form1
         ' Panel9
         ' 
         Panel9.BackColor = SystemColors.ControlLight
-        Panel9.Controls.Add(Label17)
+        Panel9.Controls.Add(Label5)
         Panel9.Controls.Add(Label18)
         Panel9.Location = New Point(689, 257)
         Panel9.Name = "Panel9"
         Panel9.Size = New Size(114, 123)
         Panel9.TabIndex = 30
         ' 
-        ' Label17
+        ' Label5
         ' 
-        Label17.Location = New Point(-1, 96)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(114, 25)
-        Label17.TabIndex = 1
-        Label17.TextAlign = ContentAlignment.MiddleRight
+        Label5.Location = New Point(3, 96)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(108, 25)
+        Label5.TabIndex = 3
+        Label5.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' Label18
         ' 
@@ -534,20 +541,20 @@ Partial Class Form1
         ' Panel8
         ' 
         Panel8.BackColor = SystemColors.ControlLight
-        Panel8.Controls.Add(Label15)
+        Panel8.Controls.Add(Label7)
         Panel8.Controls.Add(Label16)
         Panel8.Location = New Point(809, 257)
         Panel8.Name = "Panel8"
         Panel8.Size = New Size(114, 123)
         Panel8.TabIndex = 30
         ' 
-        ' Label15
+        ' Label7
         ' 
-        Label15.Location = New Point(-1, 96)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(114, 25)
-        Label15.TabIndex = 1
-        Label15.TextAlign = ContentAlignment.MiddleRight
+        Label7.Location = New Point(3, 94)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(108, 25)
+        Label7.TabIndex = 3
+        Label7.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' Label16
         ' 
@@ -560,20 +567,21 @@ Partial Class Form1
         ' Panel7
         ' 
         Panel7.BackColor = SystemColors.ControlLight
-        Panel7.Controls.Add(Label13)
+        Panel7.Controls.Add(TextBox3)
         Panel7.Controls.Add(Label14)
         Panel7.Location = New Point(390, 385)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(114, 123)
         Panel7.TabIndex = 30
         ' 
-        ' Label13
+        ' TextBox3
         ' 
-        Label13.Location = New Point(-1, 96)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(114, 25)
-        Label13.TabIndex = 1
-        Label13.TextAlign = ContentAlignment.MiddleRight
+        TextBox3.Location = New Point(3, 92)
+        TextBox3.MaxLength = 3
+        TextBox3.Name = "TextBox3"
+        TextBox3.Size = New Size(108, 27)
+        TextBox3.TabIndex = 35
+        TextBox3.Visible = False
         ' 
         ' Label14
         ' 
@@ -586,20 +594,21 @@ Partial Class Form1
         ' Panel6
         ' 
         Panel6.BackColor = SystemColors.ControlLight
-        Panel6.Controls.Add(Label11)
+        Panel6.Controls.Add(TextBox7)
         Panel6.Controls.Add(Label12)
         Panel6.Location = New Point(390, 256)
         Panel6.Name = "Panel6"
         Panel6.Size = New Size(114, 123)
         Panel6.TabIndex = 30
         ' 
-        ' Label11
+        ' TextBox7
         ' 
-        Label11.Location = New Point(-1, 96)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(114, 25)
-        Label11.TabIndex = 1
-        Label11.TextAlign = ContentAlignment.MiddleRight
+        TextBox7.Location = New Point(3, 91)
+        TextBox7.MaxLength = 3
+        TextBox7.Name = "TextBox7"
+        TextBox7.Size = New Size(108, 27)
+        TextBox7.TabIndex = 39
+        TextBox7.Visible = False
         ' 
         ' Label12
         ' 
@@ -612,20 +621,21 @@ Partial Class Form1
         ' Panel4
         ' 
         Panel4.BackColor = SystemColors.ControlLight
-        Panel4.Controls.Add(Label7)
+        Panel4.Controls.Add(TextBox11)
         Panel4.Controls.Add(Label8)
         Panel4.Location = New Point(390, 125)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(114, 123)
         Panel4.TabIndex = 31
         ' 
-        ' Label7
+        ' TextBox11
         ' 
-        Label7.Location = New Point(-1, 96)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(114, 25)
-        Label7.TabIndex = 1
-        Label7.TextAlign = ContentAlignment.MiddleRight
+        TextBox11.Location = New Point(3, 92)
+        TextBox11.MaxLength = 3
+        TextBox11.Name = "TextBox11"
+        TextBox11.Size = New Size(108, 27)
+        TextBox11.TabIndex = 43
+        TextBox11.Visible = False
         ' 
         ' Label8
         ' 
@@ -638,20 +648,21 @@ Partial Class Form1
         ' Panel3
         ' 
         Panel3.BackColor = SystemColors.ControlLight
-        Panel3.Controls.Add(Label5)
+        Panel3.Controls.Add(TextBox2)
         Panel3.Controls.Add(Label6)
         Panel3.Location = New Point(270, 384)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(114, 123)
         Panel3.TabIndex = 30
         ' 
-        ' Label5
+        ' TextBox2
         ' 
-        Label5.Location = New Point(-1, 96)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(114, 25)
-        Label5.TabIndex = 1
-        Label5.TextAlign = ContentAlignment.MiddleRight
+        TextBox2.Location = New Point(3, 93)
+        TextBox2.MaxLength = 3
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(108, 27)
+        TextBox2.TabIndex = 34
+        TextBox2.Visible = False
         ' 
         ' Label6
         ' 
@@ -664,20 +675,21 @@ Partial Class Form1
         ' Panel2
         ' 
         Panel2.BackColor = SystemColors.ControlLight
-        Panel2.Controls.Add(Label1)
+        Panel2.Controls.Add(TextBox9)
         Panel2.Controls.Add(Label4)
         Panel2.Location = New Point(270, 126)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(114, 123)
         Panel2.TabIndex = 30
         ' 
-        ' Label1
+        ' TextBox9
         ' 
-        Label1.Location = New Point(-1, 96)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(114, 25)
-        Label1.TabIndex = 1
-        Label1.TextAlign = ContentAlignment.MiddleRight
+        TextBox9.Location = New Point(3, 92)
+        TextBox9.MaxLength = 3
+        TextBox9.Name = "TextBox9"
+        TextBox9.Size = New Size(108, 27)
+        TextBox9.TabIndex = 41
+        TextBox9.Visible = False
         ' 
         ' Label4
         ' 
@@ -690,20 +702,21 @@ Partial Class Form1
         ' Panel5
         ' 
         Panel5.BackColor = SystemColors.ControlLight
-        Panel5.Controls.Add(Label9)
+        Panel5.Controls.Add(TextBox5)
         Panel5.Controls.Add(Label10)
         Panel5.Location = New Point(270, 255)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(114, 123)
         Panel5.TabIndex = 30
         ' 
-        ' Label9
+        ' TextBox5
         ' 
-        Label9.Location = New Point(-1, 96)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(114, 25)
-        Label9.TabIndex = 1
-        Label9.TextAlign = ContentAlignment.MiddleRight
+        TextBox5.Location = New Point(3, 93)
+        TextBox5.MaxLength = 3
+        TextBox5.Name = "TextBox5"
+        TextBox5.Size = New Size(108, 27)
+        TextBox5.TabIndex = 37
+        TextBox5.Visible = False
         ' 
         ' Label10
         ' 
@@ -716,7 +729,7 @@ Partial Class Form1
         ' btDeck
         ' 
         btDeck.Font = New Font("Yu Gothic UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
-        btDeck.Location = New Point(773, 696)
+        btDeck.Location = New Point(812, 696)
         btDeck.Name = "btDeck"
         btDeck.Size = New Size(116, 123)
         btDeck.TabIndex = 5
@@ -948,7 +961,7 @@ Partial Class Form1
         ' lbSelectCardSkill1
         ' 
         lbSelectCardSkill1.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill1.Location = New Point(173, 696)
+        lbSelectCardSkill1.Location = New Point(197, 696)
         lbSelectCardSkill1.Name = "lbSelectCardSkill1"
         lbSelectCardSkill1.Size = New Size(594, 53)
         lbSelectCardSkill1.TabIndex = 24
@@ -956,7 +969,7 @@ Partial Class Form1
         ' lbSelectCardSkill2
         ' 
         lbSelectCardSkill2.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill2.Location = New Point(173, 748)
+        lbSelectCardSkill2.Location = New Point(197, 748)
         lbSelectCardSkill2.Name = "lbSelectCardSkill2"
         lbSelectCardSkill2.Size = New Size(594, 53)
         lbSelectCardSkill2.TabIndex = 25
@@ -964,7 +977,7 @@ Partial Class Form1
         ' lbSelectCardSkill3
         ' 
         lbSelectCardSkill3.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill3.Location = New Point(173, 800)
+        lbSelectCardSkill3.Location = New Point(197, 800)
         lbSelectCardSkill3.Name = "lbSelectCardSkill3"
         lbSelectCardSkill3.Size = New Size(594, 53)
         lbSelectCardSkill3.TabIndex = 26
@@ -972,7 +985,7 @@ Partial Class Form1
         ' pnSelectPanelColor
         ' 
         pnSelectPanelColor.BackColor = Color.Aqua
-        pnSelectPanelColor.Location = New Point(12, 720)
+        pnSelectPanelColor.Location = New Point(8, 434)
         pnSelectPanelColor.Name = "pnSelectPanelColor"
         pnSelectPanelColor.Size = New Size(124, 133)
         pnSelectPanelColor.TabIndex = 27
@@ -990,11 +1003,60 @@ Partial Class Form1
         lbHandMaxSign.TextAlign = ContentAlignment.MiddleLeft
         lbHandMaxSign.Visible = False
         ' 
+        ' pnGrave
+        ' 
+        pnGrave.BackColor = SystemColors.ActiveBorder
+        pnGrave.Controls.Add(Label29)
+        pnGrave.Controls.Add(Label30)
+        pnGrave.Location = New Point(42, 729)
+        pnGrave.Name = "pnGrave"
+        pnGrave.Size = New Size(116, 123)
+        pnGrave.TabIndex = 31
+        ' 
+        ' Label29
+        ' 
+        Label29.Location = New Point(-1, 96)
+        Label29.Name = "Label29"
+        Label29.Size = New Size(114, 25)
+        Label29.TabIndex = 1
+        Label29.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' Label30
+        ' 
+        Label30.AutoSize = True
+        Label30.Location = New Point(3, 23)
+        Label30.Name = "Label30"
+        Label30.Size = New Size(0, 20)
+        Label30.TabIndex = 0
+        ' 
+        ' btDiscard
+        ' 
+        btDiscard.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btDiscard.Location = New Point(129, 668)
+        btDiscard.Name = "btDiscard"
+        btDiscard.Size = New Size(29, 24)
+        btDiscard.TabIndex = 34
+        btDiscard.Text = "↓"
+        btDiscard.UseVisualStyleBackColor = True
+        btDiscard.UseWaitCursor = True
+        btDiscard.Visible = False
+        ' 
+        ' cnGrave
+        ' 
+        cnGrave.FormattingEnabled = True
+        cnGrave.Location = New Point(42, 698)
+        cnGrave.Name = "cnGrave"
+        cnGrave.Size = New Size(116, 28)
+        cnGrave.TabIndex = 35
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1342, 882)
+        ClientSize = New Size(1342, 1004)
+        Controls.Add(cnGrave)
+        Controls.Add(btDiscard)
+        Controls.Add(pnGrave)
         Controls.Add(lbHandMaxSign)
         Controls.Add(Panel1)
         Controls.Add(lbSelectCardSkill3)
@@ -1069,6 +1131,8 @@ Partial Class Form1
         pnHand5.PerformLayout()
         pnHand6.ResumeLayout(False)
         pnHand6.PerformLayout()
+        pnGrave.ResumeLayout(False)
+        pnGrave.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents btShuffleButton As Button
@@ -1126,44 +1190,49 @@ Partial Class Form1
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Panel13 As Panel
-    Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Panel12 As Panel
-    Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents Label21 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label13 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents pnSelectPanelColor As Panel
     Friend WithEvents lbSelectCardFlavor As Label
     Friend WithEvents lbHandMaxSign As Label
+    Friend WithEvents pnGrave As Panel
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents btDiscard As Button
+    Friend WithEvents cnGrave As ComboBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBox5 As TextBox
 
 End Class
