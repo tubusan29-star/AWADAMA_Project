@@ -6,6 +6,15 @@ Imports Google.Apis.Sheets.v4.Data
 Imports Windows.Win32.System
 Public Module Common
 
+    Public Function GetCardDataByName(card_name As String) As CardDataDto
+        For Each card As CardDataDto In AllCardData.Data
+            If card.Name = card_name Then
+                Return card
+            End If
+        Next
+        Return New CardDataDto()
+    End Function
+
     ''' <summary>
     ''' ListShuffle'''
     ''' </summary>
