@@ -8,6 +8,8 @@
 
     Public ReadOnly Property HandCardNum As Integer = 6
 
+    Public ReadOnly Property AllyCardNum As Integer = 6
+
 #Region "スプレッドシート関連定数"
 
     Public ReadOnly Property MAIN_SHEET_ID As String = "1ysmqUCvlxr0neGqNpzNnpdVpG4nsENdOzggoQ5ZLTOw"

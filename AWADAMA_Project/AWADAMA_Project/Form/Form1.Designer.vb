@@ -68,24 +68,30 @@ Partial Class Form1
         Panel8 = New Panel()
         Label7 = New Label()
         Label16 = New Label()
-        Panel7 = New Panel()
-        TextBox3 = New TextBox()
-        Label14 = New Label()
-        Panel6 = New Panel()
-        TextBox7 = New TextBox()
-        Label12 = New Label()
-        Panel4 = New Panel()
-        TextBox11 = New TextBox()
-        Label8 = New Label()
-        Panel3 = New Panel()
-        TextBox2 = New TextBox()
-        Label6 = New Label()
-        Panel2 = New Panel()
-        TextBox9 = New TextBox()
-        Label4 = New Label()
-        Panel5 = New Panel()
-        TextBox5 = New TextBox()
-        Label10 = New Label()
+        pnAllyCard3 = New Panel()
+        btSetCard3 = New Button()
+        txAllyCardDefense3 = New TextBox()
+        lbAllyCardName3 = New Label()
+        pnAllyCard2 = New Panel()
+        btSetCard2 = New Button()
+        txAllyCardDefense2 = New TextBox()
+        lbAllyCardName2 = New Label()
+        pnAllyCard1 = New Panel()
+        btSetCard1 = New Button()
+        txAllyCardDefense1 = New TextBox()
+        lbAllyCardName1 = New Label()
+        pnAllyCard6 = New Panel()
+        btSetCard6 = New Button()
+        txAllyCardDefense6 = New TextBox()
+        lbAllyCardName6 = New Label()
+        pnAllyCard4 = New Panel()
+        btSetCard4 = New Button()
+        txAllyCardDefense4 = New TextBox()
+        lbAllyCardName4 = New Label()
+        pnAllyCard5 = New Panel()
+        btSetCard5 = New Button()
+        txAllyCardDefense5 = New TextBox()
+        lbAllyCardName5 = New Label()
         btDeck = New Button()
         lbSelectCardSkill1 = New Label()
         lbSelectCardSkill2 = New Label()
@@ -96,7 +102,7 @@ Partial Class Form1
         Label29 = New Label()
         Label30 = New Label()
         btDiscard = New Button()
-        cnGrave = New ComboBox()
+        coGrave = New ComboBox()
         lbHandName1 = New Label()
         lbHandType1 = New Label()
         lbHandCost1 = New Label()
@@ -131,12 +137,12 @@ Partial Class Form1
         Panel10.SuspendLayout()
         Panel9.SuspendLayout()
         Panel8.SuspendLayout()
-        Panel7.SuspendLayout()
-        Panel6.SuspendLayout()
-        Panel4.SuspendLayout()
-        Panel3.SuspendLayout()
-        Panel2.SuspendLayout()
-        Panel5.SuspendLayout()
+        pnAllyCard3.SuspendLayout()
+        pnAllyCard2.SuspendLayout()
+        pnAllyCard1.SuspendLayout()
+        pnAllyCard6.SuspendLayout()
+        pnAllyCard4.SuspendLayout()
+        pnAllyCard5.SuspendLayout()
         pnGrave.SuspendLayout()
         pnHand1.SuspendLayout()
         pnHand2.SuspendLayout()
@@ -378,10 +384,11 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(3, 23)
+        Label3.Location = New Point(3, 1)
         Label3.Name = "Label3"
-        Label3.Size = New Size(0, 20)
+        Label3.Size = New Size(49, 20)
         Label3.TabIndex = 0
+        Label3.Text = "aaaaa"
         ' 
         ' Panel14
         ' 
@@ -565,167 +572,239 @@ Partial Class Form1
         Label16.Size = New Size(0, 20)
         Label16.TabIndex = 0
         ' 
-        ' Panel7
+        ' pnAllyCard3
         ' 
-        Panel7.BackColor = SystemColors.ControlLight
-        Panel7.Controls.Add(TextBox3)
-        Panel7.Controls.Add(Label14)
-        Panel7.Location = New Point(390, 385)
-        Panel7.Name = "Panel7"
-        Panel7.Size = New Size(114, 123)
-        Panel7.TabIndex = 30
+        pnAllyCard3.BackColor = SystemColors.ControlLight
+        pnAllyCard3.Controls.Add(btSetCard3)
+        pnAllyCard3.Controls.Add(txAllyCardDefense3)
+        pnAllyCard3.Controls.Add(lbAllyCardName3)
+        pnAllyCard3.Location = New Point(390, 385)
+        pnAllyCard3.Name = "pnAllyCard3"
+        pnAllyCard3.Size = New Size(114, 123)
+        pnAllyCard3.TabIndex = 30
         ' 
-        ' TextBox3
+        ' btSetCard3
         ' 
-        TextBox3.Location = New Point(3, 92)
-        TextBox3.MaxLength = 3
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(108, 27)
-        TextBox3.TabIndex = 35
-        TextBox3.Visible = False
+        btSetCard3.Location = New Point(9, 39)
+        btSetCard3.Name = "btSetCard3"
+        btSetCard3.Size = New Size(94, 29)
+        btSetCard3.TabIndex = 45
+        btSetCard3.Text = "配置"
+        btSetCard3.UseVisualStyleBackColor = True
+        btSetCard3.Visible = False
         ' 
-        ' Label14
+        ' txAllyCardDefense3
         ' 
-        Label14.AutoSize = True
-        Label14.Location = New Point(3, 23)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(0, 20)
-        Label14.TabIndex = 0
+        txAllyCardDefense3.Location = New Point(3, 92)
+        txAllyCardDefense3.MaxLength = 3
+        txAllyCardDefense3.Name = "txAllyCardDefense3"
+        txAllyCardDefense3.Size = New Size(108, 27)
+        txAllyCardDefense3.TabIndex = 35
+        txAllyCardDefense3.Visible = False
         ' 
-        ' Panel6
+        ' lbAllyCardName3
         ' 
-        Panel6.BackColor = SystemColors.ControlLight
-        Panel6.Controls.Add(TextBox7)
-        Panel6.Controls.Add(Label12)
-        Panel6.Location = New Point(390, 256)
-        Panel6.Name = "Panel6"
-        Panel6.Size = New Size(114, 123)
-        Panel6.TabIndex = 30
+        lbAllyCardName3.AutoSize = True
+        lbAllyCardName3.Location = New Point(3, 1)
+        lbAllyCardName3.Name = "lbAllyCardName3"
+        lbAllyCardName3.Size = New Size(57, 20)
+        lbAllyCardName3.TabIndex = 0
+        lbAllyCardName3.Text = "aaaaaa"
         ' 
-        ' TextBox7
+        ' pnAllyCard2
         ' 
-        TextBox7.Location = New Point(3, 91)
-        TextBox7.MaxLength = 3
-        TextBox7.Name = "TextBox7"
-        TextBox7.Size = New Size(108, 27)
-        TextBox7.TabIndex = 39
-        TextBox7.Visible = False
+        pnAllyCard2.BackColor = SystemColors.ControlLight
+        pnAllyCard2.Controls.Add(btSetCard2)
+        pnAllyCard2.Controls.Add(txAllyCardDefense2)
+        pnAllyCard2.Controls.Add(lbAllyCardName2)
+        pnAllyCard2.Location = New Point(390, 256)
+        pnAllyCard2.Name = "pnAllyCard2"
+        pnAllyCard2.Size = New Size(114, 123)
+        pnAllyCard2.TabIndex = 30
         ' 
-        ' Label12
+        ' btSetCard2
         ' 
-        Label12.AutoSize = True
-        Label12.Location = New Point(3, 23)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(0, 20)
-        Label12.TabIndex = 0
+        btSetCard2.Location = New Point(10, 40)
+        btSetCard2.Name = "btSetCard2"
+        btSetCard2.Size = New Size(94, 29)
+        btSetCard2.TabIndex = 44
+        btSetCard2.Text = "配置"
+        btSetCard2.UseVisualStyleBackColor = True
+        btSetCard2.Visible = False
         ' 
-        ' Panel4
+        ' txAllyCardDefense2
         ' 
-        Panel4.BackColor = SystemColors.ControlLight
-        Panel4.Controls.Add(TextBox11)
-        Panel4.Controls.Add(Label8)
-        Panel4.Location = New Point(390, 125)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(114, 123)
-        Panel4.TabIndex = 31
+        txAllyCardDefense2.Location = New Point(3, 91)
+        txAllyCardDefense2.MaxLength = 3
+        txAllyCardDefense2.Name = "txAllyCardDefense2"
+        txAllyCardDefense2.Size = New Size(108, 27)
+        txAllyCardDefense2.TabIndex = 39
+        txAllyCardDefense2.Visible = False
         ' 
-        ' TextBox11
+        ' lbAllyCardName2
         ' 
-        TextBox11.Location = New Point(3, 92)
-        TextBox11.MaxLength = 3
-        TextBox11.Name = "TextBox11"
-        TextBox11.Size = New Size(108, 27)
-        TextBox11.TabIndex = 43
-        TextBox11.Visible = False
+        lbAllyCardName2.AutoSize = True
+        lbAllyCardName2.Location = New Point(3, 1)
+        lbAllyCardName2.Name = "lbAllyCardName2"
+        lbAllyCardName2.Size = New Size(49, 20)
+        lbAllyCardName2.TabIndex = 0
+        lbAllyCardName2.Text = "aaaaa"
         ' 
-        ' Label8
+        ' pnAllyCard1
         ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(3, 23)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(0, 20)
-        Label8.TabIndex = 0
+        pnAllyCard1.BackColor = SystemColors.ControlLight
+        pnAllyCard1.Controls.Add(btSetCard1)
+        pnAllyCard1.Controls.Add(txAllyCardDefense1)
+        pnAllyCard1.Controls.Add(lbAllyCardName1)
+        pnAllyCard1.Location = New Point(390, 125)
+        pnAllyCard1.Name = "pnAllyCard1"
+        pnAllyCard1.Size = New Size(114, 123)
+        pnAllyCard1.TabIndex = 31
         ' 
-        ' Panel3
+        ' btSetCard1
         ' 
-        Panel3.BackColor = SystemColors.ControlLight
-        Panel3.Controls.Add(TextBox2)
-        Panel3.Controls.Add(Label6)
-        Panel3.Location = New Point(270, 384)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(114, 123)
-        Panel3.TabIndex = 30
+        btSetCard1.Location = New Point(9, 41)
+        btSetCard1.Name = "btSetCard1"
+        btSetCard1.Size = New Size(94, 29)
+        btSetCard1.TabIndex = 43
+        btSetCard1.Text = "配置"
+        btSetCard1.UseVisualStyleBackColor = True
+        btSetCard1.Visible = False
         ' 
-        ' TextBox2
+        ' txAllyCardDefense1
         ' 
-        TextBox2.Location = New Point(3, 93)
-        TextBox2.MaxLength = 3
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(108, 27)
-        TextBox2.TabIndex = 34
-        TextBox2.Visible = False
+        txAllyCardDefense1.Location = New Point(3, 92)
+        txAllyCardDefense1.MaxLength = 3
+        txAllyCardDefense1.Name = "txAllyCardDefense1"
+        txAllyCardDefense1.Size = New Size(108, 27)
+        txAllyCardDefense1.TabIndex = 43
+        txAllyCardDefense1.Visible = False
         ' 
-        ' Label6
+        ' lbAllyCardName1
         ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(3, 23)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(0, 20)
-        Label6.TabIndex = 0
+        lbAllyCardName1.AutoSize = True
+        lbAllyCardName1.Location = New Point(3, 2)
+        lbAllyCardName1.Name = "lbAllyCardName1"
+        lbAllyCardName1.Size = New Size(57, 20)
+        lbAllyCardName1.TabIndex = 0
+        lbAllyCardName1.Text = "aaaaaa"
         ' 
-        ' Panel2
+        ' pnAllyCard6
         ' 
-        Panel2.BackColor = SystemColors.ControlLight
-        Panel2.Controls.Add(TextBox9)
-        Panel2.Controls.Add(Label4)
-        Panel2.Location = New Point(270, 126)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(114, 123)
-        Panel2.TabIndex = 30
+        pnAllyCard6.BackColor = SystemColors.ControlLight
+        pnAllyCard6.Controls.Add(btSetCard6)
+        pnAllyCard6.Controls.Add(txAllyCardDefense6)
+        pnAllyCard6.Controls.Add(lbAllyCardName6)
+        pnAllyCard6.Location = New Point(270, 384)
+        pnAllyCard6.Name = "pnAllyCard6"
+        pnAllyCard6.Size = New Size(114, 123)
+        pnAllyCard6.TabIndex = 30
         ' 
-        ' TextBox9
+        ' btSetCard6
         ' 
-        TextBox9.Location = New Point(3, 92)
-        TextBox9.MaxLength = 3
-        TextBox9.Name = "TextBox9"
-        TextBox9.Size = New Size(108, 27)
-        TextBox9.TabIndex = 41
-        TextBox9.Visible = False
+        btSetCard6.Location = New Point(14, 40)
+        btSetCard6.Name = "btSetCard6"
+        btSetCard6.Size = New Size(94, 29)
+        btSetCard6.TabIndex = 46
+        btSetCard6.Text = "配置"
+        btSetCard6.UseVisualStyleBackColor = True
+        btSetCard6.Visible = False
         ' 
-        ' Label4
+        ' txAllyCardDefense6
         ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(3, 23)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(0, 20)
-        Label4.TabIndex = 0
+        txAllyCardDefense6.Location = New Point(3, 93)
+        txAllyCardDefense6.MaxLength = 3
+        txAllyCardDefense6.Name = "txAllyCardDefense6"
+        txAllyCardDefense6.Size = New Size(108, 27)
+        txAllyCardDefense6.TabIndex = 34
+        txAllyCardDefense6.Visible = False
         ' 
-        ' Panel5
+        ' lbAllyCardName6
         ' 
-        Panel5.BackColor = SystemColors.ControlLight
-        Panel5.Controls.Add(TextBox5)
-        Panel5.Controls.Add(Label10)
-        Panel5.Location = New Point(270, 255)
-        Panel5.Name = "Panel5"
-        Panel5.Size = New Size(114, 123)
-        Panel5.TabIndex = 30
+        lbAllyCardName6.AutoSize = True
+        lbAllyCardName6.Location = New Point(3, 2)
+        lbAllyCardName6.Name = "lbAllyCardName6"
+        lbAllyCardName6.Size = New Size(49, 20)
+        lbAllyCardName6.TabIndex = 0
+        lbAllyCardName6.Text = "aaaaa"
         ' 
-        ' TextBox5
+        ' pnAllyCard4
         ' 
-        TextBox5.Location = New Point(3, 93)
-        TextBox5.MaxLength = 3
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(108, 27)
-        TextBox5.TabIndex = 37
-        TextBox5.Visible = False
+        pnAllyCard4.BackColor = SystemColors.ControlLight
+        pnAllyCard4.Controls.Add(btSetCard4)
+        pnAllyCard4.Controls.Add(txAllyCardDefense4)
+        pnAllyCard4.Controls.Add(lbAllyCardName4)
+        pnAllyCard4.Location = New Point(270, 126)
+        pnAllyCard4.Name = "pnAllyCard4"
+        pnAllyCard4.Size = New Size(114, 123)
+        pnAllyCard4.TabIndex = 30
         ' 
-        ' Label10
+        ' btSetCard4
         ' 
-        Label10.AutoSize = True
-        Label10.Location = New Point(3, 23)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(0, 20)
-        Label10.TabIndex = 0
+        btSetCard4.Location = New Point(14, 40)
+        btSetCard4.Name = "btSetCard4"
+        btSetCard4.Size = New Size(94, 29)
+        btSetCard4.TabIndex = 42
+        btSetCard4.Text = "配置"
+        btSetCard4.UseVisualStyleBackColor = True
+        btSetCard4.Visible = False
+        ' 
+        ' txAllyCardDefense4
+        ' 
+        txAllyCardDefense4.Location = New Point(3, 92)
+        txAllyCardDefense4.MaxLength = 3
+        txAllyCardDefense4.Name = "txAllyCardDefense4"
+        txAllyCardDefense4.Size = New Size(108, 27)
+        txAllyCardDefense4.TabIndex = 41
+        txAllyCardDefense4.Visible = False
+        ' 
+        ' lbAllyCardName4
+        ' 
+        lbAllyCardName4.AutoSize = True
+        lbAllyCardName4.Location = New Point(3, 1)
+        lbAllyCardName4.Name = "lbAllyCardName4"
+        lbAllyCardName4.Size = New Size(49, 20)
+        lbAllyCardName4.TabIndex = 0
+        lbAllyCardName4.Text = "aaaaa"
+        ' 
+        ' pnAllyCard5
+        ' 
+        pnAllyCard5.BackColor = SystemColors.ControlLight
+        pnAllyCard5.Controls.Add(btSetCard5)
+        pnAllyCard5.Controls.Add(txAllyCardDefense5)
+        pnAllyCard5.Controls.Add(lbAllyCardName5)
+        pnAllyCard5.Location = New Point(270, 255)
+        pnAllyCard5.Name = "pnAllyCard5"
+        pnAllyCard5.Size = New Size(114, 123)
+        pnAllyCard5.TabIndex = 30
+        ' 
+        ' btSetCard5
+        ' 
+        btSetCard5.Location = New Point(14, 41)
+        btSetCard5.Name = "btSetCard5"
+        btSetCard5.Size = New Size(94, 29)
+        btSetCard5.TabIndex = 46
+        btSetCard5.Text = "配置"
+        btSetCard5.UseVisualStyleBackColor = True
+        btSetCard5.Visible = False
+        ' 
+        ' txAllyCardDefense5
+        ' 
+        txAllyCardDefense5.Location = New Point(3, 93)
+        txAllyCardDefense5.MaxLength = 3
+        txAllyCardDefense5.Name = "txAllyCardDefense5"
+        txAllyCardDefense5.Size = New Size(108, 27)
+        txAllyCardDefense5.TabIndex = 37
+        txAllyCardDefense5.Visible = False
+        ' 
+        ' lbAllyCardName5
+        ' 
+        lbAllyCardName5.AutoSize = True
+        lbAllyCardName5.Location = New Point(3, 2)
+        lbAllyCardName5.Name = "lbAllyCardName5"
+        lbAllyCardName5.Size = New Size(49, 20)
+        lbAllyCardName5.TabIndex = 0
+        lbAllyCardName5.Text = "aaaaa"
         ' 
         ' btDeck
         ' 
@@ -821,13 +900,13 @@ Partial Class Form1
         btDiscard.UseWaitCursor = True
         btDiscard.Visible = False
         ' 
-        ' cnGrave
+        ' coGrave
         ' 
-        cnGrave.FormattingEnabled = True
-        cnGrave.Location = New Point(23, 695)
-        cnGrave.Name = "cnGrave"
-        cnGrave.Size = New Size(116, 28)
-        cnGrave.TabIndex = 35
+        coGrave.FormattingEnabled = True
+        coGrave.Location = New Point(23, 695)
+        coGrave.Name = "coGrave"
+        coGrave.Size = New Size(116, 28)
+        coGrave.TabIndex = 35
         ' 
         ' lbHandName1
         ' 
@@ -1070,9 +1149,9 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1342, 1004)
+        ClientSize = New Size(1342, 892)
         Controls.Add(pnHand2)
-        Controls.Add(cnGrave)
+        Controls.Add(coGrave)
         Controls.Add(pnHand6)
         Controls.Add(btDiscard)
         Controls.Add(pnHand1)
@@ -1093,14 +1172,14 @@ Partial Class Form1
         Controls.Add(Panel10)
         Controls.Add(Panel9)
         Controls.Add(Panel8)
-        Controls.Add(Panel7)
-        Controls.Add(Panel6)
-        Controls.Add(Panel4)
+        Controls.Add(pnAllyCard3)
+        Controls.Add(pnAllyCard2)
+        Controls.Add(pnAllyCard1)
         Controls.Add(btDeck)
-        Controls.Add(Panel3)
+        Controls.Add(pnAllyCard6)
         Controls.Add(gbAllyInfo)
-        Controls.Add(Panel2)
-        Controls.Add(Panel5)
+        Controls.Add(pnAllyCard4)
+        Controls.Add(pnAllyCard5)
         Controls.Add(gbEnemyInfo)
         Controls.Add(pnSelectPanelColor)
         Controls.Add(pnBattleArea)
@@ -1125,18 +1204,18 @@ Partial Class Form1
         Panel9.PerformLayout()
         Panel8.ResumeLayout(False)
         Panel8.PerformLayout()
-        Panel7.ResumeLayout(False)
-        Panel7.PerformLayout()
-        Panel6.ResumeLayout(False)
-        Panel6.PerformLayout()
-        Panel4.ResumeLayout(False)
-        Panel4.PerformLayout()
-        Panel3.ResumeLayout(False)
-        Panel3.PerformLayout()
-        Panel2.ResumeLayout(False)
-        Panel2.PerformLayout()
-        Panel5.ResumeLayout(False)
-        Panel5.PerformLayout()
+        pnAllyCard3.ResumeLayout(False)
+        pnAllyCard3.PerformLayout()
+        pnAllyCard2.ResumeLayout(False)
+        pnAllyCard2.PerformLayout()
+        pnAllyCard1.ResumeLayout(False)
+        pnAllyCard1.PerformLayout()
+        pnAllyCard6.ResumeLayout(False)
+        pnAllyCard6.PerformLayout()
+        pnAllyCard4.ResumeLayout(False)
+        pnAllyCard4.PerformLayout()
+        pnAllyCard5.ResumeLayout(False)
+        pnAllyCard5.PerformLayout()
         pnGrave.ResumeLayout(False)
         pnGrave.PerformLayout()
         pnHand1.ResumeLayout(False)
@@ -1195,18 +1274,18 @@ Partial Class Form1
     Friend WithEvents Label18 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label16 As Label
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Label10 As Label
+    Friend WithEvents pnAllyCard3 As Panel
+    Friend WithEvents lbAllyCardName3 As Label
+    Friend WithEvents pnAllyCard2 As Panel
+    Friend WithEvents lbAllyCardName2 As Label
+    Friend WithEvents pnAllyCard1 As Panel
+    Friend WithEvents lbAllyCardName1 As Label
+    Friend WithEvents pnAllyCard6 As Panel
+    Friend WithEvents lbAllyCardName6 As Label
+    Friend WithEvents pnAllyCard4 As Panel
+    Friend WithEvents lbAllyCardName4 As Label
+    Friend WithEvents pnAllyCard5 As Panel
+    Friend WithEvents lbAllyCardName5 As Label
     Friend WithEvents pnSelectPanelColor As Panel
     Friend WithEvents lbSelectCardFlavor As Label
     Friend WithEvents lbHandMaxSign As Label
@@ -1214,7 +1293,7 @@ Partial Class Form1
     Friend WithEvents Label29 As Label
     Friend WithEvents Label30 As Label
     Friend WithEvents btDiscard As Button
-    Friend WithEvents cnGrave As ComboBox
+    Friend WithEvents coGrave As ComboBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label9 As Label
@@ -1222,12 +1301,12 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txAllyCardDefense3 As TextBox
+    Friend WithEvents txAllyCardDefense2 As TextBox
+    Friend WithEvents txAllyCardDefense1 As TextBox
+    Friend WithEvents txAllyCardDefense6 As TextBox
+    Friend WithEvents txAllyCardDefense4 As TextBox
+    Friend WithEvents txAllyCardDefense5 As TextBox
     Friend WithEvents lbHandName1 As Label
     Friend WithEvents lbHandType1 As Label
     Friend WithEvents lbHandCost1 As Label
@@ -1253,5 +1332,11 @@ Partial Class Form1
     Friend WithEvents lbHandCost6 As Label
     Friend WithEvents pnHand6 As Panel
     Friend WithEvents Panel15 As Panel
+    Friend WithEvents btSetCard3 As Button
+    Friend WithEvents btSetCard2 As Button
+    Friend WithEvents btSetCard1 As Button
+    Friend WithEvents btSetCard6 As Button
+    Friend WithEvents btSetCard4 As Button
+    Friend WithEvents btSetCard5 As Button
 
 End Class

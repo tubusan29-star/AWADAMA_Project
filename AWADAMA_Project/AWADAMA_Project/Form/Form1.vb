@@ -2,12 +2,19 @@
 
 Public Class Form1
     Dim HandData As List(Of HandDataDto) = New List(Of HandDataDto)
+    Dim BattleAreaAllyData As List(Of CardDataDto) = New List(Of CardDataDto)
+    Dim ReaderData As CardDataDto = New CardDataDto()
     Dim GraveData As List(Of CardDataDto) = New List(Of CardDataDto)
     Dim SelectionCard As CardDataDto = New CardDataDto()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         AllCardData.GetData()
+
+        For i As Integer = 1 To Constant.AllyCardNum
+            BattleAreaAllyData.Add(New CardDataDto())
+        Next
+
     End Sub
 
     Private Sub DeckShuffle_Button_Click(sender As Object, e As EventArgs) Handles btShuffleButton.Click
@@ -93,6 +100,16 @@ Public Class Form1
 
             SelectionCard = clickCardData
             SelectionCard.DeckNo = HandData(clickNo - 1).No
+
+            Dim matchingControls As List(Of Control) = FindControlsRecursive(Me.Controls, "btSetCard")
+
+            For Each ctrl As Control In matchingControls
+                If BattleAreaAllyData(ctrl.Name.Substring(9, 1) - 1).Name <> "" Then
+                    ctrl.Visible = False
+                Else
+                    ctrl.Visible = True
+                End If
+            Next
         End If
     End Sub
 
@@ -104,11 +121,24 @@ Public Class Form1
 
         pnSelectPanelColor.Visible = False
 
+        '手札から墓地へ送る場合
         For Each no As String In HandData.Select(Function(x) x.No).ToList()
             If no = SelectionCard.DeckNo Then
-                GraveData.Add(GetCardDataByName(SelectionCard.Name))
+                Dim CardData = GetCardDataByName(SelectionCard.Name)
+                CardData.DeckNo = SelectionCard.DeckNo
+                GraveData.Add(CardData)
+                coGrave.Items.Add(SelectionCard.Name)
+                Dim resultList As IList(Of IList(Of Object)) =
+                    GraveData.Select(Function(x) CType(New List(Of Object) From {x.DeckNo.ToString(), x.Name}, IList(Of Object))).ToList()
+                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, "E2", resultList)
                 HandData.Remove(HandData.Find(Function(x) x.No = SelectionCard.DeckNo))
                 HandCardUpdate()
+
+                Dim matchingControls As List(Of Control) = FindControlsRecursive(Me.Controls, "btSetCard")
+
+                For Each ctrl As Control In matchingControls
+                    ctrl.Visible = False
+                Next
                 Exit For
             End If
         Next
@@ -116,6 +146,46 @@ Public Class Form1
         gbAllyInfo.Visible = False
         btDiscard.Visible = False
         lbHandMaxSign.Visible = False
+    End Sub
+
+    Private Sub btSetCard_Click(sender As Object, e As EventArgs) Handles btSetCard1.Click, btSetCard2.Click, btSetCard3.Click, btSetCard4.Click, btSetCard5.Click, btSetCard6.Click
+        Dim result As MsgBoxResult = MsgBox("ここへ配置しますか？", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "確認")
+        If result = MsgBoxResult.No Then
+            Exit Sub
+        End If
+
+        Dim clickedButton = TryCast(sender, Button)
+        Dim clickNo = clickedButton.Name.Substring(9, 1)
+
+        Dim foundpnAllyCard As List(Of Control) = FindControlsRecursive(Me.Controls, "pnAllyCard" & clickNo)
+
+        Dim targetpnAllyCard As Control = foundpnAllyCard(0)
+        Dim AllyCardPanel As Panel = targetpnAllyCard
+
+        pnSelectPanelColor.Visible = False
+        pnSelectPanelColor.Left = AllyCardPanel.Location.X - 5
+        pnSelectPanelColor.Top = AllyCardPanel.Location.Y - 5
+
+        BattleAreaAllyData(clickNo - 1) = SelectionCard
+
+        '手札から配置する場合
+        For Each no As String In HandData.Select(Function(x) x.No).ToList()
+            If no = SelectionCard.DeckNo Then
+                '配置処理
+                Dim matchingControls As List(Of Control) = FindControlsRecursive(Me.Controls, "btSetCard")
+                For Each ctrl As Control In matchingControls
+                    ctrl.Visible = False
+                Next
+                HandData.Remove(HandData.Find(Function(x) x.No = SelectionCard.DeckNo))
+                HandCardUpdate()
+                btDiscard.Visible = False
+                lbHandMaxSign.Visible = False
+                Exit For
+            End If
+        Next
+
+        BattleAllyUpdate()
+
     End Sub
 
     Private Sub SetAllySelectionData(selectCardData As CardDataDto)
@@ -177,6 +247,7 @@ Public Class Form1
                 handTypeLabel.Visible = True
                 handPanel.Visible = True
             Else
+                handDataNameList.Add("")
                 handLabel.Visible = False
                 handCostLabel.Visible = False
                 handTypeLabel.Visible = False
@@ -186,4 +257,52 @@ Public Class Form1
 
         Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, "B21", {handDataNameList.ToArray()})
     End Sub
+
+    Private Sub BattleAllyUpdate()
+
+        For i As Integer = 1 To Constant.HandCardNum
+
+            Dim foundlbAllyCardName As List(Of Control) = FindControlsRecursive(Me.Controls, "lbAllyCardName" & i.ToString())
+
+            Dim targetlbAllyCardName As Control = foundlbAllyCardName(0)
+            Dim AllyCardNameLabel As Label = targetlbAllyCardName
+
+            Dim foundtxAllyCardDefense As List(Of Control) = FindControlsRecursive(Me.Controls, "txAllyCardDefense" & i.ToString())
+
+            Dim targettxAllyCardDefense As Control = foundtxAllyCardDefense(0)
+            Dim AllyCardDefenseText As TextBox = targettxAllyCardDefense
+
+            If BattleAreaAllyData(i - 1).Name <> "" Then
+                Dim CardData = GetCardDataByName(BattleAreaAllyData(i - 1).Name)
+                AllyCardNameLabel.Text = CardData.Name
+                AllyCardDefenseText.Text = CardData.Defense
+                AllyCardNameLabel.Visible = True
+                AllyCardDefenseText.Visible = True
+            Else
+                AllyCardNameLabel.Visible = False
+                AllyCardDefenseText.Visible = False
+            End If
+        Next i
+
+        pnSelectPanelColor.Visible = True
+
+        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, "B13", {BattleAreaAllyData.Select(Function(x) x.Name).ToArray()})
+    End Sub
+
+    Private Function FindControlsRecursive(ByVal rootControls As Control.ControlCollection, ByVal searchPart As String) As List(Of Control)
+        Dim foundControls As New List(Of Control)()
+
+        For Each ctrl As Control In rootControls
+
+            If ctrl.Name.IndexOf(searchPart, StringComparison.OrdinalIgnoreCase) >= 0 Then
+                foundControls.Add(ctrl)
+            End If
+
+            If ctrl.HasChildren Then
+                foundControls.AddRange(FindControlsRecursive(ctrl.Controls, searchPart))
+            End If
+        Next
+
+        Return foundControls
+    End Function
 End Class
