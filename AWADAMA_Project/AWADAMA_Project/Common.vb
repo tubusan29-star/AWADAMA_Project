@@ -37,6 +37,10 @@ Public Module Common
 
 #Region "スプレッドシート操作"
 
+    Async Function GetGoogleSheeDataAsync(sheet_id As String, sheet_name As String, range As String) As Task(Of IList(Of IList(Of Object)))
+        Return Await Task.Run(Function() GetGoogleSheetData(sheet_id, sheet_name, range))
+    End Function
+
     ''' <summary>
     ''' GetGoogleSheetData
     ''' スプレッドシートデータ取得
@@ -70,6 +74,14 @@ Public Module Common
         End If
 
     End Function
+
+    Async Sub SetGoogleSheetDataAsync(sheet_id As String, sheet_name As String, range As String, values As String)
+        Await Task.Run(Sub() SetGoogleSheetData(sheet_id, sheet_name, range, values))
+    End Sub
+
+    Async Sub SetGoogleSheetDataAsync(sheet_id As String, sheet_name As String, range As String, values As IList(Of IList(Of Object)))
+        Await Task.Run(Sub() SetGoogleSheetData(sheet_id, sheet_name, range, values))
+    End Sub
 
     ''' <summary>
     ''' GetGoogleSheetData

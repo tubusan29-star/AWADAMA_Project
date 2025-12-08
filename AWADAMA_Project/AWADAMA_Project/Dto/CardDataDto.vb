@@ -54,6 +54,20 @@
     End Sub
 
     Public Sub New()
-
+        Me.No = ""
+        Me.Name = ""
+        Me.Cardname = ""
+        Me.Cost = ""
+        Me.Type = ""
+        Me.Line = ""
+        Me.Atack = ""
+        Me.Magic = ""
+        Me.Defense = ""
+        Me.Intellect = ""
+        Me.Effect = ""
+        Me.Flavor = ""
+        Me.Skill1 = ""
+        Me.Skill2 = ""
+        Me.Skill3 = ""
     End Sub
 End Class

@@ -128,6 +128,7 @@ Partial Class Form1
         lbHandCost6 = New Label()
         pnHand6 = New Panel()
         Panel15 = New Panel()
+        btReturnHand = New Button()
         gbAllyInfo.SuspendLayout()
         Panel1.SuspendLayout()
         Panel14.SuspendLayout()
@@ -663,7 +664,7 @@ Partial Class Form1
         ' 
         ' btSetCard1
         ' 
-        btSetCard1.Location = New Point(9, 41)
+        btSetCard1.Location = New Point(10, 41)
         btSetCard1.Name = "btSetCard1"
         btSetCard1.Size = New Size(94, 29)
         btSetCard1.TabIndex = 43
@@ -843,7 +844,7 @@ Partial Class Form1
         ' pnSelectPanelColor
         ' 
         pnSelectPanelColor.BackColor = Color.Aqua
-        pnSelectPanelColor.Location = New Point(8, 434)
+        pnSelectPanelColor.Location = New Point(8, 386)
         pnSelectPanelColor.Name = "pnSelectPanelColor"
         pnSelectPanelColor.Size = New Size(124, 133)
         pnSelectPanelColor.TabIndex = 27
@@ -1145,11 +1146,24 @@ Partial Class Form1
         Panel15.Size = New Size(780, 146)
         Panel15.TabIndex = 36
         ' 
+        ' btReturnHand
+        ' 
+        btReturnHand.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btReturnHand.Location = New Point(110, 549)
+        btReturnHand.Name = "btReturnHand"
+        btReturnHand.Size = New Size(29, 27)
+        btReturnHand.TabIndex = 37
+        btReturnHand.Text = "→"
+        btReturnHand.UseVisualStyleBackColor = True
+        btReturnHand.UseWaitCursor = True
+        btReturnHand.Visible = False
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1342, 892)
+        Controls.Add(btReturnHand)
         Controls.Add(pnHand2)
         Controls.Add(coGrave)
         Controls.Add(pnHand6)
@@ -1338,5 +1352,6 @@ Partial Class Form1
     Friend WithEvents btSetCard6 As Button
     Friend WithEvents btSetCard4 As Button
     Friend WithEvents btSetCard5 As Button
+    Friend WithEvents btReturnHand As Button
 
 End Class
