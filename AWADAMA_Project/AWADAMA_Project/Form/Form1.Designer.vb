@@ -143,6 +143,9 @@ Partial Class Form1
         Panel6 = New Panel()
         Panel5 = New Panel()
         Button6 = New Button()
+        Button7 = New Button()
+        GroupBox1 = New GroupBox()
+        GroupBox2 = New GroupBox()
         gbAllyInfo.SuspendLayout()
         pnBattleArea.SuspendLayout()
         Panel1.SuspendLayout()
@@ -376,6 +379,7 @@ Partial Class Form1
         ' pnBattleArea
         ' 
         pnBattleArea.BorderStyle = BorderStyle.FixedSingle
+        pnBattleArea.Controls.Add(GroupBox2)
         pnBattleArea.Controls.Add(Button5)
         pnBattleArea.Location = New Point(144, 111)
         pnBattleArea.Name = "pnBattleArea"
@@ -384,7 +388,7 @@ Partial Class Form1
         ' 
         ' Button5
         ' 
-        Button5.Location = New Point(10, 14)
+        Button5.Location = New Point(4, 19)
         Button5.Name = "Button5"
         Button5.Size = New Size(108, 29)
         Button5.TabIndex = 47
@@ -1281,7 +1285,7 @@ Partial Class Form1
         Panel4.Controls.Add(Label8)
         Panel4.Controls.Add(Panel6)
         Panel4.Controls.Add(Panel5)
-        Panel4.Location = New Point(15, 558)
+        Panel4.Location = New Point(13, 580)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(85, 88)
         Panel4.TabIndex = 49
@@ -1343,7 +1347,7 @@ Partial Class Form1
         ' 
         ' Button6
         ' 
-        Button6.Location = New Point(10, 462)
+        Button6.Location = New Point(10, 296)
         Button6.Name = "Button6"
         Button6.Size = New Size(114, 65)
         Button6.TabIndex = 48
@@ -1351,11 +1355,41 @@ Partial Class Form1
         Button6.UseVisualStyleBackColor = True
         Button6.Visible = False
         ' 
+        ' Button7
+        ' 
+        Button7.Location = New Point(10, 458)
+        Button7.Name = "Button7"
+        Button7.Size = New Size(114, 65)
+        Button7.TabIndex = 50
+        Button7.Text = "ターン終了"
+        Button7.UseVisualStyleBackColor = True
+        Button7.Visible = False
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Location = New Point(10, 353)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(114, 69)
+        GroupBox1.TabIndex = 51
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "result"
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Location = New Point(9, 54)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(114, 69)
+        GroupBox2.TabIndex = 52
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "result"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1342, 892)
+        Controls.Add(GroupBox1)
+        Controls.Add(Button7)
         Controls.Add(Button6)
         Controls.Add(Panel3)
         Controls.Add(Panel2)
@@ -1570,5 +1604,8 @@ Partial Class Form1
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox1 As GroupBox
 
 End Class
