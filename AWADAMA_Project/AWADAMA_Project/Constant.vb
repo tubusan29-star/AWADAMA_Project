@@ -10,9 +10,13 @@
 
     Public ReadOnly Property AllyCardNum As Integer = 6
 
+    Public ReadOnly Property UpdateDisplayMillSeconds As Integer = 500
+
 #Region "スプレッドシート関連定数"
 
     Public ReadOnly Property MAIN_SHEET_ID As String = "1ysmqUCvlxr0neGqNpzNnpdVpG4nsENdOzggoQ5ZLTOw"
+
+    Public ReadOnly Property MAIN_SHEET_NAME_SYSTEM As String = "システム"
 
     Public ReadOnly Property MAIN_SHEET_NAME_DECK As String = "カード一覧"
 

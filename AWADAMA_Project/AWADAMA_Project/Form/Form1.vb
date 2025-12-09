@@ -1,19 +1,42 @@
 ﻿Imports System.Reflection.Metadata
+Imports Google.Apis.Util
+Imports System.Drawing
+Imports System.Windows.Forms
 
 Public Class Form1
+    Dim UpdateInterval As Boolean = False
+
     Dim HandData As List(Of HandDataDto) = New List(Of HandDataDto)
     Dim BattleAreaAllyData As List(Of CardDataDto) = New List(Of CardDataDto)
     Dim ReaderData As CardDataDto = New CardDataDto()
     Dim GraveData As List(Of CardDataDto) = New List(Of CardDataDto)
     Dim SelectionCard As CardDataDto = New CardDataDto()
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Class VerticalProgressBar
+        Inherits ProgressBar
+
+        ' 描画方向を決定するプロパティ (今回は常に縦なので不要だが、水平/垂直を選べるようにする場合に使う)
+        ' Public Enum ProgressBarDirection
+        '     Horizontal
+        '     Vertical
+        ' End Enum
+
+        ' Protected Overrides Sub OnPaint(e As PaintEventArgs)
+        '     ' 描画処理を完全にオーバーライドする必要があるが、
+        '     ' 標準の ProgressBar はオーナー描画をサポートしていないため、この方法は複雑になる。
+        ' End Sub
+
+    End Class
+
+    Private Async Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         AllCardData.GetData()
 
         For i As Integer = 1 To Constant.AllyCardNum
             BattleAreaAllyData.Add(New CardDataDto())
         Next
+
+        Await StartUpdateTask()
 
     End Sub
 
@@ -76,8 +99,8 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub pnCard_Click(sender As Object, e As EventArgs) Handles pnHand1.Click, pnHand2.Click, pnHand3.Click, pnHand4.Click, pnHand5.Click, pnHand6.Click _
-            , pnAllyCard1.Click, pnAllyCard2.Click, pnAllyCard3.Click, pnAllyCard4.Click, pnAllyCard5.Click, pnAllyCard6.Click
+    Private Sub pnCard_Click(sender As Object, e As MouseEventArgs) Handles pnHand1.MouseDown, pnHand2.MouseDown, pnHand3.MouseDown, pnHand4.MouseDown, pnHand5.MouseDown, pnHand6.MouseDown _
+            , pnAllyCard1.MouseDown, pnAllyCard2.MouseDown, pnAllyCard3.MouseDown, pnAllyCard4.MouseDown, pnAllyCard5.MouseDown, pnAllyCard6.MouseDown
         Dim clickedPanel = TryCast(sender, Panel)
 
         pnSelectPanelColor.Left = clickedPanel.Location.X - 5
@@ -103,9 +126,9 @@ Public Class Form1
             SelectionCard = clickCardData
             SelectionCard.DeckNo = HandData(clickNo - 1).No
 
-            Dim matchingControls As List(Of Control) = FindControlsRecursive(Me.Controls, "btSetCard")
+            Dim matchingControls = FindControlsRecursive(Controls, "btSetCard")
 
-            For Each ctrl As Control In matchingControls
+            For Each ctrl In matchingControls
                 If BattleAreaAllyData(ctrl.Name.Substring(9, 1) - 1).Name <> "" Then
                     ctrl.Visible = False
                 Else
@@ -135,9 +158,13 @@ Public Class Form1
             SetAllySelectionData(clickCardData)
             SelectionCard = clickCardData
             SelectionCard.DeckNo = BattleAreaAllyData(clickNo - 1).DeckNo
-            Dim matchingControls As List(Of Control) = FindControlsRecursive(Me.Controls, "btSetCard")
-            For Each ctrl As Control In matchingControls
-                ctrl.Visible = False
+            Dim matchingControls = FindControlsRecursive(Controls, "btSetCard")
+            For Each ctrl In matchingControls
+                If e.Button = MouseButtons.Right And ctrl.Name.Substring(9, 1) <> clickNo Then
+                    ctrl.Visible = True
+                Else
+                    ctrl.Visible = False
+                End If
             Next
 
             pnSelectPanelColor.Visible = True
@@ -223,8 +250,6 @@ Public Class Form1
         pnSelectPanelColor.Left = AllyCardPanel.Location.X - 5
         pnSelectPanelColor.Top = AllyCardPanel.Location.Y - 5
 
-        BattleAreaAllyData(clickNo - 1) = SelectionCard
-
         '手札から配置する場合
         For Each no In HandData.Select(Function(x) x.No).ToList
             If no = SelectionCard.DeckNo Then
@@ -235,9 +260,32 @@ Public Class Form1
                 Next
                 HandData.Remove(HandData.Find(Function(x) x.No = SelectionCard.DeckNo))
                 HandCardUpdate()
+                BattleAreaAllyData(clickNo - 1) = SelectionCard
                 lbHandMaxSign.Visible = False
                 Exit For
             End If
+        Next
+
+        '味方配置から移動する場合
+        Dim changeIndex = 0
+        For Each no In BattleAreaAllyData.Select(Function(x) x.DeckNo).ToList
+            If no = SelectionCard.DeckNo Then
+                '配置処理
+                Dim matchingControls = FindControlsRecursive(Controls, "btSetCard")
+                For Each ctrl In matchingControls
+                    ctrl.Visible = False
+                Next
+                If BattleAreaAllyData(clickNo - 1).DeckNo = "" Then
+                    BattleAreaAllyData(clickNo - 1) = BattleAreaAllyData(changeIndex)
+                    BattleAreaAllyData(changeIndex) = New CardDataDto
+                Else
+                    Dim tempCard = BattleAreaAllyData(clickNo - 1)
+                    BattleAreaAllyData(clickNo - 1) = BattleAreaAllyData(changeIndex)
+                    BattleAreaAllyData(changeIndex) = tempCard
+                End If
+                Exit For
+            End If
+            changeIndex += 1
         Next
 
         BattleAllyUpdate()
@@ -250,9 +298,10 @@ Public Class Form1
     Private Sub btReturnHand_Click(sender As Object, e As EventArgs) Handles btReturnHand.Click
         HandData.Add(New HandDataDto(SelectionCard.DeckNo, SelectionCard.Name, "1"))
         HandCardUpdate()
-        For Each i As Integer In Enumerable.Range(0, BattleAreaAllyData.Count)
+
+        For Each i In Enumerable.Range(0, BattleAreaAllyData.Count)
             If BattleAreaAllyData(i).DeckNo = SelectionCard.DeckNo Then
-                BattleAreaAllyData(i) = New CardDataDto()
+                BattleAreaAllyData(i) = New CardDataDto
                 BattleAllyUpdate()
                 pnSelectPanelColor.Visible = False
                 btReturnHand.Visible = False
@@ -260,6 +309,30 @@ Public Class Form1
             End If
         Next
     End Sub
+
+    Private Async Function StartUpdateTask() As Task
+        While True
+            Await DoUpdatesync()
+
+            Await Task.Delay(Constant.UpdateDisplayMillSeconds)
+        End While
+    End Function
+
+    ''' <summary>
+    ''' 0.5秒感覚のディスプレイ更新
+    ''' </summary>
+    ''' <returns></returns>
+    Private Async Function DoUpdatesync() As Task
+        Await Task.Factory.StartNew(
+            Sub()
+                Dim updateFlgt = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_SYSTEM, "A1")
+                If updateFlgt IsNot Nothing Then
+                    If updateFlgt(0)(0).ToString() = "1" Then
+                        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_SYSTEM, "A1", "0")
+                    End If
+                End If
+            End Sub)
+    End Function
 
     Private Sub SetAllySelectionData(selectCardData As CardDataDto)
         lbSelectCardName.Text = selectCardData.Cardname

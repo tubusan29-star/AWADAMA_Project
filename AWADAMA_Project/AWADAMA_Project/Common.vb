@@ -66,12 +66,7 @@ Public Module Common
         Dim response As ValueRange = request.Execute()
         Dim values As IList(Of IList(Of Object)) = response.Values
 
-        If values IsNot Nothing AndAlso values.Count > 0 Then
-            Console.WriteLine("スプレッドシートからデータを取得しました。")
-            Return values
-        Else
-            Throw New Exception("スプレッドシートからデータを取得できませんでした。")
-        End If
+        Return values
 
     End Function
 
@@ -128,9 +123,6 @@ Public Module Common
 
         ' リクエストの実行
         Dim response As UpdateValuesResponse = updateRequest.Execute()
-
-        Console.WriteLine($"スプレッドシートへの書き込みが完了しました。")
-        Console.WriteLine($"更新されたセル数: {response.UpdatedCells}")
 
     End Sub
 
