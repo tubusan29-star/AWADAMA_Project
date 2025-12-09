@@ -44,6 +44,7 @@ Partial Class Form1
         lbSelectCardCost = New Label()
         lbSelectCardName = New Label()
         pnBattleArea = New Panel()
+        GroupBox2 = New GroupBox()
         Button5 = New Button()
         Panel1 = New Panel()
         TextBox1 = New TextBox()
@@ -145,7 +146,6 @@ Partial Class Form1
         Button6 = New Button()
         Button7 = New Button()
         GroupBox1 = New GroupBox()
-        GroupBox2 = New GroupBox()
         gbAllyInfo.SuspendLayout()
         pnBattleArea.SuspendLayout()
         Panel1.SuspendLayout()
@@ -386,6 +386,15 @@ Partial Class Form1
         pnBattleArea.Size = New Size(790, 423)
         pnBattleArea.TabIndex = 4
         ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Location = New Point(9, 54)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(111, 69)
+        GroupBox2.TabIndex = 52
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "result"
+        ' 
         ' Button5
         ' 
         Button5.Location = New Point(4, 19)
@@ -431,7 +440,7 @@ Partial Class Form1
         Panel14.BackColor = SystemColors.ControlLight
         Panel14.Controls.Add(Label27)
         Panel14.Controls.Add(Label28)
-        Panel14.Location = New Point(574, 126)
+        Panel14.Location = New Point(568, 126)
         Panel14.Name = "Panel14"
         Panel14.Size = New Size(114, 123)
         Panel14.TabIndex = 31
@@ -459,7 +468,7 @@ Partial Class Form1
         Panel13.BackColor = SystemColors.ControlLight
         Panel13.Controls.Add(Label2)
         Panel13.Controls.Add(Label26)
-        Panel13.Location = New Point(574, 255)
+        Panel13.Location = New Point(568, 255)
         Panel13.Name = "Panel13"
         Panel13.Size = New Size(114, 123)
         Panel13.TabIndex = 31
@@ -487,7 +496,7 @@ Partial Class Form1
         Panel12.BackColor = SystemColors.ControlLight
         Panel12.Controls.Add(Label9)
         Panel12.Controls.Add(Label24)
-        Panel12.Location = New Point(574, 386)
+        Panel12.Location = New Point(568, 386)
         Panel12.Name = "Panel12"
         Panel12.Size = New Size(114, 123)
         Panel12.TabIndex = 31
@@ -515,7 +524,7 @@ Partial Class Form1
         Panel11.BackColor = SystemColors.ControlLight
         Panel11.Controls.Add(Label11)
         Panel11.Controls.Add(Label22)
-        Panel11.Location = New Point(694, 386)
+        Panel11.Location = New Point(688, 386)
         Panel11.Name = "Panel11"
         Panel11.Size = New Size(114, 123)
         Panel11.TabIndex = 31
@@ -543,7 +552,7 @@ Partial Class Form1
         Panel10.BackColor = SystemColors.ControlLight
         Panel10.Controls.Add(Label1)
         Panel10.Controls.Add(Label20)
-        Panel10.Location = New Point(694, 127)
+        Panel10.Location = New Point(688, 127)
         Panel10.Name = "Panel10"
         Panel10.Size = New Size(114, 123)
         Panel10.TabIndex = 31
@@ -571,7 +580,7 @@ Partial Class Form1
         Panel9.BackColor = SystemColors.ControlLight
         Panel9.Controls.Add(Label5)
         Panel9.Controls.Add(Label18)
-        Panel9.Location = New Point(694, 255)
+        Panel9.Location = New Point(688, 255)
         Panel9.Name = "Panel9"
         Panel9.Size = New Size(114, 123)
         Panel9.TabIndex = 30
@@ -599,7 +608,7 @@ Partial Class Form1
         Panel8.BackColor = SystemColors.ControlLight
         Panel8.Controls.Add(Label7)
         Panel8.Controls.Add(Label16)
-        Panel8.Location = New Point(815, 255)
+        Panel8.Location = New Point(809, 255)
         Panel8.Name = "Panel8"
         Panel8.Size = New Size(114, 123)
         Panel8.TabIndex = 30
@@ -1373,15 +1382,6 @@ Partial Class Form1
         GroupBox1.TabIndex = 51
         GroupBox1.TabStop = False
         GroupBox1.Text = "result"
-        ' 
-        ' GroupBox2
-        ' 
-        GroupBox2.Location = New Point(9, 54)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(114, 69)
-        GroupBox2.TabIndex = 52
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "result"
         ' 
         ' Form1
         ' 
