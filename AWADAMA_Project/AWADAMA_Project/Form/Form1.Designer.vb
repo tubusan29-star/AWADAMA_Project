@@ -44,6 +44,10 @@ Partial Class Form1
         lbSelectCardCost = New Label()
         lbSelectCardName = New Label()
         pnBattleArea = New Panel()
+        Label15 = New Label()
+        Label14 = New Label()
+        Label13 = New Label()
+        GroupBox3 = New GroupBox()
         GroupBox2 = New GroupBox()
         Button5 = New Button()
         Panel1 = New Panel()
@@ -135,7 +139,6 @@ Partial Class Form1
         Button1 = New Button()
         Label4 = New Label()
         Panel3 = New Panel()
-        Button2 = New Button()
         Label6 = New Label()
         Panel4 = New Panel()
         Button3 = New Button()
@@ -146,6 +149,19 @@ Partial Class Form1
         Button6 = New Button()
         Button7 = New Button()
         GroupBox1 = New GroupBox()
+        Panel7 = New Panel()
+        Panel16 = New Panel()
+        Panel17 = New Panel()
+        Panel18 = New Panel()
+        Panel19 = New Panel()
+        Panel20 = New Panel()
+        Panel21 = New Panel()
+        Label10 = New Label()
+        Panel22 = New Panel()
+        Label12 = New Label()
+        Panel23 = New Panel()
+        Panel24 = New Panel()
+        Label17 = New Label()
         gbAllyInfo.SuspendLayout()
         pnBattleArea.SuspendLayout()
         Panel1.SuspendLayout()
@@ -172,11 +188,13 @@ Partial Class Form1
         Panel2.SuspendLayout()
         Panel3.SuspendLayout()
         Panel4.SuspendLayout()
+        Panel21.SuspendLayout()
+        Panel22.SuspendLayout()
         SuspendLayout()
         ' 
         ' btShuffleButton
         ' 
-        btShuffleButton.Location = New Point(806, 824)
+        btShuffleButton.Location = New Point(806, 844)
         btShuffleButton.Name = "btShuffleButton"
         btShuffleButton.Size = New Size(114, 28)
         btShuffleButton.TabIndex = 1
@@ -379,12 +397,52 @@ Partial Class Form1
         ' pnBattleArea
         ' 
         pnBattleArea.BorderStyle = BorderStyle.FixedSingle
+        pnBattleArea.Controls.Add(Label15)
+        pnBattleArea.Controls.Add(Label14)
+        pnBattleArea.Controls.Add(Label13)
+        pnBattleArea.Controls.Add(GroupBox3)
         pnBattleArea.Controls.Add(GroupBox2)
         pnBattleArea.Controls.Add(Button5)
         pnBattleArea.Location = New Point(144, 111)
         pnBattleArea.Name = "pnBattleArea"
-        pnBattleArea.Size = New Size(790, 423)
+        pnBattleArea.Size = New Size(790, 438)
         pnBattleArea.TabIndex = 4
+        ' 
+        ' Label15
+        ' 
+        Label15.Location = New Point(423, 408)
+        Label15.Name = "Label15"
+        Label15.Size = New Size(355, 20)
+        Label15.TabIndex = 56
+        Label15.Text = "相手デッキ名"
+        Label15.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' Label14
+        ' 
+        Label14.Location = New Point(12, 408)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(353, 20)
+        Label14.TabIndex = 55
+        Label14.Text = "デッキ名"
+        Label14.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Location = New Point(694, 24)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(60, 20)
+        Label13.TabIndex = 54
+        Label13.Text = "APダイス"
+        ' 
+        ' GroupBox3
+        ' 
+        GroupBox3.Location = New Point(667, 54)
+        GroupBox3.Name = "GroupBox3"
+        GroupBox3.Size = New Size(111, 69)
+        GroupBox3.TabIndex = 53
+        GroupBox3.TabStop = False
+        GroupBox3.Text = "result"
         ' 
         ' GroupBox2
         ' 
@@ -397,12 +455,13 @@ Partial Class Form1
         ' 
         ' Button5
         ' 
-        Button5.Location = New Point(4, 19)
+        Button5.BackColor = Color.LightCoral
+        Button5.Location = New Point(9, 19)
         Button5.Name = "Button5"
         Button5.Size = New Size(108, 29)
         Button5.TabIndex = 47
         Button5.Text = "APダイス"
-        Button5.UseVisualStyleBackColor = True
+        Button5.UseVisualStyleBackColor = False
         Button5.Visible = False
         ' 
         ' Panel1
@@ -880,7 +939,7 @@ Partial Class Form1
         ' btDeck
         ' 
         btDeck.Font = New Font("Yu Gothic UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
-        btDeck.Location = New Point(804, 695)
+        btDeck.Location = New Point(804, 715)
         btDeck.Name = "btDeck"
         btDeck.Size = New Size(116, 123)
         btDeck.TabIndex = 5
@@ -890,7 +949,7 @@ Partial Class Form1
         ' lbSelectCardSkill1
         ' 
         lbSelectCardSkill1.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill1.Location = New Point(189, 695)
+        lbSelectCardSkill1.Location = New Point(189, 715)
         lbSelectCardSkill1.Name = "lbSelectCardSkill1"
         lbSelectCardSkill1.Size = New Size(594, 53)
         lbSelectCardSkill1.TabIndex = 24
@@ -898,7 +957,7 @@ Partial Class Form1
         ' lbSelectCardSkill2
         ' 
         lbSelectCardSkill2.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill2.Location = New Point(189, 747)
+        lbSelectCardSkill2.Location = New Point(189, 767)
         lbSelectCardSkill2.Name = "lbSelectCardSkill2"
         lbSelectCardSkill2.Size = New Size(594, 53)
         lbSelectCardSkill2.TabIndex = 25
@@ -906,7 +965,7 @@ Partial Class Form1
         ' lbSelectCardSkill3
         ' 
         lbSelectCardSkill3.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardSkill3.Location = New Point(189, 799)
+        lbSelectCardSkill3.Location = New Point(189, 819)
         lbSelectCardSkill3.Name = "lbSelectCardSkill3"
         lbSelectCardSkill3.Size = New Size(594, 53)
         lbSelectCardSkill3.TabIndex = 26
@@ -925,7 +984,7 @@ Partial Class Form1
         lbHandMaxSign.BackColor = Color.Transparent
         lbHandMaxSign.Font = New Font("Yu Gothic UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lbHandMaxSign.ForeColor = Color.Red
-        lbHandMaxSign.Location = New Point(876, 541)
+        lbHandMaxSign.Location = New Point(876, 561)
         lbHandMaxSign.Name = "lbHandMaxSign"
         lbHandMaxSign.Size = New Size(42, 27)
         lbHandMaxSign.TabIndex = 33
@@ -938,7 +997,7 @@ Partial Class Form1
         pnGrave.BackColor = SystemColors.ActiveBorder
         pnGrave.Controls.Add(Label29)
         pnGrave.Controls.Add(Label30)
-        pnGrave.Location = New Point(23, 726)
+        pnGrave.Location = New Point(23, 746)
         pnGrave.Name = "pnGrave"
         pnGrave.Size = New Size(116, 123)
         pnGrave.TabIndex = 31
@@ -962,7 +1021,7 @@ Partial Class Form1
         ' btDiscard
         ' 
         btDiscard.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btDiscard.Location = New Point(110, 668)
+        btDiscard.Location = New Point(110, 688)
         btDiscard.Name = "btDiscard"
         btDiscard.Size = New Size(29, 24)
         btDiscard.TabIndex = 34
@@ -974,7 +1033,7 @@ Partial Class Form1
         ' coGrave
         ' 
         coGrave.FormattingEnabled = True
-        coGrave.Location = New Point(23, 695)
+        coGrave.Location = New Point(23, 715)
         coGrave.Name = "coGrave"
         coGrave.Size = New Size(116, 28)
         coGrave.TabIndex = 35
@@ -1011,7 +1070,7 @@ Partial Class Form1
         pnHand1.Controls.Add(lbHandCost1)
         pnHand1.Controls.Add(lbHandType1)
         pnHand1.Controls.Add(lbHandName1)
-        pnHand1.Location = New Point(166, 556)
+        pnHand1.Location = New Point(166, 576)
         pnHand1.Name = "pnHand1"
         pnHand1.Size = New Size(114, 123)
         pnHand1.TabIndex = 6
@@ -1049,7 +1108,7 @@ Partial Class Form1
         pnHand2.Controls.Add(lbHandCost2)
         pnHand2.Controls.Add(lbHandType2)
         pnHand2.Controls.Add(lbHandName2)
-        pnHand2.Location = New Point(286, 556)
+        pnHand2.Location = New Point(286, 576)
         pnHand2.Name = "pnHand2"
         pnHand2.Size = New Size(114, 123)
         pnHand2.TabIndex = 7
@@ -1087,7 +1146,7 @@ Partial Class Form1
         pnHand3.Controls.Add(lbHandCost3)
         pnHand3.Controls.Add(lbHandType3)
         pnHand3.Controls.Add(lbHandName3)
-        pnHand3.Location = New Point(406, 556)
+        pnHand3.Location = New Point(406, 576)
         pnHand3.Name = "pnHand3"
         pnHand3.Size = New Size(114, 123)
         pnHand3.TabIndex = 8
@@ -1125,7 +1184,7 @@ Partial Class Form1
         pnHand4.Controls.Add(lbHandCost4)
         pnHand4.Controls.Add(lbHandType4)
         pnHand4.Controls.Add(lbHandName4)
-        pnHand4.Location = New Point(526, 556)
+        pnHand4.Location = New Point(526, 576)
         pnHand4.Name = "pnHand4"
         pnHand4.Size = New Size(114, 123)
         pnHand4.TabIndex = 9
@@ -1163,7 +1222,7 @@ Partial Class Form1
         pnHand5.Controls.Add(lbHandCost5)
         pnHand5.Controls.Add(lbHandType5)
         pnHand5.Controls.Add(lbHandName5)
-        pnHand5.Location = New Point(646, 556)
+        pnHand5.Location = New Point(646, 576)
         pnHand5.Name = "pnHand5"
         pnHand5.Size = New Size(114, 123)
         pnHand5.TabIndex = 10
@@ -1201,7 +1260,7 @@ Partial Class Form1
         pnHand6.Controls.Add(lbHandCost6)
         pnHand6.Controls.Add(lbHandType6)
         pnHand6.Controls.Add(lbHandName6)
-        pnHand6.Location = New Point(766, 556)
+        pnHand6.Location = New Point(766, 576)
         pnHand6.Name = "pnHand6"
         pnHand6.Size = New Size(114, 123)
         pnHand6.TabIndex = 11
@@ -1211,7 +1270,7 @@ Partial Class Form1
         ' 
         Panel15.BackColor = SystemColors.Control
         Panel15.BorderStyle = BorderStyle.FixedSingle
-        Panel15.Location = New Point(149, 540)
+        Panel15.Location = New Point(149, 560)
         Panel15.Name = "Panel15"
         Panel15.Size = New Size(780, 146)
         Panel15.TabIndex = 36
@@ -1219,7 +1278,7 @@ Partial Class Form1
         ' btReturnHand
         ' 
         btReturnHand.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        btReturnHand.Location = New Point(116, 549)
+        btReturnHand.Location = New Point(116, 569)
         btReturnHand.Name = "btReturnHand"
         btReturnHand.Size = New Size(29, 27)
         btReturnHand.TabIndex = 37
@@ -1260,22 +1319,11 @@ Partial Class Form1
         ' Panel3
         ' 
         Panel3.BackColor = SystemColors.ControlLight
-        Panel3.Controls.Add(Button2)
         Panel3.Controls.Add(Label6)
         Panel3.Location = New Point(10, 12)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(114, 123)
         Panel3.TabIndex = 48
-        ' 
-        ' Button2
-        ' 
-        Button2.Location = New Point(12, 47)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(94, 29)
-        Button2.TabIndex = 46
-        Button2.Text = "使用"
-        Button2.UseVisualStyleBackColor = True
-        Button2.Visible = False
         ' 
         ' Label6
         ' 
@@ -1294,7 +1342,7 @@ Partial Class Form1
         Panel4.Controls.Add(Label8)
         Panel4.Controls.Add(Panel6)
         Panel4.Controls.Add(Panel5)
-        Panel4.Location = New Point(13, 580)
+        Panel4.Location = New Point(13, 600)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(85, 88)
         Panel4.TabIndex = 49
@@ -1356,17 +1404,18 @@ Partial Class Form1
         ' 
         ' Button6
         ' 
+        Button6.BackColor = Color.LemonChiffon
         Button6.Location = New Point(10, 296)
         Button6.Name = "Button6"
         Button6.Size = New Size(114, 65)
         Button6.TabIndex = 48
         Button6.Text = "1d100"
-        Button6.UseVisualStyleBackColor = True
+        Button6.UseVisualStyleBackColor = False
         Button6.Visible = False
         ' 
         ' Button7
         ' 
-        Button7.Location = New Point(10, 458)
+        Button7.Location = New Point(10, 463)
         Button7.Name = "Button7"
         Button7.Size = New Size(114, 65)
         Button7.TabIndex = 50
@@ -1383,11 +1432,137 @@ Partial Class Form1
         GroupBox1.TabStop = False
         GroupBox1.Text = "result"
         ' 
+        ' Panel7
+        ' 
+        Panel7.BackColor = SystemColors.ControlLight
+        Panel7.Location = New Point(313, -32)
+        Panel7.Name = "Panel7"
+        Panel7.Size = New Size(114, 123)
+        Panel7.TabIndex = 49
+        ' 
+        ' Panel16
+        ' 
+        Panel16.BackColor = SystemColors.ControlLight
+        Panel16.Location = New Point(399, -32)
+        Panel16.Name = "Panel16"
+        Panel16.Size = New Size(114, 123)
+        Panel16.TabIndex = 50
+        ' 
+        ' Panel17
+        ' 
+        Panel17.BackColor = SystemColors.ControlLight
+        Panel17.Location = New Point(491, -32)
+        Panel17.Name = "Panel17"
+        Panel17.Size = New Size(114, 123)
+        Panel17.TabIndex = 52
+        ' 
+        ' Panel18
+        ' 
+        Panel18.BackColor = SystemColors.ControlLight
+        Panel18.Location = New Point(585, -32)
+        Panel18.Name = "Panel18"
+        Panel18.Size = New Size(114, 123)
+        Panel18.TabIndex = 53
+        ' 
+        ' Panel19
+        ' 
+        Panel19.BackColor = SystemColors.ControlLight
+        Panel19.Location = New Point(692, -32)
+        Panel19.Name = "Panel19"
+        Panel19.Size = New Size(114, 123)
+        Panel19.TabIndex = 54
+        ' 
+        ' Panel20
+        ' 
+        Panel20.BackColor = SystemColors.ControlLight
+        Panel20.Location = New Point(798, -32)
+        Panel20.Name = "Panel20"
+        Panel20.Size = New Size(114, 123)
+        Panel20.TabIndex = 55
+        ' 
+        ' Panel21
+        ' 
+        Panel21.BackColor = SystemColors.ControlLight
+        Panel21.Controls.Add(Label10)
+        Panel21.Location = New Point(154, 7)
+        Panel21.Name = "Panel21"
+        Panel21.Size = New Size(83, 89)
+        Panel21.TabIndex = 56
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Yu Gothic UI", 16.2F)
+        Label10.Location = New Point(18, 24)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(47, 38)
+        Label10.TabIndex = 0
+        Label10.Text = "30"
+        ' 
+        ' Panel22
+        ' 
+        Panel22.BackColor = Color.DeepSkyBlue
+        Panel22.Controls.Add(Label12)
+        Panel22.Controls.Add(Panel23)
+        Panel22.Controls.Add(Panel24)
+        Panel22.Location = New Point(251, 7)
+        Panel22.Name = "Panel22"
+        Panel22.Size = New Size(44, 88)
+        Panel22.TabIndex = 53
+        ' 
+        ' Label12
+        ' 
+        Label12.Font = New Font("Segoe UI Variable Display", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.ForeColor = Color.ForestGreen
+        Label12.Location = New Point(8, 6)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(31, 23)
+        Label12.TabIndex = 52
+        Label12.Text = "2"
+        Label12.TextAlign = ContentAlignment.MiddleCenter
+        Label12.UseWaitCursor = True
+        ' 
+        ' Panel23
+        ' 
+        Panel23.BackColor = Color.Silver
+        Panel23.Location = New Point(5, 32)
+        Panel23.Name = "Panel23"
+        Panel23.Size = New Size(34, 40)
+        Panel23.TabIndex = 51
+        ' 
+        ' Panel24
+        ' 
+        Panel24.BackColor = Color.Chartreuse
+        Panel24.Location = New Point(5, 32)
+        Panel24.Name = "Panel24"
+        Panel24.Size = New Size(34, 50)
+        Panel24.TabIndex = 50
+        ' 
+        ' Label17
+        ' 
+        Label17.BackColor = Color.Aqua
+        Label17.Font = New Font("Yu Gothic UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label17.Location = New Point(12, 433)
+        Label17.Name = "Label17"
+        Label17.Size = New Size(112, 25)
+        Label17.TabIndex = 57
+        Label17.Text = "2ターン目"
+        Label17.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1342, 892)
+        Controls.Add(Label17)
+        Controls.Add(Panel22)
+        Controls.Add(Panel21)
+        Controls.Add(Panel20)
+        Controls.Add(Panel19)
+        Controls.Add(Panel18)
+        Controls.Add(Panel17)
+        Controls.Add(Panel16)
+        Controls.Add(Panel7)
         Controls.Add(GroupBox1)
         Controls.Add(Button7)
         Controls.Add(Button6)
@@ -1434,6 +1609,7 @@ Partial Class Form1
         gbAllyInfo.ResumeLayout(False)
         gbAllyInfo.PerformLayout()
         pnBattleArea.ResumeLayout(False)
+        pnBattleArea.PerformLayout()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         Panel14.ResumeLayout(False)
@@ -1481,6 +1657,9 @@ Partial Class Form1
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
         Panel4.ResumeLayout(False)
+        Panel21.ResumeLayout(False)
+        Panel21.PerformLayout()
+        Panel22.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
     Friend WithEvents btShuffleButton As Button
@@ -1594,7 +1773,6 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button2 As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
@@ -1607,5 +1785,22 @@ Partial Class Form1
     Friend WithEvents Button7 As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Panel17 As Panel
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label17 As Label
 
 End Class
