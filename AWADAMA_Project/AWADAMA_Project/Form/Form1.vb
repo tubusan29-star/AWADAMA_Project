@@ -102,6 +102,8 @@ Public Class Form1
 
         '手札選択時
         If clickedPanel.Name.Substring(0, 6) = "pnHand" Then
+            pnSelectPanelColor.Visible = False
+
             Dim clickNo = clickedPanel.Name.Substring(6, 1)
             Dim clickCardName = HandData(clickNo - 1).Name
 
@@ -130,6 +132,8 @@ Public Class Form1
 
             '味方配置選択時
         ElseIf clickedPanel.Name.Substring(0, 10) = "pnAllyCard" Then
+            pnSelectPanelColor.Visible = False
+
             Dim clickNo = clickedPanel.Name.Substring(10, 1)
             If BattleAreaAllyData(clickNo - 1).Name = "" Then
                 Dim matchingControls2 = FindControlsRecursive(Controls, "btSetCard")
@@ -326,6 +330,8 @@ Public Class Form1
                 Exit For
             End If
         Next
+
+        BattleAllyUpdate()
     End Sub
 
     Private Async Function StartUpdateTask() As Task
@@ -514,6 +520,9 @@ Public Class Form1
         Dim enemyNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_AREA_RANGE(PlayerNo))
 
         If enemyNameList IsNot Nothing Then
+            If enemyNameList.Count = 0 Then
+                Return
+            End If
             For Each name As String In enemyNameList(0)
                 Dim CardData = GetCardDataByName(name.ToString())
                 BattleAreaEnemyData.Add(CardData)
