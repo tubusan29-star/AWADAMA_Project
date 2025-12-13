@@ -47,24 +47,20 @@ Public Module Common
     ''' </summary>
     Function GetGoogleSheetData(sheet_id As String, sheet_name As String, range As String) As IList(Of IList(Of Object))
 
-        Dim service As SheetsService = Nothing
-        Dim credential As ServiceAccountCredential
-        Using stream As New FileStream("credentials.json", FileMode.Open, FileAccess.Read)
-            credential = GoogleCredential.FromStream(stream).
-                    CreateScoped(New String() {SheetsService.Scope.SpreadsheetsReadonly}).
-                    UnderlyingCredential
-        End Using
+        Dim values As IList(Of IList(Of Object)) = New List(Of IList(Of Object))
 
-        service = New SheetsService(New BaseClientService.Initializer() With {
-                .HttpClientInitializer = credential,
-                .ApplicationName = "Google Sheets API VB.NET Demo"
-            })
+        Try
 
-        Dim request As SpreadsheetsResource.ValuesResource.GetRequest =
-                service.Spreadsheets.Values.Get(sheet_id, sheet_name & "!" & range)
+            Dim request As SpreadsheetsResource.ValuesResource.GetRequest =
+                        SheetsClient.GetService().Spreadsheets.Values.Get(sheet_id, sheet_name & "!" & range)
 
-        Dim response As ValueRange = request.Execute()
-        Dim values As IList(Of IList(Of Object)) = response.Values
+            Dim response As ValueRange = request.Execute()
+
+            values = response.Values
+
+        Catch ex As Exception
+
+        End Try
 
         Return values
 
@@ -99,33 +95,68 @@ Public Module Common
     ''' </summary>
     Sub SetGoogleSheetData(sheet_id As String, sheet_name As String, range As String, values As IList(Of IList(Of Object)))
 
-        Dim service As SheetsService = Nothing
-        Dim credential As ServiceAccountCredential
-        Using stream As New FileStream("credentials.json", FileMode.Open, FileAccess.Read)
-            credential = GoogleCredential.FromStream(stream).
-                CreateScoped(New String() {SheetsService.Scope.Spreadsheets}). ' ★ 読み取り専用ではないスコープ
-                UnderlyingCredential
-        End Using
+        Try
+            Dim valueRange As New ValueRange()
+            valueRange.Values = values
 
-        ' SheetsServiceの作成
-        service = New SheetsService(New BaseClientService.Initializer() With {
-            .HttpClientInitializer = credential,
-            .ApplicationName = "Google Sheets API VB.NET Writer Demo"
-        })
+            Dim updateRequest As SpreadsheetsResource.ValuesResource.UpdateRequest =
+                SheetsClient.GetService().Spreadsheets.Values.Update(valueRange, sheet_id, sheet_name & "!" & range)
 
-        Dim valueRange As New ValueRange()
-        valueRange.Values = values
+            updateRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED
 
-        Dim updateRequest As SpreadsheetsResource.ValuesResource.UpdateRequest =
-            service.Spreadsheets.Values.Update(valueRange, sheet_id, sheet_name & "!" & range)
+            ' リクエストの実行
+            Dim response As UpdateValuesResponse = updateRequest.Execute()
+        Catch ex As Exception
 
-        updateRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.USERENTERED
-
-        ' リクエストの実行
-        Dim response As UpdateValuesResponse = updateRequest.Execute()
+        End Try
 
     End Sub
 
 #End Region
 
+End Module
+
+' VB.NET - SheetsService をキャッシュして再利用する例
+Public Module SheetsClient
+    Private _service As SheetsService = Nothing
+    Private ReadOnly lockObj As New Object()
+
+    Public Function GetService() As SheetsService
+        If _service Is Nothing Then
+            SyncLock lockObj
+                If _service Is Nothing Then
+                    Dim credential As ServiceAccountCredential
+                    Using stream As New FileStream("credentials.json", FileMode.Open, FileAccess.Read)
+                        credential = GoogleCredential.FromStream(stream).
+                            CreateScoped(New String() {SheetsService.Scope.Spreadsheets}).
+                            UnderlyingCredential
+                    End Using
+                    _service = New SheetsService(New BaseClientService.Initializer() With {
+                        .HttpClientInitializer = credential,
+                        .ApplicationName = "Google Sheets API VB.NET Demo"
+                    })
+                End If
+            End SyncLock
+        End If
+        Return _service
+    End Function
+
+    ' 簡易バックオフ付きの実行ユーティリティ
+    Public Function ExecuteWithBackoff(Of T)(action As Func(Of T)) As T
+        Dim maxAttempts = 5
+        Dim delayMs = 500
+        For attempt = 1 To maxAttempts
+            Try
+                Return action()
+            Catch ex As Google.GoogleApiException
+                If ex.HttpStatusCode = Net.HttpStatusCode.TooManyRequests And attempt < maxAttempts Then
+                    Threading.Thread.Sleep(delayMs)
+                    delayMs *= 2
+                    Continue For
+                End If
+                Throw
+            End Try
+        Next
+        Return Nothing
+    End Function
 End Module

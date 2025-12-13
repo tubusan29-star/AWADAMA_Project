@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("AWADAMA_Project"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3d72b29379ac7a3b2459df6cf74a5a5cac50686"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76af4f1d3b52137a38322b7cc7f6270f626ae242"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("AWADAMA_Project"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("AWADAMA_Project"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

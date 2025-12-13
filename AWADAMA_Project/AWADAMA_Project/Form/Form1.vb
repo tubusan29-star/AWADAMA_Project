@@ -1,32 +1,19 @@
-﻿Imports System.Reflection.Metadata
-Imports Google.Apis.Util
-Imports System.Drawing
+﻿Imports System.Drawing
+Imports System.IO
+Imports System.Reflection.Metadata
 Imports System.Windows.Forms
+Imports Google.Apis.Util
 
 Public Class Form1
     Dim UpdateInterval As Boolean = False
+    Dim PlayerNo As Integer
 
     Dim HandData As List(Of HandDataDto) = New List(Of HandDataDto)
     Dim BattleAreaAllyData As List(Of CardDataDto) = New List(Of CardDataDto)
+    Dim BattleAreaEnemyData As List(Of CardDataDto) = New List(Of CardDataDto)
     Dim ReaderData As CardDataDto = New CardDataDto()
     Dim GraveData As List(Of CardDataDto) = New List(Of CardDataDto)
     Dim SelectionCard As CardDataDto = New CardDataDto()
-
-    Public Class VerticalProgressBar
-        Inherits ProgressBar
-
-        ' 描画方向を決定するプロパティ (今回は常に縦なので不要だが、水平/垂直を選べるようにする場合に使う)
-        ' Public Enum ProgressBarDirection
-        '     Horizontal
-        '     Vertical
-        ' End Enum
-
-        ' Protected Overrides Sub OnPaint(e As PaintEventArgs)
-        '     ' 描画処理を完全にオーバーライドする必要があるが、
-        '     ' 標準の ProgressBar はオーナー描画をサポートしていないため、この方法は複雑になる。
-        ' End Sub
-
-    End Class
 
     Private Async Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -35,6 +22,8 @@ Public Class Form1
         For i As Integer = 1 To Constant.AllyCardNum
             BattleAreaAllyData.Add(New CardDataDto())
         Next
+
+        PlayerNo = FindLoginFile()
 
         Await StartUpdateTask()
 
@@ -51,11 +40,11 @@ Public Class Form1
         Dim deck As IList(Of IList(Of Object))
         Dim archive As IList(Of IList(Of Object))
 
-        deck = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_DECK, "B2:B" & Constant.MAX_CARD_CELL)
+        deck = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_DECK, MAIN_SHEET_DECK_RANGE)
 
         archive = Common.ListShuffle(Of IList(Of Object))(deck)
 
-        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, "B2:B" & Constant.MAX_CARD_CELL, archive)
+        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, MAIN_SHEET_ARCHIVE_CARD_NAME_RANGE(PlayerNo), archive)
 
     End Sub
 
@@ -67,7 +56,7 @@ Public Class Form1
 
         Dim archive As IList(Of IList(Of Object))
 
-        archive = GetGoogleSheetData(MAIN_SHEET_ID, MAIN_SHEET_NAME_ARCHIVE, "A2:C" & MAX_CARD_CELL)
+        archive = GetGoogleSheetData(MAIN_SHEET_ID, MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_ARCHIVE_RANGE(PlayerNo))
 
         Dim index = 1
         Dim drawIndex = 1
@@ -88,7 +77,7 @@ Public Class Form1
             index += 1
         Next
 
-        SetGoogleSheetData(MAIN_SHEET_ID, MAIN_SHEET_NAME_ARCHIVE, "C" & drawIndex + 1, "1")
+        SetGoogleSheetData(MAIN_SHEET_ID, MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_ARCHIVE_CARD_FRAW_FLG_COLUMN(PlayerNo) & drawIndex + 1, "1")
 
         btDeck.Text = (MAX_DECK_COUNT - disCartCount).ToString
 
@@ -97,6 +86,8 @@ Public Class Form1
         If HandData.Count >= HandCardNum Then
             lbHandMaxSign.Visible = True
         End If
+
+        SetEnemyUpdateFlg()
     End Sub
 
     Private Sub pnCard_Click(sender As Object, e As MouseEventArgs) Handles pnHand1.MouseDown, pnHand2.MouseDown, pnHand3.MouseDown, pnHand4.MouseDown, pnHand5.MouseDown, pnHand6.MouseDown _
@@ -189,7 +180,7 @@ Public Class Form1
                 coGrave.SelectedIndex = 0
                 Dim resultList As IList(Of IList(Of Object)) =
                     GraveData.Select(Function(x) CType(New List(Of Object) From {x.DeckNo.ToString(), x.Name}, IList(Of Object))).ToList()
-                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, "E2", resultList)
+                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_GRAVE_START_CELL(PlayerNo), resultList)
                 HandData.Remove(HandData.Find(Function(x) x.No = SelectionCard.DeckNo))
                 HandCardUpdate()
 
@@ -212,7 +203,7 @@ Public Class Form1
                 coGrave.SelectedIndex = 0
                 Dim resultList As IList(Of IList(Of Object)) =
                     GraveData.Select(Function(x) CType(New List(Of Object) From {x.DeckNo.ToString(), x.Name}, IList(Of Object))).ToList()
-                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, "E2", resultList)
+                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_GRAVE_START_CELL(PlayerNo), resultList)
                 Exit For
             End If
         Next
@@ -228,6 +219,8 @@ Public Class Form1
         gbAllyInfo.Visible = False
         btDiscard.Visible = False
         lbHandMaxSign.Visible = False
+
+        SetEnemyUpdateFlg()
     End Sub
 
     Private Sub btSetCard_Click(sender As Object, e As EventArgs) Handles btSetCard1.Click, btSetCard2.Click, btSetCard3.Click, btSetCard4.Click, btSetCard5.Click, btSetCard6.Click
@@ -323,15 +316,23 @@ Public Class Form1
     ''' </summary>
     ''' <returns></returns>
     Private Async Function DoUpdatesync() As Task
-        Await Task.Factory.StartNew(
-            Sub()
-                Dim updateFlgt = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_SYSTEM, "A1")
-                If updateFlgt IsNot Nothing Then
-                    If updateFlgt(0)(0).ToString() = "1" Then
-                        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_SYSTEM, "A1", "0")
-                    End If
-                End If
-            End Sub)
+        Await Task.Run(Sub()
+                           Dim allData = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ALL_DATA)
+                           If allData Is Nothing Then
+                               Return
+                           End If
+
+                           Dim requiredIndex = If(PlayerNo = Constant.PLAYER_NO_1, 0, 20)
+                           If allData.Count <= requiredIndex OrElse allData(requiredIndex) Is Nothing OrElse allData(requiredIndex).Count = 0 Then
+                               Return
+                           End If
+
+                           Dim updateFlg = allData(requiredIndex)(0)?.ToString()
+                           If updateFlg = "1" Then
+                               Me.Invoke(Sub() BattleEnemyUpdate(allData))
+                               Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_UPDATE_FLGE_CELL(PlayerNo), "0")
+                           End If
+                       End Sub)
     End Function
 
     Private Sub SetAllySelectionData(selectCardData As CardDataDto)
@@ -339,10 +340,12 @@ Public Class Form1
         lbSelectCardCost.Text = selectCardData.Cost
         lbSelectCardDefenseMax.Text = "/" & selectCardData.Defense
         lbSelectCardIntellectMax.Text = "/" & selectCardData.Intellect
-        txSelectCardDefense.Text = selectCardData.Defense
-        txSelectCardIntellect.Text = selectCardData.Intellect
+        txSelectCardDefense.Text = selectCardData.DefenseNow
+        txSelectCardIntellect.Text = selectCardData.IntellectNow
         lbSelectCardAtack.Text = selectCardData.Atack
         lbSelectCardMagic.Text = selectCardData.Magic
+        txSelectCarfAtackUpdate.Text = selectCardData.AttackUpdate
+        txSelectCardMagicUpdate.Text = selectCardData.MagicUpdate
         lbSelectCardEffect.Text = selectCardData.Effect
         lbSelectCardLine.Text = selectCardData.Line
         lbSelectCardType.Text = selectCardData.Type
@@ -401,7 +404,9 @@ Public Class Form1
             End If
         Next i
 
-        Common.SetGoogleSheetDataAsync(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, "B21", {handDataNameList.ToArray()})
+        Common.SetGoogleSheetDataAsync(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_HAND_START_CELL(PlayerNo), {handDataNameList.ToArray()})
+
+        SetEnemyUpdateFlg()
     End Sub
 
     Private Sub BattleAllyUpdate()
@@ -430,7 +435,69 @@ Public Class Form1
             End If
         Next i
 
-        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, "B13", {BattleAreaAllyData.Select(Function(x) x.Name).ToArray()})
+        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_AREA_START_CELL(PlayerNo), {BattleAreaAllyData.Select(Function(x) x.Name).ToArray()})
+
+        SetEnemyUpdateFlg()
+    End Sub
+
+    Private Sub BattleEnemyUpdate(allData As IList(Of IList(Of Object)))
+
+        Dim enemyHandNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_HAND_RANGE(PlayerNo))
+
+        If enemyHandNameList IsNot Nothing Then
+            Dim enemyHandCount = enemyHandNameList(0).Count
+
+            For i As Integer = 1 To HandCardNum
+                Dim foundpnEnemyHand As List(Of Control) = FindControlsRecursive(Me.Controls, "pnEnemyHand" & i.ToString())
+                Dim EnemyHandPanel As Panel = foundpnEnemyHand(0)
+                If i <= enemyHandCount Then
+                    EnemyHandPanel.Visible = True
+                Else
+                    EnemyHandPanel.Visible = False
+                End If
+            Next
+        End If
+
+        ' 前回データをクリア
+        BattleAreaEnemyData.Clear()
+
+        Dim enemyNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_AREA_RANGE(PlayerNo))
+
+        If enemyNameList IsNot Nothing Then
+            For Each name As String In enemyNameList(0)
+                Dim CardData = GetCardDataByName(name.ToString())
+                BattleAreaEnemyData.Add(CardData)
+            Next
+        End If
+
+        For i As Integer = 1 To Constant.EnemyCardNum
+            If BattleAreaEnemyData.Count < i Then
+                BattleAreaEnemyData.Add(New CardDataDto())
+            End If
+
+            Dim foundlbEnemyCardName As List(Of Control) = FindControlsRecursive(Me.Controls, "lbEnemyCardName" & i.ToString())
+            Dim targetlbEnemyCardName As Control = foundlbEnemyCardName(0)
+            Dim EnemyCardNameLabel As Label = targetlbEnemyCardName
+
+            Dim foundlbEnemyCardDefense As List(Of Control) = FindControlsRecursive(Me.Controls, "lbEnemyCardDefense" & i.ToString())
+            Dim targetlbEnemyCardDefense As Control = foundlbEnemyCardDefense(0)
+            Dim EnemyCardDefenseLabel As Control = targetlbEnemyCardDefense
+
+            If BattleAreaEnemyData(i - 1).Name <> "" Then
+                Dim CardData = GetCardDataByName(BattleAreaEnemyData(i - 1).Name)
+                EnemyCardNameLabel.Text = CardData.Name
+                EnemyCardDefenseLabel.Text = CardData.Defense
+                EnemyCardNameLabel.Visible = True
+                EnemyCardDefenseLabel.Visible = True
+            Else
+                EnemyCardNameLabel.Visible = False
+                EnemyCardDefenseLabel.Visible = False
+            End If
+        Next i
+    End Sub
+
+    Private Sub SetEnemyUpdateFlg()
+        Common.SetGoogleSheetDataAsync(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_UPDATE_FLGE_CELL(PlayerNo), "1")
     End Sub
 
     Private Function FindControlsRecursive(ByVal rootControls As Control.ControlCollection, ByVal searchPart As String) As List(Of Control)
@@ -448,5 +515,35 @@ Public Class Form1
         Next
 
         Return foundControls
+    End Function
+
+    ''' <summary>
+    ''' 指定されたフォルダ内で '.login' ファイルを検索し、存在する場合はそのファイル名のみを返します。
+    ''' 存在しない場合は、空の文字列を返します。
+    ''' </summary>
+    ''' <param name="searchDirectory">検索対象のフォルダパス。</param>
+    ''' <returns>見つかった '.login' ファイルのファイル名、または空の文字列。</returns>
+    Function FindLoginFile() As String
+        Try
+            Const searchPattern As String = "*.login"
+
+            Dim loginFiles() As String = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, searchPattern)
+
+            ' ファイルが見つかったか確認
+            If loginFiles.Length > 0 Then
+                Dim fullPath As String = loginFiles(0)
+
+                Dim fileNameWithExt As String = Path.GetFileName(fullPath)
+
+                Return Path.GetFileNameWithoutExtension(fileNameWithExt)
+            Else
+                Return String.Empty
+            End If
+
+        Catch ex As DirectoryNotFoundException
+            Return String.Empty
+        Catch ex As Exception
+            Return String.Empty
+        End Try
     End Function
 End Class

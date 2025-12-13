@@ -17,6 +17,11 @@
     Public Property Skill2 As String
     Public Property Skill3 As String
 
+    Public Property DefenseNow As String
+    Public Property IntellectNow As String
+    Public Property AttackUpdate As String
+    Public Property MagicUpdate As String
+
     ' -----------------------------------------------------------------
     ' コンストラクター（値を設定するための初期化処理）
     ' -----------------------------------------------------------------
@@ -51,6 +56,10 @@
         Me.Skill1 = skill1
         Me.Skill2 = skill2
         Me.Skill3 = skill3
+        Me.DefenseNow = defense
+        Me.IntellectNow = intellect
+        Me.AttackUpdate = ""
+        Me.MagicUpdate = ""
     End Sub
 
     Public Sub New()
@@ -69,5 +78,9 @@
         Me.Skill1 = ""
         Me.Skill2 = ""
         Me.Skill3 = ""
+        Me.DefenseNow = ""
+        Me.IntellectNow = ""
+        Me.AttackUpdate = ""
+        Me.MagicUpdate = ""
     End Sub
 End Class

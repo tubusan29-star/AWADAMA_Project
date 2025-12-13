@@ -24,12 +24,30 @@ Partial Class Form1
     Private Sub InitializeComponent()
         btShuffleButton = New Button()
         gbEnemyInfo = New GroupBox()
+        lbSelectCardMagicUpdateE = New Label()
+        lbSelectCarfAtackUpdateE = New Label()
+        lbSelectCardIntellectE = New Label()
+        lbSelectCardDefenseE = New Label()
+        Label1 = New Label()
+        lbSelectCardAtackE = New Label()
+        lbSelectCardMagicE = New Label()
+        lbSelectCardIntellectMaxE = New Label()
+        lbSelectCardDefenseMaxE = New Label()
+        lbSelectCardEffectE = New Label()
+        lbIntellectLabelE = New Label()
+        lbDefenseLabelE = New Label()
+        lbMagicLabelE = New Label()
+        lbAtackLabelE = New Label()
+        lbSelectCardLineE = New Label()
+        lbSelectCardTypeE = New Label()
+        lbSelectCardCostE = New Label()
+        lbSelectCardNameE = New Label()
         gbAllyInfo = New GroupBox()
         lbSelectCardFlavor = New Label()
         lbSelectCardAtack = New Label()
         lbSelectCardMagic = New Label()
-        lbSelectCardMagicUpdate = New TextBox()
-        lbSelectCarfAtackUpdate = New TextBox()
+        txSelectCardMagicUpdate = New TextBox()
+        txSelectCarfAtackUpdate = New TextBox()
         txSelectCardIntellect = New TextBox()
         lbSelectCardIntellectMax = New Label()
         txSelectCardDefense = New TextBox()
@@ -44,33 +62,39 @@ Partial Class Form1
         lbSelectCardCost = New Label()
         lbSelectCardName = New Label()
         pnBattleArea = New Panel()
+        Label19 = New Label()
+        GroupBox4 = New GroupBox()
+        ProgressBar2 = New ProgressBar()
+        ProgressBar1 = New ProgressBar()
         Label15 = New Label()
         Label14 = New Label()
         Label13 = New Label()
         GroupBox3 = New GroupBox()
         GroupBox2 = New GroupBox()
         Button5 = New Button()
+        Button6 = New Button()
+        GroupBox1 = New GroupBox()
         Panel1 = New Panel()
         TextBox1 = New TextBox()
         Label3 = New Label()
         Panel14 = New Panel()
-        Label27 = New Label()
-        Label28 = New Label()
+        lbEnemyCardDefense1 = New Label()
+        lbEnemyCardName1 = New Label()
         Panel13 = New Panel()
-        Label2 = New Label()
-        Label26 = New Label()
+        lbEnemyCardDefense2 = New Label()
+        lbEnemyCardName2 = New Label()
         Panel12 = New Panel()
-        Label9 = New Label()
-        Label24 = New Label()
+        lbEnemyCardDefense3 = New Label()
+        lbEnemyCardName3 = New Label()
         Panel11 = New Panel()
-        Label11 = New Label()
-        Label22 = New Label()
+        lbEnemyCardDefense6 = New Label()
+        lbEnemyCardName6 = New Label()
         Panel10 = New Panel()
-        Label1 = New Label()
-        Label20 = New Label()
+        lbEnemyCardDefense4 = New Label()
+        lbEnemyCardName4 = New Label()
         Panel9 = New Panel()
-        Label5 = New Label()
-        Label18 = New Label()
+        lbEnemyCardDefense5 = New Label()
+        lbEnemyCardName5 = New Label()
         Panel8 = New Panel()
         Label7 = New Label()
         Label16 = New Label()
@@ -146,15 +170,13 @@ Partial Class Form1
         Label8 = New Label()
         Panel6 = New Panel()
         Panel5 = New Panel()
-        Button6 = New Button()
         Button7 = New Button()
-        GroupBox1 = New GroupBox()
-        Panel7 = New Panel()
-        Panel16 = New Panel()
-        Panel17 = New Panel()
-        Panel18 = New Panel()
-        Panel19 = New Panel()
-        Panel20 = New Panel()
+        pnEnemyHand6 = New Panel()
+        pnEnemyHand5 = New Panel()
+        pnEnemyHand4 = New Panel()
+        pnEnemyHand3 = New Panel()
+        pnEnemyHand2 = New Panel()
+        pnEnemyHand1 = New Panel()
         Panel21 = New Panel()
         Label10 = New Label()
         Panel22 = New Panel()
@@ -162,6 +184,9 @@ Partial Class Form1
         Panel23 = New Panel()
         Panel24 = New Panel()
         Label17 = New Label()
+        Panel25 = New Panel()
+        Panel26 = New Panel()
+        gbEnemyInfo.SuspendLayout()
         gbAllyInfo.SuspendLayout()
         pnBattleArea.SuspendLayout()
         Panel1.SuspendLayout()
@@ -190,6 +215,7 @@ Partial Class Form1
         Panel4.SuspendLayout()
         Panel21.SuspendLayout()
         Panel22.SuspendLayout()
+        Panel25.SuspendLayout()
         SuspendLayout()
         ' 
         ' btShuffleButton
@@ -203,7 +229,26 @@ Partial Class Form1
         ' 
         ' gbEnemyInfo
         ' 
-        gbEnemyInfo.Location = New Point(951, 7)
+        gbEnemyInfo.BackColor = SystemColors.Control
+        gbEnemyInfo.Controls.Add(lbSelectCardMagicUpdateE)
+        gbEnemyInfo.Controls.Add(lbSelectCarfAtackUpdateE)
+        gbEnemyInfo.Controls.Add(lbSelectCardIntellectE)
+        gbEnemyInfo.Controls.Add(lbSelectCardDefenseE)
+        gbEnemyInfo.Controls.Add(Label1)
+        gbEnemyInfo.Controls.Add(lbSelectCardAtackE)
+        gbEnemyInfo.Controls.Add(lbSelectCardMagicE)
+        gbEnemyInfo.Controls.Add(lbSelectCardIntellectMaxE)
+        gbEnemyInfo.Controls.Add(lbSelectCardDefenseMaxE)
+        gbEnemyInfo.Controls.Add(lbSelectCardEffectE)
+        gbEnemyInfo.Controls.Add(lbIntellectLabelE)
+        gbEnemyInfo.Controls.Add(lbDefenseLabelE)
+        gbEnemyInfo.Controls.Add(lbMagicLabelE)
+        gbEnemyInfo.Controls.Add(lbAtackLabelE)
+        gbEnemyInfo.Controls.Add(lbSelectCardLineE)
+        gbEnemyInfo.Controls.Add(lbSelectCardTypeE)
+        gbEnemyInfo.Controls.Add(lbSelectCardCostE)
+        gbEnemyInfo.Controls.Add(lbSelectCardNameE)
+        gbEnemyInfo.Location = New Point(951, 20)
         gbEnemyInfo.Name = "gbEnemyInfo"
         gbEnemyInfo.Size = New Size(375, 373)
         gbEnemyInfo.TabIndex = 2
@@ -211,13 +256,177 @@ Partial Class Form1
         gbEnemyInfo.Text = "敵情報"
         gbEnemyInfo.Visible = False
         ' 
+        ' lbSelectCardMagicUpdateE
+        ' 
+        lbSelectCardMagicUpdateE.Location = New Point(77, 205)
+        lbSelectCardMagicUpdateE.Name = "lbSelectCardMagicUpdateE"
+        lbSelectCardMagicUpdateE.Size = New Size(39, 22)
+        lbSelectCardMagicUpdateE.TabIndex = 54
+        lbSelectCardMagicUpdateE.Text = "+20"
+        lbSelectCardMagicUpdateE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbSelectCarfAtackUpdateE
+        ' 
+        lbSelectCarfAtackUpdateE.Location = New Point(77, 178)
+        lbSelectCarfAtackUpdateE.Name = "lbSelectCarfAtackUpdateE"
+        lbSelectCarfAtackUpdateE.Size = New Size(39, 22)
+        lbSelectCarfAtackUpdateE.TabIndex = 53
+        lbSelectCarfAtackUpdateE.Text = "+20"
+        lbSelectCarfAtackUpdateE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbSelectCardIntellectE
+        ' 
+        lbSelectCardIntellectE.Font = New Font("Yu Gothic UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
+        lbSelectCardIntellectE.Location = New Point(188, 131)
+        lbSelectCardIntellectE.Name = "lbSelectCardIntellectE"
+        lbSelectCardIntellectE.Size = New Size(39, 22)
+        lbSelectCardIntellectE.TabIndex = 52
+        lbSelectCardIntellectE.Text = "20"
+        lbSelectCardIntellectE.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lbSelectCardDefenseE
+        ' 
+        lbSelectCardDefenseE.Font = New Font("Yu Gothic UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
+        lbSelectCardDefenseE.Location = New Point(13, 130)
+        lbSelectCardDefenseE.Name = "lbSelectCardDefenseE"
+        lbSelectCardDefenseE.Size = New Size(39, 22)
+        lbSelectCardDefenseE.TabIndex = 51
+        lbSelectCardDefenseE.Text = "20"
+        lbSelectCardDefenseE.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label1
+        ' 
+        Label1.BackColor = SystemColors.ControlLightLight
+        Label1.Location = New Point(4, 343)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(367, 25)
+        Label1.TabIndex = 50
+        Label1.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lbSelectCardAtackE
+        ' 
+        lbSelectCardAtackE.Location = New Point(41, 178)
+        lbSelectCardAtackE.Name = "lbSelectCardAtackE"
+        lbSelectCardAtackE.Size = New Size(39, 22)
+        lbSelectCardAtackE.TabIndex = 49
+        lbSelectCardAtackE.Text = "20"
+        lbSelectCardAtackE.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lbSelectCardMagicE
+        ' 
+        lbSelectCardMagicE.Location = New Point(41, 205)
+        lbSelectCardMagicE.Name = "lbSelectCardMagicE"
+        lbSelectCardMagicE.Size = New Size(39, 22)
+        lbSelectCardMagicE.TabIndex = 48
+        lbSelectCardMagicE.Text = "20"
+        lbSelectCardMagicE.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lbSelectCardIntellectMaxE
+        ' 
+        lbSelectCardIntellectMaxE.Location = New Point(233, 137)
+        lbSelectCardIntellectMaxE.Name = "lbSelectCardIntellectMaxE"
+        lbSelectCardIntellectMaxE.Size = New Size(39, 22)
+        lbSelectCardIntellectMaxE.TabIndex = 44
+        lbSelectCardIntellectMaxE.Text = "/20"
+        lbSelectCardIntellectMaxE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbSelectCardDefenseMaxE
+        ' 
+        lbSelectCardDefenseMaxE.Location = New Point(58, 137)
+        lbSelectCardDefenseMaxE.Name = "lbSelectCardDefenseMaxE"
+        lbSelectCardDefenseMaxE.Size = New Size(39, 22)
+        lbSelectCardDefenseMaxE.TabIndex = 42
+        lbSelectCardDefenseMaxE.Text = "/20"
+        lbSelectCardDefenseMaxE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbSelectCardEffectE
+        ' 
+        lbSelectCardEffectE.BorderStyle = BorderStyle.FixedSingle
+        lbSelectCardEffectE.Location = New Point(2, 235)
+        lbSelectCardEffectE.Name = "lbSelectCardEffectE"
+        lbSelectCardEffectE.Size = New Size(369, 106)
+        lbSelectCardEffectE.TabIndex = 41
+        ' 
+        ' lbIntellectLabelE
+        ' 
+        lbIntellectLabelE.Location = New Point(176, 102)
+        lbIntellectLabelE.Name = "lbIntellectLabelE"
+        lbIntellectLabelE.Size = New Size(40, 27)
+        lbIntellectLabelE.TabIndex = 40
+        lbIntellectLabelE.Text = "理知"
+        lbIntellectLabelE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbDefenseLabelE
+        ' 
+        lbDefenseLabelE.Location = New Point(4, 102)
+        lbDefenseLabelE.Name = "lbDefenseLabelE"
+        lbDefenseLabelE.Size = New Size(40, 27)
+        lbDefenseLabelE.TabIndex = 39
+        lbDefenseLabelE.Text = "耐久"
+        lbDefenseLabelE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbMagicLabelE
+        ' 
+        lbMagicLabelE.Location = New Point(4, 203)
+        lbMagicLabelE.Name = "lbMagicLabelE"
+        lbMagicLabelE.Size = New Size(40, 27)
+        lbMagicLabelE.TabIndex = 38
+        lbMagicLabelE.Text = "魔力"
+        lbMagicLabelE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbAtackLabelE
+        ' 
+        lbAtackLabelE.Location = New Point(4, 174)
+        lbAtackLabelE.Name = "lbAtackLabelE"
+        lbAtackLabelE.Size = New Size(40, 27)
+        lbAtackLabelE.TabIndex = 37
+        lbAtackLabelE.Text = "武力"
+        lbAtackLabelE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbSelectCardLineE
+        ' 
+        lbSelectCardLineE.Location = New Point(290, 205)
+        lbSelectCardLineE.Name = "lbSelectCardLineE"
+        lbSelectCardLineE.Size = New Size(81, 27)
+        lbSelectCardLineE.TabIndex = 36
+        lbSelectCardLineE.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' lbSelectCardTypeE
+        ' 
+        lbSelectCardTypeE.Location = New Point(4, 22)
+        lbSelectCardTypeE.Name = "lbSelectCardTypeE"
+        lbSelectCardTypeE.Size = New Size(170, 27)
+        lbSelectCardTypeE.TabIndex = 34
+        lbSelectCardTypeE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' lbSelectCardCostE
+        ' 
+        lbSelectCardCostE.BorderStyle = BorderStyle.FixedSingle
+        lbSelectCardCostE.Font = New Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
+        lbSelectCardCostE.Location = New Point(336, 10)
+        lbSelectCardCostE.Name = "lbSelectCardCostE"
+        lbSelectCardCostE.Size = New Size(39, 38)
+        lbSelectCardCostE.TabIndex = 35
+        lbSelectCardCostE.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' lbSelectCardNameE
+        ' 
+        lbSelectCardNameE.BackColor = Color.LightCoral
+        lbSelectCardNameE.Font = New Font("Yu Gothic UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
+        lbSelectCardNameE.Location = New Point(0, 51)
+        lbSelectCardNameE.Name = "lbSelectCardNameE"
+        lbSelectCardNameE.Size = New Size(374, 49)
+        lbSelectCardNameE.TabIndex = 33
+        lbSelectCardNameE.TextAlign = ContentAlignment.MiddleLeft
+        ' 
         ' gbAllyInfo
         ' 
+        gbAllyInfo.BackColor = SystemColors.Control
         gbAllyInfo.Controls.Add(lbSelectCardFlavor)
         gbAllyInfo.Controls.Add(lbSelectCardAtack)
         gbAllyInfo.Controls.Add(lbSelectCardMagic)
-        gbAllyInfo.Controls.Add(lbSelectCardMagicUpdate)
-        gbAllyInfo.Controls.Add(lbSelectCarfAtackUpdate)
+        gbAllyInfo.Controls.Add(txSelectCardMagicUpdate)
+        gbAllyInfo.Controls.Add(txSelectCarfAtackUpdate)
         gbAllyInfo.Controls.Add(txSelectCardIntellect)
         gbAllyInfo.Controls.Add(lbSelectCardIntellectMax)
         gbAllyInfo.Controls.Add(txSelectCardDefense)
@@ -231,7 +440,7 @@ Partial Class Form1
         gbAllyInfo.Controls.Add(lbSelectCardType)
         gbAllyInfo.Controls.Add(lbSelectCardCost)
         gbAllyInfo.Controls.Add(lbSelectCardName)
-        gbAllyInfo.Location = New Point(953, 486)
+        gbAllyInfo.Location = New Point(8, 13)
         gbAllyInfo.Name = "gbAllyInfo"
         gbAllyInfo.Size = New Size(375, 377)
         gbAllyInfo.TabIndex = 3
@@ -254,7 +463,7 @@ Partial Class Form1
         lbSelectCardAtack.Name = "lbSelectCardAtack"
         lbSelectCardAtack.Size = New Size(39, 22)
         lbSelectCardAtack.TabIndex = 31
-        lbSelectCardAtack.TextAlign = ContentAlignment.MiddleLeft
+        lbSelectCardAtack.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' lbSelectCardMagic
         ' 
@@ -262,24 +471,24 @@ Partial Class Form1
         lbSelectCardMagic.Name = "lbSelectCardMagic"
         lbSelectCardMagic.Size = New Size(39, 22)
         lbSelectCardMagic.TabIndex = 30
-        lbSelectCardMagic.TextAlign = ContentAlignment.MiddleLeft
+        lbSelectCardMagic.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' lbSelectCardMagicUpdate
+        ' txSelectCardMagicUpdate
         ' 
-        lbSelectCardMagicUpdate.Location = New Point(88, 207)
-        lbSelectCardMagicUpdate.MaxLength = 4
-        lbSelectCardMagicUpdate.Name = "lbSelectCardMagicUpdate"
-        lbSelectCardMagicUpdate.Size = New Size(52, 27)
-        lbSelectCardMagicUpdate.TabIndex = 29
-        lbSelectCardMagicUpdate.TextAlign = HorizontalAlignment.Center
+        txSelectCardMagicUpdate.Location = New Point(88, 207)
+        txSelectCardMagicUpdate.MaxLength = 4
+        txSelectCardMagicUpdate.Name = "txSelectCardMagicUpdate"
+        txSelectCardMagicUpdate.Size = New Size(52, 27)
+        txSelectCardMagicUpdate.TabIndex = 29
+        txSelectCardMagicUpdate.TextAlign = HorizontalAlignment.Center
         ' 
-        ' lbSelectCarfAtackUpdate
+        ' txSelectCarfAtackUpdate
         ' 
-        lbSelectCarfAtackUpdate.Location = New Point(88, 175)
-        lbSelectCarfAtackUpdate.MaxLength = 4
-        lbSelectCarfAtackUpdate.Name = "lbSelectCarfAtackUpdate"
-        lbSelectCarfAtackUpdate.Size = New Size(52, 27)
-        lbSelectCarfAtackUpdate.TabIndex = 28
+        txSelectCarfAtackUpdate.Location = New Point(88, 175)
+        txSelectCarfAtackUpdate.MaxLength = 4
+        txSelectCarfAtackUpdate.Name = "txSelectCarfAtackUpdate"
+        txSelectCarfAtackUpdate.Size = New Size(52, 27)
+        txSelectCarfAtackUpdate.TabIndex = 28
         ' 
         ' txSelectCardIntellect
         ' 
@@ -377,7 +586,7 @@ Partial Class Form1
         ' lbSelectCardCost
         ' 
         lbSelectCardCost.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardCost.Font = New Font("Yu Gothic UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
+        lbSelectCardCost.Font = New Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
         lbSelectCardCost.Location = New Point(336, 10)
         lbSelectCardCost.Name = "lbSelectCardCost"
         lbSelectCardCost.Size = New Size(39, 38)
@@ -388,25 +597,66 @@ Partial Class Form1
         ' 
         lbSelectCardName.BackColor = Color.LightCyan
         lbSelectCardName.Font = New Font("Yu Gothic UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
-        lbSelectCardName.Location = New Point(6, 54)
+        lbSelectCardName.Location = New Point(1, 53)
         lbSelectCardName.Name = "lbSelectCardName"
-        lbSelectCardName.Size = New Size(367, 49)
+        lbSelectCardName.Size = New Size(372, 49)
         lbSelectCardName.TabIndex = 0
         lbSelectCardName.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' pnBattleArea
         ' 
+        pnBattleArea.BackColor = Color.SkyBlue
         pnBattleArea.BorderStyle = BorderStyle.FixedSingle
+        pnBattleArea.Controls.Add(Label19)
+        pnBattleArea.Controls.Add(GroupBox4)
+        pnBattleArea.Controls.Add(ProgressBar2)
+        pnBattleArea.Controls.Add(ProgressBar1)
         pnBattleArea.Controls.Add(Label15)
         pnBattleArea.Controls.Add(Label14)
         pnBattleArea.Controls.Add(Label13)
         pnBattleArea.Controls.Add(GroupBox3)
         pnBattleArea.Controls.Add(GroupBox2)
         pnBattleArea.Controls.Add(Button5)
+        pnBattleArea.Controls.Add(Button6)
+        pnBattleArea.Controls.Add(GroupBox1)
         pnBattleArea.Location = New Point(144, 111)
         pnBattleArea.Name = "pnBattleArea"
         pnBattleArea.Size = New Size(790, 438)
         pnBattleArea.TabIndex = 4
+        ' 
+        ' Label19
+        ' 
+        Label19.AutoSize = True
+        Label19.Location = New Point(694, 292)
+        Label19.Name = "Label19"
+        Label19.Size = New Size(50, 20)
+        Label19.TabIndex = 59
+        Label19.Text = "1d100"
+        ' 
+        ' GroupBox4
+        ' 
+        GroupBox4.Location = New Point(669, 323)
+        GroupBox4.Name = "GroupBox4"
+        GroupBox4.Size = New Size(106, 60)
+        GroupBox4.TabIndex = 52
+        GroupBox4.TabStop = False
+        GroupBox4.Text = "result"
+        ' 
+        ' ProgressBar2
+        ' 
+        ProgressBar2.Location = New Point(666, 269)
+        ProgressBar2.Name = "ProgressBar2"
+        ProgressBar2.Size = New Size(109, 10)
+        ProgressBar2.TabIndex = 58
+        ProgressBar2.Value = 70
+        ' 
+        ' ProgressBar1
+        ' 
+        ProgressBar1.Location = New Point(11, 269)
+        ProgressBar1.Name = "ProgressBar1"
+        ProgressBar1.Size = New Size(109, 10)
+        ProgressBar1.TabIndex = 57
+        ProgressBar1.Value = 70
         ' 
         ' Label15
         ' 
@@ -456,13 +706,33 @@ Partial Class Form1
         ' Button5
         ' 
         Button5.BackColor = Color.LightCoral
+        Button5.FlatStyle = FlatStyle.Popup
         Button5.Location = New Point(9, 19)
         Button5.Name = "Button5"
         Button5.Size = New Size(108, 29)
         Button5.TabIndex = 47
         Button5.Text = "APダイス"
         Button5.UseVisualStyleBackColor = False
-        Button5.Visible = False
+        ' 
+        ' Button6
+        ' 
+        Button6.BackColor = Color.LemonChiffon
+        Button6.FlatStyle = FlatStyle.Popup
+        Button6.Location = New Point(9, 288)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(108, 29)
+        Button6.TabIndex = 48
+        Button6.Text = "1d100"
+        Button6.UseVisualStyleBackColor = False
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Location = New Point(11, 323)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(106, 60)
+        GroupBox1.TabIndex = 51
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "result"
         ' 
         ' Panel1
         ' 
@@ -476,7 +746,7 @@ Partial Class Form1
         ' 
         ' TextBox1
         ' 
-        TextBox1.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
+        TextBox1.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
         TextBox1.Location = New Point(3, 93)
         TextBox1.MaxLength = 3
         TextBox1.Name = "TextBox1"
@@ -493,174 +763,175 @@ Partial Class Form1
         Label3.Size = New Size(49, 20)
         Label3.TabIndex = 0
         Label3.Text = "aaaaa"
+        Label3.Visible = False
         ' 
         ' Panel14
         ' 
         Panel14.BackColor = SystemColors.ControlLight
-        Panel14.Controls.Add(Label27)
-        Panel14.Controls.Add(Label28)
+        Panel14.Controls.Add(lbEnemyCardDefense1)
+        Panel14.Controls.Add(lbEnemyCardName1)
         Panel14.Location = New Point(568, 126)
         Panel14.Name = "Panel14"
         Panel14.Size = New Size(114, 123)
         Panel14.TabIndex = 31
         ' 
-        ' Label27
+        ' lbEnemyCardDefense1
         ' 
-        Label27.Location = New Point(3, 97)
-        Label27.Name = "Label27"
-        Label27.Size = New Size(108, 25)
-        Label27.TabIndex = 1
-        Label27.TextAlign = ContentAlignment.MiddleRight
+        lbEnemyCardDefense1.Location = New Point(3, 97)
+        lbEnemyCardDefense1.Name = "lbEnemyCardDefense1"
+        lbEnemyCardDefense1.Size = New Size(108, 25)
+        lbEnemyCardDefense1.TabIndex = 1
+        lbEnemyCardDefense1.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label28
+        ' lbEnemyCardName1
         ' 
-        Label28.AutoSize = True
-        Label28.Location = New Point(3, 23)
-        Label28.Name = "Label28"
-        Label28.Size = New Size(49, 20)
-        Label28.TabIndex = 0
-        Label28.Text = "eeeee"
-        Label28.Visible = False
+        lbEnemyCardName1.AutoSize = True
+        lbEnemyCardName1.Location = New Point(3, 1)
+        lbEnemyCardName1.Name = "lbEnemyCardName1"
+        lbEnemyCardName1.Size = New Size(49, 20)
+        lbEnemyCardName1.TabIndex = 0
+        lbEnemyCardName1.Text = "eeeee"
+        lbEnemyCardName1.Visible = False
         ' 
         ' Panel13
         ' 
         Panel13.BackColor = SystemColors.ControlLight
-        Panel13.Controls.Add(Label2)
-        Panel13.Controls.Add(Label26)
+        Panel13.Controls.Add(lbEnemyCardDefense2)
+        Panel13.Controls.Add(lbEnemyCardName2)
         Panel13.Location = New Point(568, 255)
         Panel13.Name = "Panel13"
         Panel13.Size = New Size(114, 123)
         Panel13.TabIndex = 31
         ' 
-        ' Label2
+        ' lbEnemyCardDefense2
         ' 
-        Label2.Location = New Point(3, 96)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(108, 25)
-        Label2.TabIndex = 2
-        Label2.TextAlign = ContentAlignment.MiddleRight
+        lbEnemyCardDefense2.Location = New Point(3, 96)
+        lbEnemyCardDefense2.Name = "lbEnemyCardDefense2"
+        lbEnemyCardDefense2.Size = New Size(108, 25)
+        lbEnemyCardDefense2.TabIndex = 2
+        lbEnemyCardDefense2.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label26
+        ' lbEnemyCardName2
         ' 
-        Label26.AutoSize = True
-        Label26.Location = New Point(3, 23)
-        Label26.Name = "Label26"
-        Label26.Size = New Size(49, 20)
-        Label26.TabIndex = 0
-        Label26.Text = "eeeee"
-        Label26.Visible = False
+        lbEnemyCardName2.AutoSize = True
+        lbEnemyCardName2.Location = New Point(3, 1)
+        lbEnemyCardName2.Name = "lbEnemyCardName2"
+        lbEnemyCardName2.Size = New Size(49, 20)
+        lbEnemyCardName2.TabIndex = 0
+        lbEnemyCardName2.Text = "eeeee"
+        lbEnemyCardName2.Visible = False
         ' 
         ' Panel12
         ' 
         Panel12.BackColor = SystemColors.ControlLight
-        Panel12.Controls.Add(Label9)
-        Panel12.Controls.Add(Label24)
+        Panel12.Controls.Add(lbEnemyCardDefense3)
+        Panel12.Controls.Add(lbEnemyCardName3)
         Panel12.Location = New Point(568, 386)
         Panel12.Name = "Panel12"
         Panel12.Size = New Size(114, 123)
         Panel12.TabIndex = 31
         ' 
-        ' Label9
+        ' lbEnemyCardDefense3
         ' 
-        Label9.Location = New Point(3, 96)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(108, 25)
-        Label9.TabIndex = 2
-        Label9.TextAlign = ContentAlignment.MiddleRight
+        lbEnemyCardDefense3.Location = New Point(3, 96)
+        lbEnemyCardDefense3.Name = "lbEnemyCardDefense3"
+        lbEnemyCardDefense3.Size = New Size(108, 25)
+        lbEnemyCardDefense3.TabIndex = 2
+        lbEnemyCardDefense3.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label24
+        ' lbEnemyCardName3
         ' 
-        Label24.AutoSize = True
-        Label24.Location = New Point(3, 23)
-        Label24.Name = "Label24"
-        Label24.Size = New Size(49, 20)
-        Label24.TabIndex = 0
-        Label24.Text = "eeeee"
-        Label24.Visible = False
+        lbEnemyCardName3.AutoSize = True
+        lbEnemyCardName3.Location = New Point(3, 1)
+        lbEnemyCardName3.Name = "lbEnemyCardName3"
+        lbEnemyCardName3.Size = New Size(49, 20)
+        lbEnemyCardName3.TabIndex = 0
+        lbEnemyCardName3.Text = "eeeee"
+        lbEnemyCardName3.Visible = False
         ' 
         ' Panel11
         ' 
         Panel11.BackColor = SystemColors.ControlLight
-        Panel11.Controls.Add(Label11)
-        Panel11.Controls.Add(Label22)
+        Panel11.Controls.Add(lbEnemyCardDefense6)
+        Panel11.Controls.Add(lbEnemyCardName6)
         Panel11.Location = New Point(688, 386)
         Panel11.Name = "Panel11"
         Panel11.Size = New Size(114, 123)
         Panel11.TabIndex = 31
         ' 
-        ' Label11
+        ' lbEnemyCardDefense6
         ' 
-        Label11.Location = New Point(3, 96)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(108, 25)
-        Label11.TabIndex = 3
-        Label11.TextAlign = ContentAlignment.MiddleRight
+        lbEnemyCardDefense6.Location = New Point(3, 96)
+        lbEnemyCardDefense6.Name = "lbEnemyCardDefense6"
+        lbEnemyCardDefense6.Size = New Size(108, 25)
+        lbEnemyCardDefense6.TabIndex = 3
+        lbEnemyCardDefense6.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label22
+        ' lbEnemyCardName6
         ' 
-        Label22.AutoSize = True
-        Label22.Location = New Point(3, 23)
-        Label22.Name = "Label22"
-        Label22.Size = New Size(49, 20)
-        Label22.TabIndex = 0
-        Label22.Text = "eeeee"
-        Label22.Visible = False
+        lbEnemyCardName6.AutoSize = True
+        lbEnemyCardName6.Location = New Point(3, 1)
+        lbEnemyCardName6.Name = "lbEnemyCardName6"
+        lbEnemyCardName6.Size = New Size(49, 20)
+        lbEnemyCardName6.TabIndex = 0
+        lbEnemyCardName6.Text = "eeeee"
+        lbEnemyCardName6.Visible = False
         ' 
         ' Panel10
         ' 
         Panel10.BackColor = SystemColors.ControlLight
-        Panel10.Controls.Add(Label1)
-        Panel10.Controls.Add(Label20)
+        Panel10.Controls.Add(lbEnemyCardDefense4)
+        Panel10.Controls.Add(lbEnemyCardName4)
         Panel10.Location = New Point(688, 127)
         Panel10.Name = "Panel10"
         Panel10.Size = New Size(114, 123)
         Panel10.TabIndex = 31
         ' 
-        ' Label1
+        ' lbEnemyCardDefense4
         ' 
-        Label1.Location = New Point(3, 96)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(108, 25)
-        Label1.TabIndex = 2
-        Label1.TextAlign = ContentAlignment.MiddleRight
+        lbEnemyCardDefense4.Location = New Point(3, 96)
+        lbEnemyCardDefense4.Name = "lbEnemyCardDefense4"
+        lbEnemyCardDefense4.Size = New Size(108, 25)
+        lbEnemyCardDefense4.TabIndex = 2
+        lbEnemyCardDefense4.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label20
+        ' lbEnemyCardName4
         ' 
-        Label20.AutoSize = True
-        Label20.Location = New Point(3, 23)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(49, 20)
-        Label20.TabIndex = 0
-        Label20.Text = "eeeee"
-        Label20.Visible = False
+        lbEnemyCardName4.AutoSize = True
+        lbEnemyCardName4.Location = New Point(3, 1)
+        lbEnemyCardName4.Name = "lbEnemyCardName4"
+        lbEnemyCardName4.Size = New Size(49, 20)
+        lbEnemyCardName4.TabIndex = 0
+        lbEnemyCardName4.Text = "eeeee"
+        lbEnemyCardName4.Visible = False
         ' 
         ' Panel9
         ' 
         Panel9.BackColor = SystemColors.ControlLight
-        Panel9.Controls.Add(Label5)
-        Panel9.Controls.Add(Label18)
+        Panel9.Controls.Add(lbEnemyCardDefense5)
+        Panel9.Controls.Add(lbEnemyCardName5)
         Panel9.Location = New Point(688, 255)
         Panel9.Name = "Panel9"
         Panel9.Size = New Size(114, 123)
         Panel9.TabIndex = 30
         ' 
-        ' Label5
+        ' lbEnemyCardDefense5
         ' 
-        Label5.Location = New Point(3, 96)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(108, 25)
-        Label5.TabIndex = 3
-        Label5.TextAlign = ContentAlignment.MiddleRight
+        lbEnemyCardDefense5.Location = New Point(3, 96)
+        lbEnemyCardDefense5.Name = "lbEnemyCardDefense5"
+        lbEnemyCardDefense5.Size = New Size(108, 25)
+        lbEnemyCardDefense5.TabIndex = 3
+        lbEnemyCardDefense5.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' Label18
+        ' lbEnemyCardName5
         ' 
-        Label18.AutoSize = True
-        Label18.Location = New Point(3, 23)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(49, 20)
-        Label18.TabIndex = 0
-        Label18.Text = "eeeee"
-        Label18.Visible = False
+        lbEnemyCardName5.AutoSize = True
+        lbEnemyCardName5.Location = New Point(3, 1)
+        lbEnemyCardName5.Name = "lbEnemyCardName5"
+        lbEnemyCardName5.Size = New Size(49, 20)
+        lbEnemyCardName5.TabIndex = 0
+        lbEnemyCardName5.Text = "eeeee"
+        lbEnemyCardName5.Visible = False
         ' 
         ' Panel8
         ' 
@@ -678,12 +949,12 @@ Partial Class Form1
         Label7.Name = "Label7"
         Label7.Size = New Size(108, 25)
         Label7.TabIndex = 3
-        Label7.TextAlign = ContentAlignment.MiddleRight
+        Label7.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label16
         ' 
         Label16.AutoSize = True
-        Label16.Location = New Point(3, 23)
+        Label16.Location = New Point(3, 1)
         Label16.Name = "Label16"
         Label16.Size = New Size(49, 20)
         Label16.TabIndex = 0
@@ -713,7 +984,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense3
         ' 
-        txAllyCardDefense3.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
+        txAllyCardDefense3.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
         txAllyCardDefense3.Location = New Point(3, 92)
         txAllyCardDefense3.MaxLength = 3
         txAllyCardDefense3.Name = "txAllyCardDefense3"
@@ -730,6 +1001,7 @@ Partial Class Form1
         lbAllyCardName3.Size = New Size(57, 20)
         lbAllyCardName3.TabIndex = 0
         lbAllyCardName3.Text = "aaaaaa"
+        lbAllyCardName3.Visible = False
         ' 
         ' pnAllyCard2
         ' 
@@ -754,7 +1026,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense2
         ' 
-        txAllyCardDefense2.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
+        txAllyCardDefense2.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
         txAllyCardDefense2.Location = New Point(3, 91)
         txAllyCardDefense2.MaxLength = 3
         txAllyCardDefense2.Name = "txAllyCardDefense2"
@@ -771,6 +1043,7 @@ Partial Class Form1
         lbAllyCardName2.Size = New Size(49, 20)
         lbAllyCardName2.TabIndex = 0
         lbAllyCardName2.Text = "aaaaa"
+        lbAllyCardName2.Visible = False
         ' 
         ' pnAllyCard1
         ' 
@@ -795,7 +1068,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense1
         ' 
-        txAllyCardDefense1.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
+        txAllyCardDefense1.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
         txAllyCardDefense1.Location = New Point(3, 92)
         txAllyCardDefense1.MaxLength = 3
         txAllyCardDefense1.Name = "txAllyCardDefense1"
@@ -807,11 +1080,12 @@ Partial Class Form1
         ' lbAllyCardName1
         ' 
         lbAllyCardName1.AutoSize = True
-        lbAllyCardName1.Location = New Point(3, 2)
+        lbAllyCardName1.Location = New Point(3, 1)
         lbAllyCardName1.Name = "lbAllyCardName1"
         lbAllyCardName1.Size = New Size(57, 20)
         lbAllyCardName1.TabIndex = 0
         lbAllyCardName1.Text = "aaaaaa"
+        lbAllyCardName1.Visible = False
         ' 
         ' pnAllyCard6
         ' 
@@ -836,7 +1110,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense6
         ' 
-        txAllyCardDefense6.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
+        txAllyCardDefense6.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
         txAllyCardDefense6.Location = New Point(3, 93)
         txAllyCardDefense6.MaxLength = 3
         txAllyCardDefense6.Name = "txAllyCardDefense6"
@@ -848,11 +1122,12 @@ Partial Class Form1
         ' lbAllyCardName6
         ' 
         lbAllyCardName6.AutoSize = True
-        lbAllyCardName6.Location = New Point(3, 2)
+        lbAllyCardName6.Location = New Point(3, 1)
         lbAllyCardName6.Name = "lbAllyCardName6"
         lbAllyCardName6.Size = New Size(49, 20)
         lbAllyCardName6.TabIndex = 0
         lbAllyCardName6.Text = "aaaaa"
+        lbAllyCardName6.Visible = False
         ' 
         ' pnAllyCard4
         ' 
@@ -877,7 +1152,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense4
         ' 
-        txAllyCardDefense4.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
+        txAllyCardDefense4.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
         txAllyCardDefense4.Location = New Point(3, 92)
         txAllyCardDefense4.MaxLength = 3
         txAllyCardDefense4.Name = "txAllyCardDefense4"
@@ -894,6 +1169,7 @@ Partial Class Form1
         lbAllyCardName4.Size = New Size(49, 20)
         lbAllyCardName4.TabIndex = 0
         lbAllyCardName4.Text = "aaaaa"
+        lbAllyCardName4.Visible = False
         ' 
         ' pnAllyCard5
         ' 
@@ -918,7 +1194,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense5
         ' 
-        txAllyCardDefense5.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
+        txAllyCardDefense5.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
         txAllyCardDefense5.Location = New Point(3, 93)
         txAllyCardDefense5.MaxLength = 3
         txAllyCardDefense5.Name = "txAllyCardDefense5"
@@ -930,11 +1206,12 @@ Partial Class Form1
         ' lbAllyCardName5
         ' 
         lbAllyCardName5.AutoSize = True
-        lbAllyCardName5.Location = New Point(3, 2)
+        lbAllyCardName5.Location = New Point(3, 1)
         lbAllyCardName5.Name = "lbAllyCardName5"
         lbAllyCardName5.Size = New Size(49, 20)
         lbAllyCardName5.TabIndex = 0
         lbAllyCardName5.Text = "aaaaa"
+        lbAllyCardName5.Visible = False
         ' 
         ' btDeck
         ' 
@@ -982,7 +1259,7 @@ Partial Class Form1
         ' lbHandMaxSign
         ' 
         lbHandMaxSign.BackColor = Color.Transparent
-        lbHandMaxSign.Font = New Font("Yu Gothic UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lbHandMaxSign.Font = New Font("Yu Gothic UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lbHandMaxSign.ForeColor = Color.Red
         lbHandMaxSign.Location = New Point(876, 561)
         lbHandMaxSign.Name = "lbHandMaxSign"
@@ -1020,7 +1297,7 @@ Partial Class Form1
         ' 
         ' btDiscard
         ' 
-        btDiscard.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btDiscard.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         btDiscard.Location = New Point(110, 688)
         btDiscard.Name = "btDiscard"
         btDiscard.Size = New Size(29, 24)
@@ -1277,7 +1554,7 @@ Partial Class Form1
         ' 
         ' btReturnHand
         ' 
-        btReturnHand.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btReturnHand.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         btReturnHand.Location = New Point(116, 569)
         btReturnHand.Name = "btReturnHand"
         btReturnHand.Size = New Size(29, 27)
@@ -1292,7 +1569,7 @@ Partial Class Form1
         Panel2.BackColor = SystemColors.ControlLight
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(Label4)
-        Panel2.Location = New Point(10, 149)
+        Panel2.Location = New Point(8, 408)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(114, 123)
         Panel2.TabIndex = 47
@@ -1320,7 +1597,7 @@ Partial Class Form1
         ' 
         Panel3.BackColor = SystemColors.ControlLight
         Panel3.Controls.Add(Label6)
-        Panel3.Location = New Point(10, 12)
+        Panel3.Location = New Point(8, 122)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(114, 123)
         Panel3.TabIndex = 48
@@ -1342,7 +1619,7 @@ Partial Class Form1
         Panel4.Controls.Add(Label8)
         Panel4.Controls.Add(Panel6)
         Panel4.Controls.Add(Panel5)
-        Panel4.Location = New Point(13, 600)
+        Panel4.Location = New Point(13, 589)
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(85, 88)
         Panel4.TabIndex = 49
@@ -1350,7 +1627,7 @@ Partial Class Form1
         ' Button3
         ' 
         Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Button3.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Button3.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Button3.Location = New Point(3, 5)
         Button3.Name = "Button3"
         Button3.Size = New Size(23, 23)
@@ -1363,7 +1640,7 @@ Partial Class Form1
         ' 
         ' Button4
         ' 
-        Button4.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Button4.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Button4.Location = New Point(58, 5)
         Button4.Name = "Button4"
         Button4.Size = New Size(23, 23)
@@ -1376,7 +1653,7 @@ Partial Class Form1
         ' 
         ' Label8
         ' 
-        Label8.Font = New Font("Segoe UI Variable Display", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.Font = New Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label8.ForeColor = Color.ForestGreen
         Label8.Location = New Point(17, 7)
         Label8.Name = "Label8"
@@ -1402,83 +1679,74 @@ Partial Class Form1
         Panel5.Size = New Size(78, 50)
         Panel5.TabIndex = 50
         ' 
-        ' Button6
-        ' 
-        Button6.BackColor = Color.LemonChiffon
-        Button6.Location = New Point(10, 296)
-        Button6.Name = "Button6"
-        Button6.Size = New Size(114, 65)
-        Button6.TabIndex = 48
-        Button6.Text = "1d100"
-        Button6.UseVisualStyleBackColor = False
-        Button6.Visible = False
-        ' 
         ' Button7
         ' 
-        Button7.Location = New Point(10, 463)
+        Button7.Location = New Point(8, 308)
         Button7.Name = "Button7"
         Button7.Size = New Size(114, 65)
         Button7.TabIndex = 50
         Button7.Text = "ターン終了"
         Button7.UseVisualStyleBackColor = True
-        Button7.Visible = False
         ' 
-        ' GroupBox1
+        ' pnEnemyHand6
         ' 
-        GroupBox1.Location = New Point(10, 353)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(114, 69)
-        GroupBox1.TabIndex = 51
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "result"
+        pnEnemyHand6.BackColor = SystemColors.ControlLight
+        pnEnemyHand6.BorderStyle = BorderStyle.FixedSingle
+        pnEnemyHand6.Location = New Point(313, -32)
+        pnEnemyHand6.Name = "pnEnemyHand6"
+        pnEnemyHand6.Size = New Size(114, 123)
+        pnEnemyHand6.TabIndex = 49
+        pnEnemyHand6.Visible = False
         ' 
-        ' Panel7
+        ' pnEnemyHand5
         ' 
-        Panel7.BackColor = SystemColors.ControlLight
-        Panel7.Location = New Point(313, -32)
-        Panel7.Name = "Panel7"
-        Panel7.Size = New Size(114, 123)
-        Panel7.TabIndex = 49
+        pnEnemyHand5.BackColor = SystemColors.ControlLight
+        pnEnemyHand5.BorderStyle = BorderStyle.FixedSingle
+        pnEnemyHand5.Location = New Point(399, -32)
+        pnEnemyHand5.Name = "pnEnemyHand5"
+        pnEnemyHand5.Size = New Size(114, 123)
+        pnEnemyHand5.TabIndex = 50
+        pnEnemyHand5.Visible = False
         ' 
-        ' Panel16
+        ' pnEnemyHand4
         ' 
-        Panel16.BackColor = SystemColors.ControlLight
-        Panel16.Location = New Point(399, -32)
-        Panel16.Name = "Panel16"
-        Panel16.Size = New Size(114, 123)
-        Panel16.TabIndex = 50
+        pnEnemyHand4.BackColor = SystemColors.ControlLight
+        pnEnemyHand4.BorderStyle = BorderStyle.FixedSingle
+        pnEnemyHand4.Location = New Point(491, -32)
+        pnEnemyHand4.Name = "pnEnemyHand4"
+        pnEnemyHand4.Size = New Size(114, 123)
+        pnEnemyHand4.TabIndex = 52
+        pnEnemyHand4.Visible = False
         ' 
-        ' Panel17
+        ' pnEnemyHand3
         ' 
-        Panel17.BackColor = SystemColors.ControlLight
-        Panel17.Location = New Point(491, -32)
-        Panel17.Name = "Panel17"
-        Panel17.Size = New Size(114, 123)
-        Panel17.TabIndex = 52
+        pnEnemyHand3.BackColor = SystemColors.ControlLight
+        pnEnemyHand3.BorderStyle = BorderStyle.FixedSingle
+        pnEnemyHand3.Location = New Point(585, -32)
+        pnEnemyHand3.Name = "pnEnemyHand3"
+        pnEnemyHand3.Size = New Size(114, 123)
+        pnEnemyHand3.TabIndex = 53
+        pnEnemyHand3.Visible = False
         ' 
-        ' Panel18
+        ' pnEnemyHand2
         ' 
-        Panel18.BackColor = SystemColors.ControlLight
-        Panel18.Location = New Point(585, -32)
-        Panel18.Name = "Panel18"
-        Panel18.Size = New Size(114, 123)
-        Panel18.TabIndex = 53
+        pnEnemyHand2.BackColor = SystemColors.ControlLight
+        pnEnemyHand2.BorderStyle = BorderStyle.FixedSingle
+        pnEnemyHand2.Location = New Point(692, -32)
+        pnEnemyHand2.Name = "pnEnemyHand2"
+        pnEnemyHand2.Size = New Size(114, 123)
+        pnEnemyHand2.TabIndex = 54
+        pnEnemyHand2.Visible = False
         ' 
-        ' Panel19
+        ' pnEnemyHand1
         ' 
-        Panel19.BackColor = SystemColors.ControlLight
-        Panel19.Location = New Point(692, -32)
-        Panel19.Name = "Panel19"
-        Panel19.Size = New Size(114, 123)
-        Panel19.TabIndex = 54
-        ' 
-        ' Panel20
-        ' 
-        Panel20.BackColor = SystemColors.ControlLight
-        Panel20.Location = New Point(798, -32)
-        Panel20.Name = "Panel20"
-        Panel20.Size = New Size(114, 123)
-        Panel20.TabIndex = 55
+        pnEnemyHand1.BackColor = SystemColors.ControlLight
+        pnEnemyHand1.BorderStyle = BorderStyle.FixedSingle
+        pnEnemyHand1.Location = New Point(798, -31)
+        pnEnemyHand1.Name = "pnEnemyHand1"
+        pnEnemyHand1.Size = New Size(114, 123)
+        pnEnemyHand1.TabIndex = 55
+        pnEnemyHand1.Visible = False
         ' 
         ' Panel21
         ' 
@@ -1512,7 +1780,7 @@ Partial Class Form1
         ' 
         ' Label12
         ' 
-        Label12.Font = New Font("Segoe UI Variable Display", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.Font = New Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label12.ForeColor = Color.ForestGreen
         Label12.Location = New Point(8, 6)
         Label12.Name = "Label12"
@@ -1541,31 +1809,46 @@ Partial Class Form1
         ' Label17
         ' 
         Label17.BackColor = Color.Aqua
-        Label17.Font = New Font("Yu Gothic UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
-        Label17.Location = New Point(12, 433)
+        Label17.Font = New Font("Yu Gothic UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label17.Location = New Point(10, 278)
         Label17.Name = "Label17"
         Label17.Size = New Size(112, 25)
         Label17.TabIndex = 57
         Label17.Text = "2ターン目"
         Label17.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' Panel25
+        ' 
+        Panel25.BackColor = Color.Aquamarine
+        Panel25.Controls.Add(gbAllyInfo)
+        Panel25.Location = New Point(942, 464)
+        Panel25.Name = "Panel25"
+        Panel25.Size = New Size(391, 405)
+        Panel25.TabIndex = 58
+        ' 
+        ' Panel26
+        ' 
+        Panel26.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(192))
+        Panel26.Location = New Point(942, 5)
+        Panel26.Name = "Panel26"
+        Panel26.Size = New Size(391, 405)
+        Panel26.TabIndex = 59
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1342, 892)
         Controls.Add(Label17)
         Controls.Add(Panel22)
         Controls.Add(Panel21)
-        Controls.Add(Panel20)
-        Controls.Add(Panel19)
-        Controls.Add(Panel18)
-        Controls.Add(Panel17)
-        Controls.Add(Panel16)
-        Controls.Add(Panel7)
-        Controls.Add(GroupBox1)
+        Controls.Add(pnEnemyHand1)
+        Controls.Add(pnEnemyHand2)
+        Controls.Add(pnEnemyHand3)
+        Controls.Add(pnEnemyHand4)
+        Controls.Add(pnEnemyHand5)
+        Controls.Add(pnEnemyHand6)
         Controls.Add(Button7)
-        Controls.Add(Button6)
         Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(btReturnHand)
@@ -1596,7 +1879,6 @@ Partial Class Form1
         Controls.Add(pnAllyCard1)
         Controls.Add(btDeck)
         Controls.Add(pnAllyCard6)
-        Controls.Add(gbAllyInfo)
         Controls.Add(pnAllyCard4)
         Controls.Add(pnAllyCard5)
         Controls.Add(gbEnemyInfo)
@@ -1604,8 +1886,11 @@ Partial Class Form1
         Controls.Add(pnBattleArea)
         Controls.Add(Panel15)
         Controls.Add(Panel4)
+        Controls.Add(Panel25)
+        Controls.Add(Panel26)
         Name = "Form1"
         Text = "バトル"
+        gbEnemyInfo.ResumeLayout(False)
         gbAllyInfo.ResumeLayout(False)
         gbAllyInfo.PerformLayout()
         pnBattleArea.ResumeLayout(False)
@@ -1660,6 +1945,7 @@ Partial Class Form1
         Panel21.ResumeLayout(False)
         Panel21.PerformLayout()
         Panel22.ResumeLayout(False)
+        Panel25.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
     Friend WithEvents btShuffleButton As Button
@@ -1685,23 +1971,23 @@ Partial Class Form1
     Friend WithEvents lbSelectCardIntellectMax As Label
     Friend WithEvents lbSelectCardAtack As Label
     Friend WithEvents lbSelectCardMagic As Label
-    Friend WithEvents lbSelectCardMagicUpdate As TextBox
-    Friend WithEvents lbSelectCarfAtackUpdate As TextBox
+    Friend WithEvents txSelectCardMagicUpdate As TextBox
+    Friend WithEvents txSelectCarfAtackUpdate As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel14 As Panel
-    Friend WithEvents Label27 As Label
-    Friend WithEvents Label28 As Label
+    Friend WithEvents lbEnemyCardDefense1 As Label
+    Friend WithEvents lbEnemyCardName1 As Label
     Friend WithEvents Panel13 As Panel
-    Friend WithEvents Label26 As Label
+    Friend WithEvents lbEnemyCardName2 As Label
     Friend WithEvents Panel12 As Panel
-    Friend WithEvents Label24 As Label
+    Friend WithEvents lbEnemyCardName3 As Label
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents Label22 As Label
+    Friend WithEvents lbEnemyCardName6 As Label
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents Label20 As Label
+    Friend WithEvents lbEnemyCardName4 As Label
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents Label18 As Label
+    Friend WithEvents lbEnemyCardName5 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label16 As Label
     Friend WithEvents pnAllyCard3 As Panel
@@ -1725,11 +2011,11 @@ Partial Class Form1
     Friend WithEvents btDiscard As Button
     Friend WithEvents coGrave As ComboBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lbEnemyCardDefense2 As Label
+    Friend WithEvents lbEnemyCardDefense3 As Label
+    Friend WithEvents lbEnemyCardDefense6 As Label
+    Friend WithEvents lbEnemyCardDefense4 As Label
+    Friend WithEvents lbEnemyCardDefense5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txAllyCardDefense3 As TextBox
     Friend WithEvents txAllyCardDefense2 As TextBox
@@ -1785,12 +2071,12 @@ Partial Class Form1
     Friend WithEvents Button7 As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents Panel17 As Panel
-    Friend WithEvents Panel18 As Panel
-    Friend WithEvents Panel19 As Panel
-    Friend WithEvents Panel20 As Panel
+    Friend WithEvents pnEnemyHand6 As Panel
+    Friend WithEvents pnEnemyHand5 As Panel
+    Friend WithEvents pnEnemyHand4 As Panel
+    Friend WithEvents pnEnemyHand3 As Panel
+    Friend WithEvents pnEnemyHand2 As Panel
+    Friend WithEvents pnEnemyHand1 As Panel
     Friend WithEvents Panel21 As Panel
     Friend WithEvents Label10 As Label
     Friend WithEvents Panel22 As Panel
@@ -1802,5 +2088,30 @@ Partial Class Form1
     Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label17 As Label
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents Label19 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents ProgressBar2 As ProgressBar
+    Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lbSelectCardAtackE As Label
+    Friend WithEvents lbSelectCardMagicE As Label
+    Friend WithEvents txSelectCardIntellectE As TextBox
+    Friend WithEvents lbSelectCardIntellectMaxE As Label
+    Friend WithEvents lbSelectCardDefenseMaxE As Label
+    Friend WithEvents lbSelectCardEffectE As Label
+    Friend WithEvents lbIntellectLabelE As Label
+    Friend WithEvents lbDefenseLabelE As Label
+    Friend WithEvents lbMagicLabelE As Label
+    Friend WithEvents lbAtackLabelE As Label
+    Friend WithEvents lbSelectCardLineE As Label
+    Friend WithEvents lbSelectCardTypeE As Label
+    Friend WithEvents lbSelectCardCostE As Label
+    Friend WithEvents lbSelectCardNameE As Label
+    Friend WithEvents lbSelectCardDefenseE As Label
+    Friend WithEvents lbSelectCardIntellectE As Label
+    Friend WithEvents lbSelectCardMagicUpdateE As Label
+    Friend WithEvents lbSelectCarfAtackUpdateE As Label
+    Friend WithEvents Panel26 As Panel
 
 End Class
