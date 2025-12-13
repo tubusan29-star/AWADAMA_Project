@@ -74,25 +74,27 @@ Partial Class Form1
         Button5 = New Button()
         Button6 = New Button()
         GroupBox1 = New GroupBox()
+        pnSelectPanelColorE = New Panel()
+        pnSelectPanelColor = New Panel()
         Panel1 = New Panel()
         TextBox1 = New TextBox()
         Label3 = New Label()
-        Panel14 = New Panel()
+        pnEnemyCard1 = New Panel()
         lbEnemyCardDefense1 = New Label()
         lbEnemyCardName1 = New Label()
-        Panel13 = New Panel()
+        pnEnemyCard2 = New Panel()
         lbEnemyCardDefense2 = New Label()
         lbEnemyCardName2 = New Label()
-        Panel12 = New Panel()
+        pnEnemyCard3 = New Panel()
         lbEnemyCardDefense3 = New Label()
         lbEnemyCardName3 = New Label()
-        Panel11 = New Panel()
+        pnEnemyCard6 = New Panel()
         lbEnemyCardDefense6 = New Label()
         lbEnemyCardName6 = New Label()
-        Panel10 = New Panel()
+        pnEnemyCard4 = New Panel()
         lbEnemyCardDefense4 = New Label()
         lbEnemyCardName4 = New Label()
-        Panel9 = New Panel()
+        pnEnemyCard5 = New Panel()
         lbEnemyCardDefense5 = New Label()
         lbEnemyCardName5 = New Label()
         Panel8 = New Panel()
@@ -126,7 +128,6 @@ Partial Class Form1
         lbSelectCardSkill1 = New Label()
         lbSelectCardSkill2 = New Label()
         lbSelectCardSkill3 = New Label()
-        pnSelectPanelColor = New Panel()
         lbHandMaxSign = New Label()
         pnGrave = New Panel()
         Label29 = New Label()
@@ -190,12 +191,12 @@ Partial Class Form1
         gbAllyInfo.SuspendLayout()
         pnBattleArea.SuspendLayout()
         Panel1.SuspendLayout()
-        Panel14.SuspendLayout()
-        Panel13.SuspendLayout()
-        Panel12.SuspendLayout()
-        Panel11.SuspendLayout()
-        Panel10.SuspendLayout()
-        Panel9.SuspendLayout()
+        pnEnemyCard1.SuspendLayout()
+        pnEnemyCard2.SuspendLayout()
+        pnEnemyCard3.SuspendLayout()
+        pnEnemyCard6.SuspendLayout()
+        pnEnemyCard4.SuspendLayout()
+        pnEnemyCard5.SuspendLayout()
         Panel8.SuspendLayout()
         pnAllyCard3.SuspendLayout()
         pnAllyCard2.SuspendLayout()
@@ -402,7 +403,7 @@ Partial Class Form1
         ' lbSelectCardCostE
         ' 
         lbSelectCardCostE.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardCostE.Font = New Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
+        lbSelectCardCostE.Font = New Font("Yu Gothic UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
         lbSelectCardCostE.Location = New Point(336, 10)
         lbSelectCardCostE.Name = "lbSelectCardCostE"
         lbSelectCardCostE.Size = New Size(39, 38)
@@ -586,7 +587,7 @@ Partial Class Form1
         ' lbSelectCardCost
         ' 
         lbSelectCardCost.BorderStyle = BorderStyle.FixedSingle
-        lbSelectCardCost.Font = New Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
+        lbSelectCardCost.Font = New Font("Yu Gothic UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(128))
         lbSelectCardCost.Location = New Point(336, 10)
         lbSelectCardCost.Name = "lbSelectCardCost"
         lbSelectCardCost.Size = New Size(39, 38)
@@ -734,6 +735,24 @@ Partial Class Form1
         GroupBox1.TabStop = False
         GroupBox1.Text = "result"
         ' 
+        ' pnSelectPanelColorE
+        ' 
+        pnSelectPanelColorE.BackColor = Color.Tomato
+        pnSelectPanelColorE.Location = New Point(15, 11)
+        pnSelectPanelColorE.Name = "pnSelectPanelColorE"
+        pnSelectPanelColorE.Size = New Size(124, 133)
+        pnSelectPanelColorE.TabIndex = 28
+        pnSelectPanelColorE.Visible = False
+        ' 
+        ' pnSelectPanelColor
+        ' 
+        pnSelectPanelColor.BackColor = Color.Aqua
+        pnSelectPanelColor.Location = New Point(8, 5)
+        pnSelectPanelColor.Name = "pnSelectPanelColor"
+        pnSelectPanelColor.Size = New Size(124, 133)
+        pnSelectPanelColor.TabIndex = 27
+        pnSelectPanelColor.Visible = False
+        ' 
         ' Panel1
         ' 
         Panel1.BackColor = SystemColors.ControlLight
@@ -746,7 +765,7 @@ Partial Class Form1
         ' 
         ' TextBox1
         ' 
-        TextBox1.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
+        TextBox1.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
         TextBox1.Location = New Point(3, 93)
         TextBox1.MaxLength = 3
         TextBox1.Name = "TextBox1"
@@ -765,15 +784,15 @@ Partial Class Form1
         Label3.Text = "aaaaa"
         Label3.Visible = False
         ' 
-        ' Panel14
+        ' pnEnemyCard1
         ' 
-        Panel14.BackColor = SystemColors.ControlLight
-        Panel14.Controls.Add(lbEnemyCardDefense1)
-        Panel14.Controls.Add(lbEnemyCardName1)
-        Panel14.Location = New Point(568, 126)
-        Panel14.Name = "Panel14"
-        Panel14.Size = New Size(114, 123)
-        Panel14.TabIndex = 31
+        pnEnemyCard1.BackColor = SystemColors.ControlLight
+        pnEnemyCard1.Controls.Add(lbEnemyCardDefense1)
+        pnEnemyCard1.Controls.Add(lbEnemyCardName1)
+        pnEnemyCard1.Location = New Point(568, 126)
+        pnEnemyCard1.Name = "pnEnemyCard1"
+        pnEnemyCard1.Size = New Size(114, 123)
+        pnEnemyCard1.TabIndex = 31
         ' 
         ' lbEnemyCardDefense1
         ' 
@@ -793,15 +812,15 @@ Partial Class Form1
         lbEnemyCardName1.Text = "eeeee"
         lbEnemyCardName1.Visible = False
         ' 
-        ' Panel13
+        ' pnEnemyCard2
         ' 
-        Panel13.BackColor = SystemColors.ControlLight
-        Panel13.Controls.Add(lbEnemyCardDefense2)
-        Panel13.Controls.Add(lbEnemyCardName2)
-        Panel13.Location = New Point(568, 255)
-        Panel13.Name = "Panel13"
-        Panel13.Size = New Size(114, 123)
-        Panel13.TabIndex = 31
+        pnEnemyCard2.BackColor = SystemColors.ControlLight
+        pnEnemyCard2.Controls.Add(lbEnemyCardDefense2)
+        pnEnemyCard2.Controls.Add(lbEnemyCardName2)
+        pnEnemyCard2.Location = New Point(568, 255)
+        pnEnemyCard2.Name = "pnEnemyCard2"
+        pnEnemyCard2.Size = New Size(114, 123)
+        pnEnemyCard2.TabIndex = 31
         ' 
         ' lbEnemyCardDefense2
         ' 
@@ -821,15 +840,15 @@ Partial Class Form1
         lbEnemyCardName2.Text = "eeeee"
         lbEnemyCardName2.Visible = False
         ' 
-        ' Panel12
+        ' pnEnemyCard3
         ' 
-        Panel12.BackColor = SystemColors.ControlLight
-        Panel12.Controls.Add(lbEnemyCardDefense3)
-        Panel12.Controls.Add(lbEnemyCardName3)
-        Panel12.Location = New Point(568, 386)
-        Panel12.Name = "Panel12"
-        Panel12.Size = New Size(114, 123)
-        Panel12.TabIndex = 31
+        pnEnemyCard3.BackColor = SystemColors.ControlLight
+        pnEnemyCard3.Controls.Add(lbEnemyCardDefense3)
+        pnEnemyCard3.Controls.Add(lbEnemyCardName3)
+        pnEnemyCard3.Location = New Point(568, 386)
+        pnEnemyCard3.Name = "pnEnemyCard3"
+        pnEnemyCard3.Size = New Size(114, 123)
+        pnEnemyCard3.TabIndex = 31
         ' 
         ' lbEnemyCardDefense3
         ' 
@@ -849,15 +868,15 @@ Partial Class Form1
         lbEnemyCardName3.Text = "eeeee"
         lbEnemyCardName3.Visible = False
         ' 
-        ' Panel11
+        ' pnEnemyCard6
         ' 
-        Panel11.BackColor = SystemColors.ControlLight
-        Panel11.Controls.Add(lbEnemyCardDefense6)
-        Panel11.Controls.Add(lbEnemyCardName6)
-        Panel11.Location = New Point(688, 386)
-        Panel11.Name = "Panel11"
-        Panel11.Size = New Size(114, 123)
-        Panel11.TabIndex = 31
+        pnEnemyCard6.BackColor = SystemColors.ControlLight
+        pnEnemyCard6.Controls.Add(lbEnemyCardDefense6)
+        pnEnemyCard6.Controls.Add(lbEnemyCardName6)
+        pnEnemyCard6.Location = New Point(688, 386)
+        pnEnemyCard6.Name = "pnEnemyCard6"
+        pnEnemyCard6.Size = New Size(114, 123)
+        pnEnemyCard6.TabIndex = 31
         ' 
         ' lbEnemyCardDefense6
         ' 
@@ -877,15 +896,15 @@ Partial Class Form1
         lbEnemyCardName6.Text = "eeeee"
         lbEnemyCardName6.Visible = False
         ' 
-        ' Panel10
+        ' pnEnemyCard4
         ' 
-        Panel10.BackColor = SystemColors.ControlLight
-        Panel10.Controls.Add(lbEnemyCardDefense4)
-        Panel10.Controls.Add(lbEnemyCardName4)
-        Panel10.Location = New Point(688, 127)
-        Panel10.Name = "Panel10"
-        Panel10.Size = New Size(114, 123)
-        Panel10.TabIndex = 31
+        pnEnemyCard4.BackColor = SystemColors.ControlLight
+        pnEnemyCard4.Controls.Add(lbEnemyCardDefense4)
+        pnEnemyCard4.Controls.Add(lbEnemyCardName4)
+        pnEnemyCard4.Location = New Point(688, 127)
+        pnEnemyCard4.Name = "pnEnemyCard4"
+        pnEnemyCard4.Size = New Size(114, 123)
+        pnEnemyCard4.TabIndex = 31
         ' 
         ' lbEnemyCardDefense4
         ' 
@@ -905,15 +924,15 @@ Partial Class Form1
         lbEnemyCardName4.Text = "eeeee"
         lbEnemyCardName4.Visible = False
         ' 
-        ' Panel9
+        ' pnEnemyCard5
         ' 
-        Panel9.BackColor = SystemColors.ControlLight
-        Panel9.Controls.Add(lbEnemyCardDefense5)
-        Panel9.Controls.Add(lbEnemyCardName5)
-        Panel9.Location = New Point(688, 255)
-        Panel9.Name = "Panel9"
-        Panel9.Size = New Size(114, 123)
-        Panel9.TabIndex = 30
+        pnEnemyCard5.BackColor = SystemColors.ControlLight
+        pnEnemyCard5.Controls.Add(lbEnemyCardDefense5)
+        pnEnemyCard5.Controls.Add(lbEnemyCardName5)
+        pnEnemyCard5.Location = New Point(688, 255)
+        pnEnemyCard5.Name = "pnEnemyCard5"
+        pnEnemyCard5.Size = New Size(114, 123)
+        pnEnemyCard5.TabIndex = 30
         ' 
         ' lbEnemyCardDefense5
         ' 
@@ -984,7 +1003,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense3
         ' 
-        txAllyCardDefense3.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
+        txAllyCardDefense3.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
         txAllyCardDefense3.Location = New Point(3, 92)
         txAllyCardDefense3.MaxLength = 3
         txAllyCardDefense3.Name = "txAllyCardDefense3"
@@ -1026,7 +1045,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense2
         ' 
-        txAllyCardDefense2.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
+        txAllyCardDefense2.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
         txAllyCardDefense2.Location = New Point(3, 91)
         txAllyCardDefense2.MaxLength = 3
         txAllyCardDefense2.Name = "txAllyCardDefense2"
@@ -1068,7 +1087,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense1
         ' 
-        txAllyCardDefense1.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
+        txAllyCardDefense1.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
         txAllyCardDefense1.Location = New Point(3, 92)
         txAllyCardDefense1.MaxLength = 3
         txAllyCardDefense1.Name = "txAllyCardDefense1"
@@ -1110,7 +1129,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense6
         ' 
-        txAllyCardDefense6.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
+        txAllyCardDefense6.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
         txAllyCardDefense6.Location = New Point(3, 93)
         txAllyCardDefense6.MaxLength = 3
         txAllyCardDefense6.Name = "txAllyCardDefense6"
@@ -1152,7 +1171,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense4
         ' 
-        txAllyCardDefense4.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
+        txAllyCardDefense4.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
         txAllyCardDefense4.Location = New Point(3, 92)
         txAllyCardDefense4.MaxLength = 3
         txAllyCardDefense4.Name = "txAllyCardDefense4"
@@ -1194,7 +1213,7 @@ Partial Class Form1
         ' 
         ' txAllyCardDefense5
         ' 
-        txAllyCardDefense5.Font = New Font("Yu Gothic UI Semibold", 9F, FontStyle.Bold)
+        txAllyCardDefense5.Font = New Font("Yu Gothic UI Semibold", 9.0F, FontStyle.Bold)
         txAllyCardDefense5.Location = New Point(3, 93)
         txAllyCardDefense5.MaxLength = 3
         txAllyCardDefense5.Name = "txAllyCardDefense5"
@@ -1247,19 +1266,10 @@ Partial Class Form1
         lbSelectCardSkill3.Size = New Size(594, 53)
         lbSelectCardSkill3.TabIndex = 26
         ' 
-        ' pnSelectPanelColor
-        ' 
-        pnSelectPanelColor.BackColor = Color.Aqua
-        pnSelectPanelColor.Location = New Point(1013, 23)
-        pnSelectPanelColor.Name = "pnSelectPanelColor"
-        pnSelectPanelColor.Size = New Size(124, 133)
-        pnSelectPanelColor.TabIndex = 27
-        pnSelectPanelColor.Visible = False
-        ' 
         ' lbHandMaxSign
         ' 
         lbHandMaxSign.BackColor = Color.Transparent
-        lbHandMaxSign.Font = New Font("Yu Gothic UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        lbHandMaxSign.Font = New Font("Yu Gothic UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         lbHandMaxSign.ForeColor = Color.Red
         lbHandMaxSign.Location = New Point(876, 561)
         lbHandMaxSign.Name = "lbHandMaxSign"
@@ -1297,7 +1307,7 @@ Partial Class Form1
         ' 
         ' btDiscard
         ' 
-        btDiscard.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btDiscard.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         btDiscard.Location = New Point(110, 688)
         btDiscard.Name = "btDiscard"
         btDiscard.Size = New Size(29, 24)
@@ -1554,7 +1564,7 @@ Partial Class Form1
         ' 
         ' btReturnHand
         ' 
-        btReturnHand.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        btReturnHand.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         btReturnHand.Location = New Point(116, 569)
         btReturnHand.Name = "btReturnHand"
         btReturnHand.Size = New Size(29, 27)
@@ -1627,7 +1637,7 @@ Partial Class Form1
         ' Button3
         ' 
         Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        Button3.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Button3.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Button3.Location = New Point(3, 5)
         Button3.Name = "Button3"
         Button3.Size = New Size(23, 23)
@@ -1640,7 +1650,7 @@ Partial Class Form1
         ' 
         ' Button4
         ' 
-        Button4.Font = New Font("UD デジタル 教科書体 NP-B", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Button4.Font = New Font("UD デジタル 教科書体 NP-B", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Button4.Location = New Point(58, 5)
         Button4.Name = "Button4"
         Button4.Size = New Size(23, 23)
@@ -1653,7 +1663,7 @@ Partial Class Form1
         ' 
         ' Label8
         ' 
-        Label8.Font = New Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.Font = New Font("Segoe UI Variable Display", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label8.ForeColor = Color.ForestGreen
         Label8.Location = New Point(17, 7)
         Label8.Name = "Label8"
@@ -1780,7 +1790,7 @@ Partial Class Form1
         ' 
         ' Label12
         ' 
-        Label12.Font = New Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.Font = New Font("Segoe UI Variable Display", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label12.ForeColor = Color.ForestGreen
         Label12.Location = New Point(8, 6)
         Label12.Name = "Label12"
@@ -1809,7 +1819,7 @@ Partial Class Form1
         ' Label17
         ' 
         Label17.BackColor = Color.Aqua
-        Label17.Font = New Font("Yu Gothic UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
+        Label17.Font = New Font("Yu Gothic UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(128))
         Label17.Location = New Point(10, 278)
         Label17.Name = "Label17"
         Label17.Size = New Size(112, 25)
@@ -1836,7 +1846,7 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1342, 892)
         Controls.Add(Label17)
@@ -1864,15 +1874,15 @@ Partial Class Form1
         Controls.Add(lbHandMaxSign)
         Controls.Add(lbSelectCardSkill3)
         Controls.Add(pnHand3)
-        Controls.Add(Panel14)
+        Controls.Add(pnEnemyCard1)
         Controls.Add(lbSelectCardSkill2)
-        Controls.Add(Panel13)
+        Controls.Add(pnEnemyCard2)
         Controls.Add(lbSelectCardSkill1)
-        Controls.Add(Panel12)
+        Controls.Add(pnEnemyCard3)
         Controls.Add(btShuffleButton)
-        Controls.Add(Panel11)
-        Controls.Add(Panel10)
-        Controls.Add(Panel9)
+        Controls.Add(pnEnemyCard6)
+        Controls.Add(pnEnemyCard4)
+        Controls.Add(pnEnemyCard5)
         Controls.Add(Panel8)
         Controls.Add(pnAllyCard3)
         Controls.Add(pnAllyCard2)
@@ -1882,12 +1892,13 @@ Partial Class Form1
         Controls.Add(pnAllyCard4)
         Controls.Add(pnAllyCard5)
         Controls.Add(gbEnemyInfo)
-        Controls.Add(pnSelectPanelColor)
-        Controls.Add(pnBattleArea)
-        Controls.Add(Panel15)
         Controls.Add(Panel4)
         Controls.Add(Panel25)
         Controls.Add(Panel26)
+        Controls.Add(pnSelectPanelColorE)
+        Controls.Add(pnSelectPanelColor)
+        Controls.Add(pnBattleArea)
+        Controls.Add(Panel15)
         Name = "Form1"
         Text = "バトル"
         gbEnemyInfo.ResumeLayout(False)
@@ -1897,18 +1908,18 @@ Partial Class Form1
         pnBattleArea.PerformLayout()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
-        Panel14.ResumeLayout(False)
-        Panel14.PerformLayout()
-        Panel13.ResumeLayout(False)
-        Panel13.PerformLayout()
-        Panel12.ResumeLayout(False)
-        Panel12.PerformLayout()
-        Panel11.ResumeLayout(False)
-        Panel11.PerformLayout()
-        Panel10.ResumeLayout(False)
-        Panel10.PerformLayout()
-        Panel9.ResumeLayout(False)
-        Panel9.PerformLayout()
+        pnEnemyCard1.ResumeLayout(False)
+        pnEnemyCard1.PerformLayout()
+        pnEnemyCard2.ResumeLayout(False)
+        pnEnemyCard2.PerformLayout()
+        pnEnemyCard3.ResumeLayout(False)
+        pnEnemyCard3.PerformLayout()
+        pnEnemyCard6.ResumeLayout(False)
+        pnEnemyCard6.PerformLayout()
+        pnEnemyCard4.ResumeLayout(False)
+        pnEnemyCard4.PerformLayout()
+        pnEnemyCard5.ResumeLayout(False)
+        pnEnemyCard5.PerformLayout()
         Panel8.ResumeLayout(False)
         Panel8.PerformLayout()
         pnAllyCard3.ResumeLayout(False)
@@ -1975,18 +1986,18 @@ Partial Class Form1
     Friend WithEvents txSelectCarfAtackUpdate As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents Panel14 As Panel
+    Friend WithEvents pnEnemyCard1 As Panel
     Friend WithEvents lbEnemyCardDefense1 As Label
     Friend WithEvents lbEnemyCardName1 As Label
-    Friend WithEvents Panel13 As Panel
+    Friend WithEvents pnEnemyCard2 As Panel
     Friend WithEvents lbEnemyCardName2 As Label
-    Friend WithEvents Panel12 As Panel
+    Friend WithEvents pnEnemyCard3 As Panel
     Friend WithEvents lbEnemyCardName3 As Label
-    Friend WithEvents Panel11 As Panel
+    Friend WithEvents pnEnemyCard6 As Panel
     Friend WithEvents lbEnemyCardName6 As Label
-    Friend WithEvents Panel10 As Panel
+    Friend WithEvents pnEnemyCard4 As Panel
     Friend WithEvents lbEnemyCardName4 As Label
-    Friend WithEvents Panel9 As Panel
+    Friend WithEvents pnEnemyCard5 As Panel
     Friend WithEvents lbEnemyCardName5 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Label16 As Label
@@ -2096,7 +2107,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents lbSelectCardAtackE As Label
     Friend WithEvents lbSelectCardMagicE As Label
-    Friend WithEvents txSelectCardIntellectE As TextBox
     Friend WithEvents lbSelectCardIntellectMaxE As Label
     Friend WithEvents lbSelectCardDefenseMaxE As Label
     Friend WithEvents lbSelectCardEffectE As Label
@@ -2113,5 +2123,6 @@ Partial Class Form1
     Friend WithEvents lbSelectCardMagicUpdateE As Label
     Friend WithEvents lbSelectCarfAtackUpdateE As Label
     Friend WithEvents Panel26 As Panel
+    Friend WithEvents pnSelectPanelColorE As Panel
 
 End Class

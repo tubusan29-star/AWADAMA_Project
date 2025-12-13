@@ -14,6 +14,7 @@ Public Class Form1
     Dim ReaderData As CardDataDto = New CardDataDto()
     Dim GraveData As List(Of CardDataDto) = New List(Of CardDataDto)
     Dim SelectionCard As CardDataDto = New CardDataDto()
+    Dim SelectionCardE As CardDataDto = New CardDataDto()
 
     Private Async Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -54,9 +55,13 @@ Public Class Form1
             Exit Sub
         End If
 
-        Dim archive As IList(Of IList(Of Object))
+        Dim archive As IList(Of IList(Of Object)) = Nothing
 
-        archive = GetGoogleSheetData(MAIN_SHEET_ID, MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_ARCHIVE_RANGE(PlayerNo))
+        While archive Is Nothing OrElse archive.Count = 0
+            archive = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, MAIN_SHEET_ARCHIVE_RANGE(PlayerNo))
+            Task.Delay(1000).Wait()
+        End While
+
 
         Dim index = 1
         Dim drawIndex = 1
@@ -91,17 +96,9 @@ Public Class Form1
     End Sub
 
     Private Sub pnCard_Click(sender As Object, e As MouseEventArgs) Handles pnHand1.MouseDown, pnHand2.MouseDown, pnHand3.MouseDown, pnHand4.MouseDown, pnHand5.MouseDown, pnHand6.MouseDown _
-            , pnAllyCard1.MouseDown, pnAllyCard2.MouseDown, pnAllyCard3.MouseDown, pnAllyCard4.MouseDown, pnAllyCard5.MouseDown, pnAllyCard6.MouseDown
+            , pnAllyCard1.MouseDown, pnAllyCard2.MouseDown, pnAllyCard3.MouseDown, pnAllyCard4.MouseDown, pnAllyCard5.MouseDown, pnAllyCard6.MouseDown _
+            , pnEnemyCard1.MouseDown, pnEnemyCard2.MouseDown, pnEnemyCard3.MouseDown, pnEnemyCard4.MouseDown, pnEnemyCard5.MouseDown, pnEnemyCard6.MouseDown
         Dim clickedPanel = TryCast(sender, Panel)
-
-        pnSelectPanelColor.Left = clickedPanel.Location.X - 5
-        pnSelectPanelColor.Top = clickedPanel.Location.Y - 5
-        pnSelectPanelColor.Visible = False
-
-        btDiscard.Visible = False
-        btReturnHand.Visible = False
-
-        SelectionCard = Nothing
 
         '手札選択時
         If clickedPanel.Name.Substring(0, 6) = "pnHand" Then
@@ -127,6 +124,8 @@ Public Class Form1
                 End If
             Next
 
+            pnSelectPanelColor.Left = clickedPanel.Location.X - 5
+            pnSelectPanelColor.Top = clickedPanel.Location.Y - 5
             pnSelectPanelColor.Visible = True
 
             '味方配置選択時
@@ -158,7 +157,26 @@ Public Class Form1
                 End If
             Next
 
+            pnSelectPanelColor.Left = clickedPanel.Location.X - 5
+            pnSelectPanelColor.Top = clickedPanel.Location.Y - 5
             pnSelectPanelColor.Visible = True
+
+            '敵配置選択時
+        ElseIf clickedPanel.Name.Substring(0, 11) = "pnEnemyCard" Then
+            Dim clickNo = clickedPanel.Name.Substring(11, 1)
+            If BattleAreaEnemyData(clickNo - 1).Name = "" Then
+                Exit Sub
+            End If
+            gbEnemyInfo.Visible = True
+            Dim clickCardData = GetCardDataByName(BattleAreaEnemyData(clickNo - 1).Name)
+            SetEnemySelectionData(clickCardData)
+            SelectionCardE = clickCardData
+            SelectionCardE.DeckNo = BattleAreaEnemyData(clickNo - 1).DeckNo
+            Dim matchingControls = FindControlsRecursive(Controls, "btSetCard")
+
+            pnSelectPanelColorE.Left = clickedPanel.Location.X - 5
+            pnSelectPanelColorE.Top = clickedPanel.Location.Y - 5
+            pnSelectPanelColorE.Visible = True
         End If
     End Sub
 
@@ -271,6 +289,13 @@ Public Class Form1
                 If BattleAreaAllyData(clickNo - 1).DeckNo = "" Then
                     BattleAreaAllyData(clickNo - 1) = BattleAreaAllyData(changeIndex)
                     BattleAreaAllyData(changeIndex) = New CardDataDto
+
+                    foundpnAllyCard = FindControlsRecursive(Controls, "pnAllyCard" & changeIndex + 1)
+
+                    targetpnAllyCard = foundpnAllyCard(0)
+                    AllyCardPanel = targetpnAllyCard
+
+                    AllyCardPanel.Enabled = False
                 Else
                     Dim tempCard = BattleAreaAllyData(clickNo - 1)
                     BattleAreaAllyData(clickNo - 1) = BattleAreaAllyData(changeIndex)
@@ -349,6 +374,28 @@ Public Class Form1
         lbSelectCardEffect.Text = selectCardData.Effect
         lbSelectCardLine.Text = selectCardData.Line
         lbSelectCardType.Text = selectCardData.Type
+
+        lbSelectCardSkill1.Text = selectCardData.Skill3
+        lbSelectCardSkill2.Text = selectCardData.Skill2
+        lbSelectCardSkill3.Text = selectCardData.Skill3
+
+        lbSelectCardFlavor.Text = selectCardData.Flavor
+    End Sub
+
+    Private Sub SetEnemySelectionData(selectCardData As CardDataDto)
+        lbSelectCardNameE.Text = selectCardData.Cardname
+        lbSelectCardCostE.Text = selectCardData.Cost
+        lbSelectCardDefenseMaxE.Text = "/" & selectCardData.Defense
+        lbSelectCardIntellectMaxE.Text = "/" & selectCardData.Intellect
+        lbSelectCardDefenseE.Text = selectCardData.DefenseNow
+        lbSelectCardIntellectE.Text = selectCardData.IntellectNow
+        lbSelectCardAtackE.Text = selectCardData.Atack
+        lbSelectCardMagicE.Text = selectCardData.Magic
+        lbSelectCarfAtackUpdateE.Text = selectCardData.AttackUpdate
+        lbSelectCardMagicUpdateE.Text = selectCardData.MagicUpdate
+        lbSelectCardEffectE.Text = selectCardData.Effect
+        lbSelectCardLineE.Text = selectCardData.Line
+        lbSelectCardTypeE.Text = selectCardData.Type
 
         lbSelectCardSkill1.Text = selectCardData.Skill3
         lbSelectCardSkill2.Text = selectCardData.Skill2
@@ -445,6 +492,9 @@ Public Class Form1
         Dim enemyHandNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_HAND_RANGE(PlayerNo))
 
         If enemyHandNameList IsNot Nothing Then
+            If enemyHandNameList.Count = 0 Then
+                Return
+            End If
             Dim enemyHandCount = enemyHandNameList(0).Count
 
             For i As Integer = 1 To HandCardNum
