@@ -11,7 +11,6 @@ C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADA
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\bin\Release\net10.0-windows\System.Management.dll
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\bin\Release\net10.0-windows\runtimes\win\lib\net7.0\System.Management.dll
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.vbproj.AssemblyReference.cache
-C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.Form1.resources
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.vbproj.GenerateResource.cache
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.AssemblyInfoInputs.cache
@@ -24,3 +23,8 @@ C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADA
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.pdb
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.genruntimeconfig.cache
 C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\ref\AWADAMA_Project.dll
+C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\bin\Release\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\bin\Release\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\bin\Release\net10.0-windows\Npgsql.dll
+C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.FrmBattle.resources
+C:\Users\tubus\OneDrive\ドキュメント\AWADAMA_Project\AWADAMA_Project\AWADAMA_Project\obj\Release\net10.0-windows\AWADAMA_Project.FrmLogin.resources

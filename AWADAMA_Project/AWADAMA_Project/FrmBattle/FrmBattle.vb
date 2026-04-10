@@ -3,10 +3,19 @@ Imports System.IO
 Imports System.Reflection.Metadata
 Imports System.Windows.Forms
 Imports Google.Apis.Util
+Imports Npgsql
 
-Public Class Form1
+Public Class FrmBattle
     Dim UpdateInterval As Boolean = False
-    Dim PlayerNo As Integer
+    Private _PlayerNo As Integer
+
+    Public Function GetPlayerNo() As Integer
+        Return Me._PlayerNo
+    End Function
+
+    Public Sub SetPlayerNo(AutoPropertyValue As Integer)
+        Me._PlayerNo = AutoPropertyValue
+    End Sub
 
     Dim HandData As List(Of HandDataDto) = New List(Of HandDataDto)
     Dim BattleAreaAllyData As List(Of CardDataDto) = New List(Of CardDataDto)
@@ -16,7 +25,12 @@ Public Class Form1
     Dim SelectionCard As CardDataDto = New CardDataDto()
     Dim SelectionCardE As CardDataDto = New CardDataDto()
 
+    Dim con As NpgsqlConnection
+
     Private Async Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Common.getDBConnect(con)
+        con.Open()
 
         AllCardData.GetData()
 
@@ -24,8 +38,8 @@ Public Class Form1
             BattleAreaAllyData.Add(New CardDataDto())
         Next
 
-        PlayerNo = FindLoginFile()
-
+        SetPlayerNo(FindLoginFile()
+)
         Await StartUpdateTask()
 
     End Sub
@@ -45,7 +59,7 @@ Public Class Form1
 
         archive = Common.ListShuffle(Of IList(Of Object))(deck)
 
-        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, MAIN_SHEET_ARCHIVE_CARD_NAME_RANGE(PlayerNo), archive)
+        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, MAIN_SHEET_ARCHIVE_CARD_NAME_RANGE(GetPlayerNo()), archive)
 
     End Sub
 
@@ -58,7 +72,7 @@ Public Class Form1
         Dim archive As IList(Of IList(Of Object)) = Nothing
 
         While archive Is Nothing OrElse archive.Count = 0
-            archive = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, MAIN_SHEET_ARCHIVE_RANGE(PlayerNo))
+            archive = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, MAIN_SHEET_ARCHIVE_RANGE(GetPlayerNo()))
             Task.Delay(1000).Wait()
         End While
 
@@ -82,7 +96,7 @@ Public Class Form1
             index += 1
         Next
 
-        SetGoogleSheetData(MAIN_SHEET_ID, MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_ARCHIVE_CARD_FRAW_FLG_COLUMN(PlayerNo) & drawIndex + 1, "1")
+        SetGoogleSheetData(MAIN_SHEET_ID, MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_ARCHIVE_CARD_FRAW_FLG_COLUMN(GetPlayerNo()) & drawIndex + 1, "1")
 
         btDeck.Text = (MAX_DECK_COUNT - disCartCount).ToString
 
@@ -202,7 +216,7 @@ Public Class Form1
                 coGrave.SelectedIndex = 0
                 Dim resultList As IList(Of IList(Of Object)) =
                     GraveData.Select(Function(x) CType(New List(Of Object) From {x.DeckNo.ToString(), x.Name}, IList(Of Object))).ToList()
-                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_GRAVE_START_CELL(PlayerNo), resultList)
+                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_GRAVE_START_CELL(GetPlayerNo()), resultList)
                 HandData.Remove(HandData.Find(Function(x) x.No = SelectionCard.DeckNo))
                 HandCardUpdate()
 
@@ -225,7 +239,7 @@ Public Class Form1
                 coGrave.SelectedIndex = 0
                 Dim resultList As IList(Of IList(Of Object)) =
                     GraveData.Select(Function(x) CType(New List(Of Object) From {x.DeckNo.ToString(), x.Name}, IList(Of Object))).ToList()
-                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_GRAVE_START_CELL(PlayerNo), resultList)
+                Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_ARCHIVE, Constant.MAIN_SHEET_GRAVE_START_CELL(GetPlayerNo()), resultList)
                 Exit For
             End If
         Next
@@ -335,7 +349,7 @@ Public Class Form1
     End Sub
 
     Private Async Function StartUpdateTask() As Task
-        While True
+        While con.FullState = System.Data.ConnectionState.Open
             Await DoUpdatesync()
 
             Await Task.Delay(Constant.UpdateDisplayMillSeconds)
@@ -348,20 +362,32 @@ Public Class Form1
     ''' <returns></returns>
     Private Async Function DoUpdatesync() As Task
         Await Task.Run(Sub()
-                           Dim allData = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ALL_DATA)
-                           If allData Is Nothing Then
-                               Return
-                           End If
+                           Dim updateFlg = ""
 
-                           Dim requiredIndex = If(PlayerNo = Constant.PLAYER_NO_1, 0, 20)
-                           If allData.Count <= requiredIndex OrElse allData(requiredIndex) Is Nothing OrElse allData(requiredIndex).Count = 0 Then
-                               Return
-                           End If
+                           ' SELECT（読み込み）の実行
+                           Dim selectSql As String = "SELECT update_flg FROM update_check WHERE id =" & GetPlayerNo() & ";"
+                           Using cmdSelect As New NpgsqlCommand(selectSql, con)
+                               If cmdSelect.Connection.FullState = System.Data.ConnectionState.Closed Then
+                                   Return
+                               End If
+                               Using reader = cmdSelect.ExecuteReader()
+                                   Console.WriteLine("--- 保存されているデータ ---")
+                                   While reader.Read()
+                                       updateFlg = reader("update_flg")
+                                   End While
+                               End Using
+                           End Using
 
-                           Dim updateFlg = allData(requiredIndex)(0)?.ToString()
                            If updateFlg = "1" Then
+                               Dim allData = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ALL_DATA)
+                               If allData Is Nothing Then
+                                   Return
+                               End If
                                Me.Invoke(Sub() BattleEnemyUpdate(allData))
-                               Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_UPDATE_FLGE_CELL(PlayerNo), "0")
+                               Dim insertSql As String = "UPDATE update_check SET update_flg = 0 WHERE id = " & GetPlayerNo() & ";"
+                               Using cmdInsert As New NpgsqlCommand(insertSql, con)
+                                   Dim rowsAffected = cmdInsert.ExecuteNonQuery()
+                               End Using
                            End If
                        End Sub)
     End Function
@@ -457,7 +483,7 @@ Public Class Form1
             End If
         Next i
 
-        Common.SetGoogleSheetDataAsync(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_HAND_START_CELL(PlayerNo), {handDataNameList.ToArray()})
+        Common.SetGoogleSheetDataAsync(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_HAND_START_CELL(GetPlayerNo()), {handDataNameList.ToArray()})
 
         SetEnemyUpdateFlg()
     End Sub
@@ -488,14 +514,14 @@ Public Class Form1
             End If
         Next i
 
-        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_AREA_START_CELL(PlayerNo), {BattleAreaAllyData.Select(Function(x) x.Name).ToArray()})
+        Common.SetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_AREA_START_CELL(GetPlayerNo()), {BattleAreaAllyData.Select(Function(x) x.Name).ToArray()})
 
         SetEnemyUpdateFlg()
     End Sub
 
     Private Sub BattleEnemyUpdate(allData As IList(Of IList(Of Object)))
 
-        Dim enemyHandNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_HAND_RANGE(PlayerNo))
+        Dim enemyHandNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_HAND_RANGE(GetPlayerNo()))
 
         If enemyHandNameList IsNot Nothing Then
             If enemyHandNameList.Count = 0 Then
@@ -517,7 +543,7 @@ Public Class Form1
         ' 前回データをクリア
         BattleAreaEnemyData.Clear()
 
-        Dim enemyNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_AREA_RANGE(PlayerNo))
+        Dim enemyNameList = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ENWMY_AREA_RANGE(GetPlayerNo()))
 
         If enemyNameList IsNot Nothing Then
             If enemyNameList.Count = 0 Then
@@ -556,7 +582,10 @@ Public Class Form1
     End Sub
 
     Private Sub SetEnemyUpdateFlg()
-        Common.SetGoogleSheetDataAsync(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_UPDATE_FLGE_CELL(PlayerNo), "1")
+        Dim insertSql As String = "UPDATE update_check SET update_flg = 1 WHERE id = " & ENEMY_NO(GetPlayerNo()) & ";"
+        Using cmdInsert As New NpgsqlCommand(insertSql, con)
+            Dim rowsAffected = cmdInsert.ExecuteNonQuery()
+        End Using
     End Sub
 
     Private Function FindControlsRecursive(ByVal rootControls As Control.ControlCollection, ByVal searchPart As String) As List(Of Control)
@@ -605,4 +634,8 @@ Public Class Form1
             Return String.Empty
         End Try
     End Function
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        con.Close()
+    End Sub
 End Class

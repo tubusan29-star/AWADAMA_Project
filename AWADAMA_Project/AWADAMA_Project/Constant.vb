@@ -16,6 +16,8 @@
     Public ReadOnly Property EnemyCardNum As Integer = 6
 
     Public ReadOnly Property UpdateDisplayMillSeconds As Integer = 500
+    Public ReadOnly Property ENEMY_NO As Integer() =
+        {1, 0}
 
 #Region "スプレッドシート関連定数"
 
