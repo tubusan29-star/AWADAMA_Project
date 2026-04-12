@@ -114,13 +114,6 @@ Public Module Common
     End Sub
 
 #End Region
-    Friend Sub getDBConnect(ByRef con As NpgsqlConnection)
-
-        Dim connString As String = "Host=aws-1-ap-northeast-2.pooler.supabase.com;Port=5432;Database=postgres;Username=postgres.putjlrckatjibyhtxolw;Password=unidamastadio;SSL Mode=Require;Trust Server Certificate=true"
-
-        con = New NpgsqlConnection(connString)
-
-    End Sub
 
 End Module
 

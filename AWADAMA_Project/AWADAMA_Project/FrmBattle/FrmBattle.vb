@@ -1,4 +1,5 @@
-﻿Imports System.Drawing
+﻿Imports System.Data.Common
+Imports System.Drawing
 Imports System.IO
 Imports System.Reflection.Metadata
 Imports System.Windows.Forms
@@ -29,7 +30,7 @@ Public Class FrmBattle
 
     Private Async Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Common.getDBConnect(con)
+        DBManager.getDBConnect(con)
         con.Open()
 
         AllCardData.GetData()
@@ -38,8 +39,6 @@ Public Class FrmBattle
             BattleAreaAllyData.Add(New CardDataDto())
         Next
 
-        SetPlayerNo(FindLoginFile()
-)
         Await StartUpdateTask()
 
     End Sub
@@ -362,21 +361,9 @@ Public Class FrmBattle
     ''' <returns></returns>
     Private Async Function DoUpdatesync() As Task
         Await Task.Run(Sub()
-                           Dim updateFlg = ""
+                           Dim updataFlgData = DBManager.selectData(con, Query.selectCheckUpdateFlg(GetPlayerNo()))
 
-                           ' SELECT（読み込み）の実行
-                           Dim selectSql As String = "SELECT update_flg FROM update_check WHERE id =" & GetPlayerNo() & ";"
-                           Using cmdSelect As New NpgsqlCommand(selectSql, con)
-                               If cmdSelect.Connection.FullState = System.Data.ConnectionState.Closed Then
-                                   Return
-                               End If
-                               Using reader = cmdSelect.ExecuteReader()
-                                   Console.WriteLine("--- 保存されているデータ ---")
-                                   While reader.Read()
-                                       updateFlg = reader("update_flg")
-                                   End While
-                               End Using
-                           End Using
+                           Dim updateFlg = updataFlgData(0)("update_flg")
 
                            If updateFlg = "1" Then
                                Dim allData = Common.GetGoogleSheetData(Constant.MAIN_SHEET_ID, Constant.MAIN_SHEET_NAME_BATTLE, Constant.MAIN_SHEET_BATTLE_ALL_DATA)
@@ -384,10 +371,8 @@ Public Class FrmBattle
                                    Return
                                End If
                                Me.Invoke(Sub() BattleEnemyUpdate(allData))
-                               Dim insertSql As String = "UPDATE update_check SET update_flg = 0 WHERE id = " & GetPlayerNo() & ";"
-                               Using cmdInsert As New NpgsqlCommand(insertSql, con)
-                                   Dim rowsAffected = cmdInsert.ExecuteNonQuery()
-                               End Using
+
+                               DBManager.exec(con, Query.updCheckUpdateFlg(GetPlayerNo(), 0))
                            End If
                        End Sub)
     End Function
@@ -582,10 +567,7 @@ Public Class FrmBattle
     End Sub
 
     Private Sub SetEnemyUpdateFlg()
-        Dim insertSql As String = "UPDATE update_check SET update_flg = 1 WHERE id = " & ENEMY_NO(GetPlayerNo()) & ";"
-        Using cmdInsert As New NpgsqlCommand(insertSql, con)
-            Dim rowsAffected = cmdInsert.ExecuteNonQuery()
-        End Using
+        DBManager.exec(con, Query.updCheckUpdateFlg(ENEMY_NO(GetPlayerNo()), 1))
     End Sub
 
     Private Function FindControlsRecursive(ByVal rootControls As Control.ControlCollection, ByVal searchPart As String) As List(Of Control)
